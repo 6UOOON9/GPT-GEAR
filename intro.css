@@ -1,0 +1,39 @@
+/* A six-loop research mark opens into the real-robot film. */
+.brand-knot{width:32px;height:32px;display:inline-block;vertical-align:middle;flex:none}.film-wordmark{display:inline-flex;align-items:center;gap:10px}.film-wordmark .brand-knot{width:25px;height:25px}.flow-icon .brand-knot{width:36px;height:36px}
+.opening-film{overflow:hidden}.film-stage,.film-caption{animation:none}
+.brand-intro[hidden]{display:none!important}.brand-intro{position:absolute;inset:0;z-index:8;display:grid;place-items:center;overflow:hidden;background:#07090e;animation:intro-curtain 4.6s both;pointer-events:auto}
+.intro-atmosphere{position:absolute;inset:-30%;background:radial-gradient(ellipse at 43% 42%,#39537d28,transparent 39%),radial-gradient(ellipse at 59% 53%,#67538a1c,transparent 38%);animation:intro-atmosphere 4.6s both}
+.intro-center{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px;margin-top:-30px}.intro-mark{width:clamp(144px,19vw,230px);height:clamp(144px,19vw,230px);filter:drop-shadow(0 0 26px #98b7ff24);animation:knot-open 4.6s cubic-bezier(.65,0,.2,1) both;transform-origin:center}.intro-mark svg{width:100%;height:100%;overflow:visible}.intro-mark .knot-ribbon{stroke-dasharray:100;transform-origin:128px 128px;animation:knot-trace 1.4s cubic-bezier(.2,.65,.2,1) both,ribbon-unfold 1.6s 2.7s cubic-bezier(.65,0,.2,1) both}
+.intro-copy{text-align:center;animation:intro-type 4.6s both}.intro-overline{font-size:9px;letter-spacing:3.3px;color:#91a8cd}.intro-copy p{font-family:Manrope,var(--font);font-size:clamp(34px,5vw,57px);font-weight:500;letter-spacing:-2px;margin:15px 0 17px;color:#e3ecfc}.intro-copy p span{font-weight:400;color:#b5a6df}.intro-subtitle{font-size:9px;letter-spacing:3.8px;color:#7d8aa3}.intro-skip{position:absolute;top:29px;right:4vw;display:flex;gap:24px;align-items:center;background:transparent;border:1px solid #35405a;border-radius:30px;padding:10px 17px;color:#b9c5dc;font-size:10px;z-index:2}.intro-skip:hover{background:#1c2538;border-color:#829bc1}.intro-footnote{position:absolute;bottom:34px;font-size:8px;letter-spacing:3px;color:#66748e;animation:intro-type 4.6s both}
+.intro-running .film-stage{animation:film-reveal 1.45s 3.1s both}.intro-running .film-caption,.intro-running .film-heading,.intro-running .film-scroll{animation:intro-details .7s 3.8s both}
+@keyframes knot-trace{0%{stroke-dashoffset:100;opacity:0}15%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes knot-open{0%{transform:scale(.83) rotate(-25deg);opacity:0}15%{opacity:1}46%,58%{transform:scale(1) rotate(0);opacity:1}100%{transform:scale(10) rotate(30deg);opacity:0}}
+@keyframes ribbon-unfold{from{transform:translateY(0)}to{transform:translateY(-105px)}}
+@keyframes intro-curtain{0%,65%{background:#07090e;visibility:visible;opacity:1}88%{background:#07090e00;opacity:1}99%{visibility:visible}100%{background:#07090e00;opacity:0;visibility:hidden;pointer-events:none}}
+@keyframes intro-atmosphere{0%{opacity:0}30%,60%{opacity:1}100%{opacity:0;transform:scale(1.5)}}
+@keyframes intro-type{0%,15%{opacity:0;transform:translateY(9px)}30%,57%{opacity:1;transform:none}73%,100%{opacity:0;transform:translateY(-10px)}}
+@keyframes film-reveal{from{clip-path:circle(5% at 50% 50%);filter:brightness(.4);transform:scale(1.035)}to{clip-path:circle(75% at 50% 50%);filter:brightness(1);transform:none}}
+@keyframes intro-details{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media(max-width:600px){.intro-center{gap:24px;margin-top:-50px}.intro-skip{right:20px;top:20px}.intro-overline{font-size:8px;letter-spacing:2.5px}.intro-subtitle{font-size:8px;letter-spacing:2.5px}.intro-footnote{font-size:7px;letter-spacing:2px}.brand-knot{width:28px;height:28px}}
+@media(prefers-reduced-motion:reduce){.brand-intro{display:none!important}.intro-running .film-stage,.intro-running .film-caption,.intro-running .film-heading,.intro-running .film-scroll{animation:none}}
+
+/* The paper title leads; the film fills the entire opening viewport. */
+.opening-film{padding:0;gap:0;height:100svh;min-height:100svh;max-height:100svh;display:block;background:#07090e}
+.film-stage{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none;margin:0;border:0;border-radius:0;box-shadow:none;overflow:hidden;background:#07090e}
+.film-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;background:#07090e}
+.film-stage::after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#0006);pointer-events:none}
+.film-progress{z-index:1;height:2px;background:#ffffff18}.film-progress span{box-shadow:none;background:#dce5f5aa}
+.film-caption{position:absolute;right:28px;bottom:24px;width:auto;z-index:2;display:block;margin:0}.film-controls{gap:8px}.film-controls button{background:#0a10184d;border:0;color:#fff;backdrop-filter:blur(12px);width:40px;height:40px}.film-controls button:hover{background:#0a1018b3}
+.film-scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;margin:0;color:#fff}.film-scroll>span:last-child{color:#fff;font-size:28px;animation:none;line-height:40px}
+.film-status:not(:empty){position:absolute;bottom:80px;left:8%;right:8%;z-index:3;background:#0a1018d9;padding:12px;border-radius:8px;font-size:14px;color:#e5ecf8}
+.film-start{z-index:3;width:64px;height:64px;border-radius:50%;padding:0;display:grid;place-items:center;border:0;background:#0a101873}.film-start span{color:#fff;font-size:30px}
+.intro-center{width:100%;gap:30px;margin:0;padding:36px 28px}.intro-mark{width:clamp(96px,10vw,140px);height:clamp(96px,10vw,140px);filter:none;flex:none}.intro-copy{width:100%}.intro-title{font-family:Manrope,var(--font);font-size:clamp(32px,4.8vw,72px);font-weight:500;line-height:1.16;letter-spacing:-.045em;color:#eef1f7;max-width:1100px;margin:0 auto;text-wrap:balance}.intro-title span{display:inline-block;font-size:.76em;font-weight:400;color:#c8ccd7;margin-top:12px;letter-spacing:-.035em}
+.intro-atmosphere{background:radial-gradient(ellipse at 50% 45%,#35456316,transparent 55%)}.intro-skip{top:24px;right:28px;width:40px;height:40px;display:grid;place-items:center;padding:0;gap:0;font-size:20px;border:0;background:transparent;color:#a9b3c8}.intro-skip:hover{background:#1b2333}
+@media(max-width:600px){.opening-film{padding:0;gap:0;height:100svh;max-height:100svh}.film-stage{height:100%;max-height:none;aspect-ratio:auto;border-radius:0}.film-stage video{object-position:53% 50%}.film-caption{right:16px;bottom:22px}.film-controls{width:auto;gap:6px}.film-controls button{width:34px;height:34px;font-size:18px}.film-scroll{bottom:20px;left:24px;transform:none}.intro-center{gap:32px;padding:30px 22px;margin:0}.intro-title{font-size:clamp(30px,7.6vw,44px);line-height:1.2;letter-spacing:-.04em}.intro-title span{font-size:.8em;margin-top:16px}.intro-skip{top:18px;right:18px}.film-start{padding:0;width:60px;height:60px}.film-status:not(:empty){bottom:74px}}
+/* Hide the source clip's title strip in tall viewports. */
+@media(max-aspect-ratio:4/3){.film-stage video{height:107%;top:-7%}}
+
+/* Titles use a single neutral ink throughout the paper. */
+h1,h2,h3,h4{color:var(--ink)}
+h1>span,h2>span,.intro-title span{color:inherit;background:none;-webkit-text-fill-color:currentColor}
+.takeaway p,.takeaway strong{color:var(--ink)}
