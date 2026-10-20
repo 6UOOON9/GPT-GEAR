@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "environments": {
+    "univtac": {
+      "benchmark": "univtac",
+      "env_root": "/path/to/UniVTAC",
+      "sim_python": "/path/to/univtac/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1468828686,
+      "tactile_mode": "force"
+    }
+  ]
+}

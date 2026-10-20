@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "episodes": [
+    {
+      "task": "align_blocks",
+      "seed": 0,
+      "layout_id": 0,
+      "environment": "robodojo"
+    }
+  ],
+  "environments": {
+    "robodojo": {
+      "benchmark": "robodojo",
+      "env_root": "/path/to/RoboDojo",
+      "sim_python": "/path/to/robodojo/bin/python"
+    }
+  }
+}

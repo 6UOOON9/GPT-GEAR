@@ -1,0 +1,62 @@
+{
+  "robocasa-gr1": [
+    "PnPCupToDrawerClose",
+    "PnPPotatoToMicrowaveClose",
+    "PnPMilkToMicrowaveClose",
+    "PnPBottleToCabinetClose",
+    "PnPWineToCabinetClose",
+    "PnPCanToDrawerClose",
+    "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+    "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+    "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+    "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+    "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+    "PosttrainPnPNovelFromPlacematToBasketSplitA",
+    "PosttrainPnPNovelFromPlacematToBowlSplitA",
+    "PosttrainPnPNovelFromPlacematToPlateSplitA",
+    "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+    "PosttrainPnPNovelFromPlateToBowlSplitA",
+    "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+    "PosttrainPnPNovelFromPlateToPanSplitA",
+    "PosttrainPnPNovelFromPlateToPlateSplitA",
+    "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+    "PosttrainPnPNovelFromTrayToPlateSplitA",
+    "PosttrainPnPNovelFromTrayToPotSplitA",
+    "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+    "PosttrainPnPNovelFromTrayToTieredshelfSplitA"
+  ],
+  "univtac": {
+    "grasp_classify": {
+      "difficulty": "unspecified",
+      "instruction": "Sort the prism currently held by the gripper according to its surface: place a rough-surfaced prism on the orange pad, or a smooth-surfaced prism on the green pad. Position the prism upright over the correct pad. Infer the surface from the available sensor observations."
+    },
+    "insert_tube": {
+      "difficulty": "unspecified",
+      "instruction": "Insert the test tube currently held by the gripper into the matching inclined opening of the tube holder. Align the tube with the opening and seat it securely while maintaining the grasp."
+    },
+    "lift_bottle": {
+      "difficulty": "unspecified",
+      "instruction": "Grasp the bottle at the prepared gripper position, reorient it to stand upright on the supporting surface by the wall, and leave it standing stably."
+    },
+    "pull_out_key": {
+      "difficulty": "unspecified",
+      "instruction": "Remove the key currently grasped by the gripper from its slot. Turn and withdraw the key as needed while keeping the slot fixed and maintaining an upright, secure grasp of the key."
+    },
+    "lift_can": {
+      "difficulty": "unspecified",
+      "instruction": "Grasp the can at the prepared gripper position, reorient it to stand upright on the table, and leave it standing stably. The goal is an upright can resting on the table."
+    },
+    "put_bottle_in_shelf": {
+      "difficulty": "unspecified",
+      "instruction": "Place the currently grasped bottle upright in the shelf. Maintain a secure grasp during lifting and reorientation, then place the bottle in the shelf."
+    },
+    "insert_hole": {
+      "difficulty": "unspecified",
+      "instruction": "Insert the test tube currently held by the gripper into the hole of the holder. Align the tube with the hole and insert it deeply while maintaining the grasp."
+    },
+    "insert_HDMI": {
+      "difficulty": "unspecified",
+      "instruction": "Insert the HDMI connector currently held by the gripper into its matching socket. Align and seat the connector while maintaining the grasp and keeping the socket fixed."
+    }
+  }
+}

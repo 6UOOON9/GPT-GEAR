@@ -1,0 +1,2414 @@
+{
+  "version": 2,
+  "environments": {
+    "gr1": {
+      "benchmark": "robocasa-gr1",
+      "env_root": "/path/to/robocasa-gr1-tabletop-tasks",
+      "robosuite_root": "/path/to/robosuite-gr1",
+      "data_root": "/path/to/robocasa_data",
+      "sim_python": "/path/to/robocasa/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 1365783547
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 1428943631
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 2467939662
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 845560870
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 4091876006
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 3848601277
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 880870654
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 1546234808
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 715676900
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 607397550
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 3174688996
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 844318121
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 3782647797
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 3986231638
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 3178984468
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 2167126151
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1006242044
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 3410692588
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 866903761
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 1962050642
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 1719081696
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 377200932
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 2430891497
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 2612034900
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 2637691299
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 3344027583
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 1614298696
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 1714926763
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 3768453954
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 3596828622
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 1030597497
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 3244342640
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 1904033309
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 2740551672
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 3493186796
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 1715761015
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 3940877058
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 829037255
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1621084077
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 4076784971
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 2427683950
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 528063514
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 1100141705
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 408475458
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 3623002216
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 87695531
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 666999822
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 1547279100
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 3896006956
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 3838009691
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 1559926455
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 70529174
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 1401618114
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 932177284
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 186830836
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2737505101
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 3937169892
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 2673374081
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 2875576695
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 4119182410
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 2997835552
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 661758555
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 487906402
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 587026551
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1458798773
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 181316520
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 730724893
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 1301683560
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 2648905792
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 4246489893
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 2527121359
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 817291927
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 1858440439
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 3699750585
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 3778782270
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 4103510240
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 1291603945
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 1327973900
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2317844316
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 683674384
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 4230059029
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 395912289
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 2110394595
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 1934022255
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 1286514989
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 1682221540
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1057064381
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1633897039
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 2353556253
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 4020033426
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 3940246113
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 1974245168
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 928059948
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3018501712
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 142811118
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3803956615
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 4043083461
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 1184447365
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 599862515
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 3074379279
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 1734569071
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 1168105996
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 3523219519
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 32915799
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 1556949511
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 4004231785
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 1942598396
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 4192913326
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 580869635
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 2043953886
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 4062152950
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1669920756
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 444847979
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2447732280
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 4146345796
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 3250112277
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 1688921110
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3382967482
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3841040452
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3172270501
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 3060587860
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 3671162868
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 1366732113
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 3140571075
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 2280587239
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 1068426191
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2988530304
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 713405345
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 1088575006
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 512069983
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 2278124140
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 1790576537
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 1654152925
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 1337766087
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1929798394
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1994065645
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 2308154911
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2913110831
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 388248399
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 2483325650
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 522863653
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 7717610
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 2154496640
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3242432457
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 2050837903
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 871075559
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 801954567
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2949879479
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 2298894944
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 3082926758
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 14132939
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2950015479
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2707745975
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 695540915
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 425038544
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 3588815484
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 3224330863
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 3392207602
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2524824008
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1627529480
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1816764627
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 1306900641
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 2161028497
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 882517199
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 564207921
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3821784536
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 1941378190
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 4022315080
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 1989813400
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 2368231412
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 2237698977
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2018895792
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 2966899631
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 120556186
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2688780185
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2894087192
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 1300401181
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 382395985
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 595903121
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 3528948498
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 78293285
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 555197471
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2141180989
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 2489443481
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 2032057312
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 650599409
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 2553645318
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 3033962938
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 433607479
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 1209499312
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 2821201205
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3134790733
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 2007907480
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 2444637927
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 3982419797
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 444151063
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 1262687918
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 4195190635
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2387609620
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 4038026425
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2720698271
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 1719710474
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 656842591
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 979011527
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 495884749
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 2764567929
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2336575651
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1499506862
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 3381214341
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2475078308
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 718420440
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 530582206
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 1261649177
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 2117610962
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 1507222027
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3044552987
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 917271537
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 1594719190
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 268273615
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 3557222730
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 746306209
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 3907119395
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2074048311
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2910680626
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 523516746
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 3111629949
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 3499395535
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 1796684948
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 2367909049
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 692955509
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2978014861
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 3198527913
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1988227537
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 1091668889
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 292560984
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 4053241879
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 3095282332
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 1803693206
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3022788994
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 2476885409
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 235296873
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 1456758888
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 4080945686
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2171246070
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 2795575578
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 905950633
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2316043284
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 475587667
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2626303303
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 1950426712
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 1626167543
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 3154397189
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 2702109187
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 2079232061
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2007425269
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 4101887467
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 3187088929
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 393654438
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 2191810296
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 229981866
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 3675110943
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 153614985
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 752196272
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3762492472
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 4117852149
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 3157481506
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 3776861659
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 3244509909
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 1875214645
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 1408937501
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 609442935
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2491787284
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 712017450
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 1070259483
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 18791429
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 3232126590
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 2581432034
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 1747083817
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2501567784
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 3152607316
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 2810504270
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2324611171
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 3470547170
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 1778319736
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 3310092466
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 4256912807
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3405999419
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 2495129083
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 3028401780
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 2487385324
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 3655597296
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 3160032572
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 977064958
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 2117650754
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 1684028596
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 350872283
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 253191697
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 1404003041
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 4000839193
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 2209735809
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 37447162
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 4067956488
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1715458185
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 890003134
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 3178478578
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 7911143
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 721554441
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 636462085
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 3665787928
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3067403286
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 2107255662
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3942873868
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 938021450
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 1975216237
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 446835906
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 1364008368
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 3844657053
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 1893880460
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2737780001
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2704475993
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2344230189
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 143434619
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 937424845
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 1561827065
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 3675376661
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 950017624
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1200996833
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 4013237598
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 3067663848
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 1140381058
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 3486769349
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 967001450
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 656501846
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 467278424
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3478384015
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3655892629
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 2214716738
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 3565932821
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 1536723469
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 3509673406
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 2861697106
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 3470229077
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 1964535777
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 1663552406
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 537619665
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 3791992539
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 144551496
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 2344901128
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 1426041504
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 103554608
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 3947872391
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 2732153833
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 765680984
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2906576968
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 790631067
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 1470522799
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 2147055422
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3561163443
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3743957659
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3387535014
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 246989169
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 816494652
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 2437506584
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2046176934
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 1383970197
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 1254686015
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 3730264075
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 135855806
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2017291419
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 1659738862
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 3885620965
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 3306641671
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 3021019979
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 3862992068
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 3627470993
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1162086108
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1310770264
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 871494764
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 1800002505
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 2745905394
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 3544182953
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 347321190
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3425770363
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3399376302
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 2171348377
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 346464685
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 2232799469
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2266349621
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 847997494
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 3267377852
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2511106838
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 2500728270
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2083633817
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 3432607682
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 3087879347
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 4092343281
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 3643320812
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 4020659975
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1803828549
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 1660338034
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1633989293
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 758784549
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 2219698374
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 1376952802
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 2150930852
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3474800493
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3271078137
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 2231901545
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 3066372139
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 2558833907
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 4108259256
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2497803444
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 4270484708
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 590786847
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 2797389346
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 815089489
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2647387676
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 3567062123
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 1855641376
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 1642798862
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 2693872149
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 370125676
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2449657865
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 74888957
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 2384699354
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2258572898
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 728343924
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 3368904955
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 512082661
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 3381770153
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3278431277
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 2977565904
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 3525914312
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 4202768930
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 4018885744
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 2406712897
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 101157374
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 2718973226
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 227532332
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 3470633276
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 3515031154
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 3683439011
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 2191279880
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 521736520
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 2826629104
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 4147364371
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 2036506740
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 686376107
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 3331256689
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 2650920275
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 80815221
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 662821016
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 1773184660
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 266907139
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 3093010161
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 1187818062
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCupToDrawerClose",
+      "seed": 4105883719
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPPotatoToMicrowaveClose",
+      "seed": 369356286
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPMilkToMicrowaveClose",
+      "seed": 3415987139
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPBottleToCabinetClose",
+      "seed": 4100575187
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPWineToCabinetClose",
+      "seed": 572196759
+    },
+    {
+      "environment": "gr1",
+      "task": "PnPCanToDrawerClose",
+      "seed": 2800750164
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToBasketSplitA",
+      "seed": 75729410
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToCardboardboxSplitA",
+      "seed": 167304717
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPanSplitA",
+      "seed": 2929269167
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToPotSplitA",
+      "seed": 1422756464
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromCuttingboardToTieredbasketSplitA",
+      "seed": 3621524777
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBasketSplitA",
+      "seed": 2853282379
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToBowlSplitA",
+      "seed": 1043445796
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToPlateSplitA",
+      "seed": 75188298
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlacematToTieredshelfSplitA",
+      "seed": 1038850239
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToBowlSplitA",
+      "seed": 4223365192
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToCardboardboxSplitA",
+      "seed": 1151521332
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPanSplitA",
+      "seed": 1780047411
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromPlateToPlateSplitA",
+      "seed": 2800479091
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToCardboardboxSplitA",
+      "seed": 3073643190
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPlateSplitA",
+      "seed": 716112427
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToPotSplitA",
+      "seed": 811657388
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredbasketSplitA",
+      "seed": 576011754
+    },
+    {
+      "environment": "gr1",
+      "task": "PosttrainPnPNovelFromTrayToTieredshelfSplitA",
+      "seed": 3196937079
+    }
+  ]
+}

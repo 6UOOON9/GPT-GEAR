@@ -1,0 +1,812 @@
+{
+  "version": 2,
+  "environments": {
+    "univtac": {
+      "benchmark": "univtac",
+      "env_root": "/path/to/UniVTAC",
+      "sim_python": "/path/to/univtac/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1468828686
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 97251441
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1041460767
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 25398058
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1179996247
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 164115556
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 631316086
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 541034245
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1197299743
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 2017987317
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 318343841
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 165333139
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1362752701
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1265403244
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 647804960
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 473998496
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1899985682
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1275645078
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 1928661201
+    },
+    {
+      "environment": "univtac",
+      "task": "grasp_classify",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_tube",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_bottle",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "pull_out_key",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "lift_can",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "put_bottle_in_shelf",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_hole",
+      "seed": 618150680
+    },
+    {
+      "environment": "univtac",
+      "task": "insert_HDMI",
+      "seed": 618150680
+    }
+  ]
+}

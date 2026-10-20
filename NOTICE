@@ -1,0 +1,98 @@
+2026-10-21: RoboTwin expert-video text generation is adapted from
+robotwin_reference_text_generation_20261020.zip into the shared annotation workflow.
+The three-camera visual prompt and 42-image limit are retained, with explicit
+sampling-rate selection, common audit capture and output validation. Camera rules
+and the image limit live in the RoboTwin adapter; no archived script is imported
+at runtime.
+No expert videos, trajectories or generated annotations are bundled.
+
+2026-10-20: LIBERO-plus visual text generation is integrated into the shared
+reference annotation commands. The two-camera prompt is retained from local
+LIBERO-plus/libero/codex_control/prompts/reference_text.md; the workflow follows
+LIBERO-plus/scripts/prepare_reference_text.py using the shared generator's audit
+capture and stricter output checks. No runtime import from the LIBERO-plus checkout is needed.
+
+2026-10-20: UniVTAC and GR1 visual annotation prompts are adapted from
+astra-as-policy.zip.
+Reference video and trajectory preparation is external to this project, including
+RoboDojo. Only visual text generation and reference validation/delivery remain;
+dataset download, video/trajectory exporters and source-dataset verification tools
+are not included. Official datasets and generated demonstrations are not bundled.
+
+2026-10-20: RoboTwin native initialization, EE action conversion, physics-step
+video sampling and reference trajectory validation are adapted from
+robotwin_eval_clean_20261019.zip. The common controller, session, MCP and queue
+remain shared. Expert screening and quota scheduling are not included. The archive
+contains no actual reference data or RoboTwin simulator/assets. No upstream commit
+was supplied; the selected host revision and configuration hashes are recorded.
+The supplied RoboTwin MIT license is reproduced in licenses/RoboTwin-MIT.txt;
+RPent-derived functionality retains the Apache-2.0 attribution below.
+
+2026-10-19: RoboCasa GR1 and UniVTAC adapters, task/seed registries, native
+kinematics, continuous gripper and contact-force conversion, reference validators,
+and saved measured-depth queries are adapted from the supplied astra-as-policy.zip.
+Transport and policy lifecycle use this project's common implementation. The archive's RPent
+Apache-2.0 and RoboDojo MIT attribution is retained below; UniVTAC's supplied
+Apache-2.0 text is reproduced in licenses/UniVTAC-Apache-2.0.txt. No simulator,
+assets, downloaded demonstration data or archived evaluation results are bundled.
+GR1 simulation revisions are pinned; UniVTAC's upstream revision was not supplied
+and is recorded from the selected runtime checkout, not asserted as validated.
+
+GPT-GEAR: multi-benchmark integration
+
+2026-10-19: generalized package, launcher, control contracts, queues and results
+for unmodified RoboDojo and LIBERO-plus. LIBERO native OSC adaptation, video
+streaming and single-arm reference validation were adapted from the local
+LIBERO-plus/libero/codex_control implementation. These files live in this package; no custom code is
+loaded from the simulation checkout. The simulation projects remain external
+runtime dependencies, pinned by the benchmark registry.
+
+Reference delivery, depth declarations, feedback projection and telemetry retain
+the provenance of codex_control_docs_and_core_20260925.zip. RPent copyright
+headers and bundled license texts are retained. The following earlier notes
+describe their original integration contexts, not the current public API.
+
+2026-09-26: scripts/prepare_reference_text.py and prompts/reference_text.md are
+adapted from the same archive's operator-only visual annotation generator.
+Changes: RoboDojo camera labels, optional evidence capture, stricter numbered-line
+syntax/CJK rejection, explicit multi-agent disablement, and the repository's
+single temporary-proxy fallback only for identified connection failures.
+The archive's fresh read-only CLI, 1 FPS independent image sampling, visual-only
+English prompt and atomic no-replace text publication are retained.
+
+Historical upstream NOTICE follows verbatim. Its LIBERO-specific statements
+(including "No runtime dependency on RoboDojo") describe the SOURCE archive,
+not this RoboDojo integration; codex_libero.md is not an injected prompt here.
+
+--- BEGIN UPSTREAM NOTICE ---
+Transport, launcher and session adapted from the local RoboDojo codex_control implementation.
+SO(3), servo and calibration helpers retain their RPent Apache-2.0 copyright headers.
+2026-09-17: LIBERO-plus single-arm, MuJoCo, episode lifecycle and request-guard adaptations.
+No runtime dependency on RoboDojo or RPent.
+
+RoboDojo source is distributed under the MIT license, reproduced in licenses/RoboDojo-MIT.txt.
+RPent-derived files and prompts retain Apache-2.0 terms, reproduced in licenses/RPent-Apache-2.0.txt.
+
+Source attribution for prompts/codex_libero.md
+
+Copyright 2026 The RPent Authors.
+Adapted from RPent robots/robodojo/prompt_bundle.py, delta_system_prompt().
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+2026-09-16: Generalized the policy and integrated goal tracking, revisable
+object memory, interaction gates, bounded repair and completion budgeting.
+This attribution file is not part of the injected developer instructions.
+
+2026-09-17: Adapted from RoboDojo for LIBERO-plus single-arm OSC control,
+native directional gripper commands, and configured native-step budgets.
+
+Full Apache-2.0 license: licenses/RPent-Apache-2.0.txt
+RoboDojo MIT notice: licenses/RoboDojo-MIT.txt
+
+--- END UPSTREAM NOTICE ---

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "environments": {
+    "libero": {
+      "benchmark": "libero-plus",
+      "env_root": "/path/to/LIBERO-plus",
+      "sim_python": "/path/to/libero/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "libero",
+      "task": "libero_spatial/0",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    }
+  ]
+}

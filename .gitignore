@@ -1,0 +1,57 @@
+# Local Python environments
+.venv/
+.venvs/
+venv/
+env/
+
+# Local environment settings (keep distributable templates)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python bytecode, caches, and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+build/
+dist/
+
+# Local tests
+/tests/
+
+# Test coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Simulation output and local datasets
+outputs/
+artifacts/
+references/
+data/
+success_reference*/
+eval_result/
+*.log
+*.log.*
+
+# Editor and operating-system temporary files
+.ipynb_checkpoints/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

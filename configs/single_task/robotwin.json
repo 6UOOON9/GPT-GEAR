@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "environments": {
+    "robotwin": {
+      "benchmark": "robotwin",
+      "env_root": "/path/to/RoboTwin",
+      "sim_python": "/path/to/robotwin/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "robotwin",
+      "task": "adjust_bottle",
+      "seed": 0,
+      "task_config": "clean"
+    }
+  ]
+}

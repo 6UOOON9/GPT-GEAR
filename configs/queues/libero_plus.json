@@ -1,0 +1,362 @@
+{
+  "version": 2,
+  "environments": {
+    "libero": {
+      "benchmark": "libero-plus",
+      "env_root": "/path/to/LIBERO-plus",
+      "sim_python": "/path/to/libero/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "libero",
+      "task": "libero_goal/0",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/281",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/690",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/1098",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/1508",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/1887",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/2312",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/1912",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/691",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_goal/282",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/75",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/387",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/735",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/1132",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/1506",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/1807",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/2202",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/1808",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/736",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_spatial/388",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/78",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/640",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1061",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1442",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1884",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1982",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/2336",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1983",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1062",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/641",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/33",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/409",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/781",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1208",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1613",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1959",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/2287",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/1960",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/782",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_10/410",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/0",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/248",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/646",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/1042",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/1396",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/1818",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/2221",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/1819",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/647",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    },
+    {
+      "environment": "libero",
+      "task": "libero_object/249",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 600
+    }
+  ]
+}
