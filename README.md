@@ -237,4 +237,4 @@ Use repository Issues to share questions, reproduction notes, and requests for n
 
 ## License and acknowledgments
 
-This project reuses implementations from RoboDojo, RPent, and related environment adapters. Files from different sources retain their respective MIT or Apache-2.0 licenses and attribution. See [LICENSE](LICENSE), [NOTICE](NOTICE), and the [license directory](licenses/). Simulation environments, datasets, and assets must be prepared separately.
+This project reuses implementations from [RoboDojo](https://github.com/robodojo-benchmark/RoboDojo), [RPent](https://github.com/RLinf/RPent), and related environment adapters. Files from different sources retain their respective MIT or Apache-2.0 licenses and attribution. See [LICENSE](LICENSE), [NOTICE](NOTICE), and the [license directory](licenses/). Simulation environments, datasets, and assets must be prepared separately.
