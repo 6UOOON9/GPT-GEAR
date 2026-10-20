@@ -237,4 +237,4 @@ docs/                # 通用使用与开发文档
 
 ## 许可与致谢
 
-本项目复用了 RoboDojo、RPent 以及相关环境适配中的实现。不同来源文件保留相应的 MIT 或 Apache-2.0 许可与署名，详见 [LICENSE](LICENSE)、[NOTICE](NOTICE) 和 [许可证目录](licenses/)。仿真环境、数据集和资产需另行准备。
+本项目复用了 [RoboDojo](https://github.com/robodojo-benchmark/RoboDojo)、[RPent](https://github.com/RLinf/RPent) 以及相关环境适配中的实现。不同来源文件保留相应的 MIT 或 Apache-2.0 许可与署名，详见 [LICENSE](LICENSE)、[NOTICE](NOTICE) 和 [许可证目录](licenses/)。仿真环境、数据集和资产需另行准备。
