@@ -29,7 +29,7 @@ from demonstrations.common import finite_number, read_text
 from environments import environment_package
 
 CODEX_TIMEOUT = 600.0
-ANNOTATION_BENCHMARKS = ('robodojo', 'libero-plus', 'univtac', 'robocasa-gr1', 'robotwin')
+ANNOTATION_BENCHMARKS = ('robodojo', 'libero-plus', 'libero-geomotion', 'univtac', 'robocasa-gr1', 'robotwin')
 AUDIT_FORMAT = "robodojo-visual-steps-v2"
 
 

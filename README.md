@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
   <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
+  <a href="https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"><img src="https://img.shields.io/badge/Hugging_Face-LIBERO--GeoMotion-FFD21E?style=flat-square&logo=huggingface" alt="LIBERO-GeoMotion on Hugging Face"></a>
   <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
   <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
@@ -34,13 +35,15 @@
 
 Welcome to **GPT-GEAR**! We provide a **robot control and evaluation framework spanning multiple simulation environments**, bringing model interaction, reference demonstrations, closed-loop execution, and batch evaluation together so you can explore what general-purpose models can do with robots. Here, a model observes a scene through cameras, learns from demonstrations, tries an action, and adjusts its next move using the robot's feedback. From understanding an instruction to completing a grasp, we ask: **what can the model already do, and where does it still struggle?**
 
-Our work explores **depth perception, embodied in-context learning, and tactile understanding** across five environments: **LIBERO-plus, RoboTwin, UniVTAC, RoboCasa GR1, and RoboDojo**. Take a look at the paper and project page, try your own tasks with the code, and join us in exploring how general-purpose models can interact with the physical world!
+Our work explores **depth perception, embodied in-context learning, and tactile understanding** across five environments: **LIBERO-plus, RoboTwin, UniVTAC, RoboCasa GR1, and RoboDojo**. We also release **[LIBERO-GeoMotion](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)**, with 36 scenes across 9 geometry-constrained manipulation task families, to further explore spatial understanding and motion coordination.
+
+Take a look at the paper and project page, try your own tasks with the code, and join us in exploring how general-purpose models can interact with the physical world!
 
 <a id="news"></a>
 
 ## 📰 News
 
-- ✨ **2026/10/21** — Our 📄 [paper](https://arxiv.org/abs/2610.28259) and 🌐 [project page](https://6uooon9.github.io/GPT-GEAR/) are now available! Visit the [project page](https://6uooon9.github.io/GPT-GEAR/) for more demos, explore our method and results, and share your thoughts and feedback.
+- ✨ **2026/10/21** — Our 📄 [paper](https://arxiv.org/abs/2610.28259), 🌐 [project page](https://6uooon9.github.io/GPT-GEAR/), and 📦 [LIBERO-GeoMotion dataset](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion) are now available! Visit the project page for more demos, explore our method and results, and share your thoughts and feedback.
 - 📄 **2026/10/20** — **Research report**: 📄 [*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](https://arxiv.org/abs/2610.28259). We share GPT-6 Astra's capabilities and limitations in robotic manipulation, along with questions for further exploration.
 
 <a id="overview"></a>
@@ -49,7 +52,11 @@ Our work explores **depth perception, embodied in-context learning, and tactile 
 
 ## 🧭 Overview
 
-**Observe, try, and adjust with feedback.** GPT-GEAR gives the model a set of tools for interacting with robots, turning its understanding of a scene into actions step by step. Camera images show what the scene looks like now, reference demonstrations offer clues about what to do, and execution feedback helps the model choose its next move. Along the way, it can revisit earlier observations, draw on demonstrated actions, and observe the scene again after each action. This loop connects reasoning with execution and makes each attempt an opportunity to understand the model's capabilities.
+**Observe, try, and adjust with feedback.** GPT-GEAR gives the model a set of tools for interacting with robots, turning its understanding of a scene into actions step by step.
+
+Camera images show what the scene looks like now, reference demonstrations offer clues about what to do, and execution feedback helps the model choose its next move. Along the way, it can revisit earlier observations, draw on demonstrated actions, and observe the scene again after each action.
+
+This loop connects reasoning with execution and makes each attempt an opportunity to understand the model's capabilities.
 
 <p align="center">
   <a href="assets/readme/method.png">
@@ -65,7 +72,7 @@ Our work explores **depth perception, embodied in-context learning, and tactile 
 
 ## 🧠 Embodied Capabilities
 
-**Getting a robot to complete a task starts with understanding space, learning from examples, and making sense of contact.** We explore these three abilities: can the model estimate and use depth, apply lessons from a demonstration to a new scene, and adjust its actions using tactile feedback? The figure below brings these questions together.
+**Getting a robot to complete a task starts with understanding space, learning from examples, and making sense of contact.** We explore these three abilities: can the model estimate and use depth, apply lessons from a demonstration to a new scene, and adjust its actions using tactile feedback? The figure below brings these questions together. For a detailed analysis, see our [paper](https://arxiv.org/abs/2610.28259).
 
 <p align="center">
   <a href="assets/readme/embodied-capabilities.png">
@@ -115,7 +122,21 @@ Our work explores **depth perception, embodied in-context learning, and tactile 
 
 ## 📐 LIBERO-GeoMotion
 
-**Knowing where an object belongs is one thing—can the robot turn it to the right angle and get it there?** To further explore the gap between spatial understanding and physical execution, we introduce **LIBERO-GeoMotion**, a new dataset and benchmark built on LIBERO assets for geometry-constrained manipulation, with **9 task families and 36 scene variants**. From moving an elongated object through a narrow opening to placing a book upright in a slot or pointing a mug handle in a specified direction, the tasks probe **grasp orientation alignment, object reorientation for placement, and coordinated motion under geometric and sequential constraints**. With straightforward goals but demanding motions, we ask whether the model can coordinate translation and rotation while anticipating how its actions affect nearby objects.
+**Can the robot turn an object to the right angle and move it into place?** **LIBERO-GeoMotion** is a standalone simulation environment and benchmark built on LIBERO assets, with **9 task families and 36 scene variants** for geometry-constrained manipulation.
+
+Tasks such as passing through narrow openings, placing books upright, and aligning mug handles probe **precise pose alignment, coordinated translation and rotation, and anticipation of physical consequences**. The goals are easy to understand; executing them requires careful motion under geometric and sequential constraints.
+
+<p align="center">
+  <a href="assets/readme/libero-geomotion-tasks.png">
+    <img src="assets/readme/libero-geomotion-tasks.png" width="100%" alt="Overview of nine LIBERO-GeoMotion task families: (a) narrow-passage transport, (b) upright book placement, (c) oriented bottle placement, (d) plate pushing around obstacles while keeping it flat, (e) book storage and drawer closure, (f) single-mug alignment and door closure, (g) mango transport while keeping the vase upright, (h) package storage and drawer closure, and (i) dual-mug alignment and door closure. Green dashed outlines and arrows indicate target positions and orientations; upper-right insets show final states.">
+  </a>
+</p>
+
+<p align="center">
+  <sub>Nine task families · Green markers indicate target positions and orientations; upper-right insets show final states. 🖼️ <a href="assets/readme/libero-geomotion-tasks.png">View full-resolution figure ↗</a></sub>
+</p>
+
+**What makes these motions difficult in practice?** In the narrow-passage task below, the robot must adjust an elongated object's orientation as it moves, guiding it through the opening and onto the green pad. The successful and failed sequences illustrate the challenge of coordinating translation and rotation.
 
 <p align="center">
   <a href="assets/readme/libero-geomotion.png">
@@ -124,10 +145,10 @@ Our work explores **depth perception, embodied in-context learning, and tactile 
 </p>
 
 <p align="center">
-  <sub>Geometric constraints · Pose alignment · Coordinated translation and rotation. 🖼️ <a href="assets/readme/libero-geomotion.png">View full-resolution figure ↗</a></sub>
+  <sub>Narrow-passage task · Successful and failed execution sequences. 🖼️ <a href="assets/readme/libero-geomotion.png">View full-resolution figure ↗</a></sub>
 </p>
 
-In our [paper](https://arxiv.org/abs/2610.28259), GPT-6 Astra achieves **11.1%** zero-shot success, rising to **50.0%** with contextual demonstrations. Demonstrations help, while challenges in motion coordination leave room for further exploration. 📦 **The LIBERO-GeoMotion dataset is coming soon—stay tuned!**
+In our [paper](https://arxiv.org/abs/2610.28259), GPT-6 Astra achieves **11.1%** zero-shot success, rising to **50.0%** with contextual demonstrations. Demonstrations help, while challenges in motion coordination leave room for further exploration. 📦 **[LIBERO-GeoMotion is available on Hugging Face](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)**, including the simulator, assets, expert demonstrations, and installation guide.
 
 Find more experiments and analysis in the paper linked above. Want to try it yourself? Start with the environments below and the 🚀 [quick start](#quick-start), and let us know what you discover!
 
@@ -141,6 +162,7 @@ Find more experiments and analysis in the paper linked above. Want to try it you
 |---|---|---|---|
 | RoboDojo | `align_blocks` | Three-view RGB, dual-arm state | 📚 [Environment setup](docs/environments/robodojo.md) |
 | LIBERO-plus | `libero_spatial/0` | Two-view RGB, single-arm state | 📚 [Environment setup](docs/environments/libero-plus.md) |
+| LIBERO-GeoMotion | `libero_rp/0` | Two-view RGB, single-arm state | 📚 [Environment setup](docs/environments/libero-geomotion.md) |
 | RoboCasa GR1 | `PnPCupToDrawerClose` | RGB, dual-arm state, measured depth | 📚 [Environment setup](docs/environments/robocasa-gr1.md) |
 | UniVTAC | `insert_HDMI` | RGB, robot state, resultant tactile forces | 📚 [Environment setup](docs/environments/univtac.md) |
 | RoboTwin | `adjust_bottle` | Three-view RGB, dual-arm state | 📚 [Environment setup](docs/environments/robotwin.md) |
@@ -151,7 +173,7 @@ See the 🔧 [installation guide](docs/installation.md) for dependencies and ass
 
 ## 🔧 Installation
 
-Before running robot tasks, install the simulation environment you plan to use, prepare its assets, and run its native example. You do not need all five environments. The installation guide lists 🔧 [upstream repositories and setup instructions](docs/installation.md#install-your-simulation-environment-first). The following commands install only the GPT-GEAR tools.
+Before running robot tasks, install the simulation environment you plan to use, prepare its assets, and run its native example. Only install the environments you plan to use. The installation guide lists 🔧 [upstream repositories and setup instructions](docs/installation.md#install-your-simulation-environment-first). The following commands install only the GPT-GEAR tools.
 
 We recommend a separate Python 3.11+ tool environment on Linux. The example below uses Python 3.12. Run it from the repository root:
 
@@ -251,7 +273,7 @@ Prepare reference files before evaluation for every environment. This project ge
 |---|---|
 | Installation through your first task | 🔧 [Installation](docs/installation.md) → 🚀 [Running a task](docs/running.md) → 📊 [Results](docs/results.md) |
 | Multi-task evaluation and result analysis | 🧪 [Queues](docs/queues.md) → 📊 [Results and troubleshooting](docs/results.md) |
-| Assets, observations, and evaluation options | 📚 [Guides for the five environments](docs/README.md#environment-configuration) |
+| Assets, observations, and evaluation options | 📚 [Environment configuration guides](docs/README.md#environment-configuration) |
 | Control, protocols, and environment adapters | 🏗️ [Architecture](docs/architecture.md) |
 | Tests, issue reports, and contributions | 💬 [Contributing](CONTRIBUTING.md) |
 
@@ -261,7 +283,7 @@ src/
 ├── control/         # Robot control and pose deltas
 ├── protocol/        # MCP tools, HTTP communication, and feedback
 ├── perception/      # Camera calibration, depth, and observation modalities
-├── environments/    # Adapters for the five simulation environments
+├── environments/    # Adapters for supported simulation environments
 ├── demonstrations/  # Reference processing and video-to-text generation
 └── prompts/         # Shared model instructions
 configs/

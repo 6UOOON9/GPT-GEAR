@@ -45,7 +45,7 @@ Raw scores from different environments are not directly averaged. UniVTAC provid
 | `server.log` / `codex_stderr.log` | Simulator-side and model-side diagnostic logs |
 | `session.json` | Local connection information containing a token; do not publish it |
 
-RoboDojo uses native scoring and videos in `eval_result/` under the simulator directory; see result files for exact paths. LIBERO-plus recordings show two cameras side by side; RoboTwin shows three and uses `video_timeline.jsonl` to map video frames to physics time and native calls.
+RoboDojo uses native scoring and videos in `eval_result/` under the simulator directory; see result files for exact paths. LIBERO-plus and LIBERO-GeoMotion recordings show two cameras side by side; RoboTwin shows three and uses `video_timeline.jsonl` to map video frames to physics time and native calls.
 
 RoboTwin samples at 25 fps using actual physics time, including initial and final states but excluding model inference waiting time. If encoding fails, `episode.mp4` is not published; existing partial files are retained, and the episode is summarized as `runtime_error`, outside the success rate. Its result also records that expert filtering was not performed.
 
@@ -65,7 +65,7 @@ Activate `.venvs/codex-mcp` from the repository root, or call `.venvs/codex-mcp/
 
 ### A layout, task, or HDF5 file is missing
 
-RoboDojo layouts depend on task, seed, and layout together. LIBERO-plus tasks use `suite/task_id`. UniVTAC task names are case-sensitive. GR1 requires environment configuration from `<task_name>.hdf5` even without references. Check options against the [running guide](running.md).
+RoboDojo layouts depend on task, seed, and layout together. LIBERO-plus and LIBERO-GeoMotion tasks use `suite/task_id`; GeoMotion supports only fixed initial state 0. UniVTAC task names are case-sensitive. GR1 requires environment configuration from `<task_name>.hdf5` even without references. Check options against the [running guide](running.md).
 
 ### The output directory already exists
 

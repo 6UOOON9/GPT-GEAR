@@ -21,12 +21,13 @@ RoboDojo 可使用已有 Python 3.11 环境，LIBERO-plus 可使用已有 Python
 
 ### 先安装所需的仿真环境
 
-**运行机器人任务前，请先按上游说明安装要使用的仿真环境、依赖和资产，并跑通其原生示例。只需安装你要使用的环境，不必安装全部五个。** 安装 GPT-GEAR 不会自动安装这些环境或下载资产。
+**运行机器人任务前，请先按上游说明安装要使用的仿真环境、依赖和资产，并跑通其原生示例。只需安装你要使用的环境，不必安装全部环境。** 安装 GPT-GEAR 不会自动安装这些环境或下载资产。
 
-| 环境 | 上游仓库 | 安装与资产准备 |
+| 环境 | 获取来源 | 安装与资产准备 |
 |---|---|---|
 | RoboDojo | [RoboDojo-Benchmark/RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo) | [安装与资源下载](https://robodojo-benchmark.com/doc/usage/install-and-download/) |
 | LIBERO-plus | [sylvestf/LIBERO-plus](https://github.com/sylvestf/LIBERO-plus) | [README 的 Installation 部分](https://github.com/sylvestf/LIBERO-plus#readme)，包含附加依赖和资产下载入口 |
+| LIBERO-GeoMotion | [uooon/LIBERO-GeoMotion](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion) | [安装教程](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion#installation) |
 | RoboCasa GR1 | [robocasa/robocasa-gr1-tabletop-tasks](https://github.com/robocasa/robocasa-gr1-tabletop-tasks) | [Getting Started](https://github.com/robocasa/robocasa-gr1-tabletop-tasks#getting-started)，包含配套 robosuite 和场景资产 |
 | UniVTAC | [univtac/UniVTAC](https://github.com/univtac/UniVTAC) | [Installation Guide](https://github.com/univtac/UniVTAC/blob/main/docs/Installation.md) |
 | RoboTwin | [RoboTwin-Platform/RoboTwin](https://github.com/RoboTwin-Platform/RoboTwin) | [Install & Download](https://robotwin-platform.github.io/doc/usage/robotwin-install.html) |

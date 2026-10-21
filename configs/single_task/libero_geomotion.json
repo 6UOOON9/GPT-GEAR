@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "environments": {
+    "geomotion": {
+      "benchmark": "libero-geomotion",
+      "env_root": "/path/to/LIBERO-GeoMotion",
+      "sim_python": "/path/to/geomotion/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/0",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    }
+  ]
+}

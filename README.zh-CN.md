@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
   <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
+  <a href="https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"><img src="https://img.shields.io/badge/Hugging_Face-LIBERO--GeoMotion-FFD21E?style=flat-square&logo=huggingface" alt="LIBERO-GeoMotion on Hugging Face"></a>
   <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
   <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
@@ -34,13 +35,15 @@
 
 欢迎来到 **GPT-GEAR**！我们提供了一个**支持多个仿真环境的机器人控制与评测框架**，把模型交互、参考示范、闭环执行和批量评测串在一起，让你更方便地探索通用模型的机器人操作能力。在这里，模型通过相机观察场景、参考示范学习操作，再亲自尝试，并根据机器人的反馈调整下一步。从理解一句指令到完成一次抓取，我们希望看看：**模型已经能做到什么，又会在哪里遇到困难？**
 
-这项工作从**深度感知、具身上下文学习和触觉理解**出发，在 **LIBERO-plus、RoboTwin、UniVTAC、RoboCasa GR1 和 RoboDojo** 五个环境中探索模型的具身能力。欢迎阅读论文、浏览项目主页，也欢迎用这里的代码试试自己的任务，和我们一起探索通用模型走向物理世界的可能性！
+这项工作从**深度感知、具身上下文学习和触觉理解**出发，在 **LIBERO-plus、RoboTwin、UniVTAC、RoboCasa GR1 和 RoboDojo** 五个环境中探索模型的具身能力。我们还发布了 **[LIBERO-GeoMotion](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)**，包含 9 类几何约束操作任务、36 个场景，用于进一步探索模型的空间理解与动作协调能力。
+
+欢迎阅读论文、浏览项目主页，也欢迎用这里的代码试试自己的任务，和我们一起探索通用模型走向物理世界的可能性！
 
 <a id="news"></a>
 
 ## 📰 最新动态
 
-- ✨ **2026/10/21** — 📄 [论文](https://arxiv.org/abs/2610.28259)与🌐 [项目主页](https://6uooon9.github.io/GPT-GEAR/)已开放！更多demo请参考我们的[主页](https://6uooon9.github.io/GPT-GEAR/)，也欢迎了解我们的方法和实验结果，交流想法与反馈。
+- ✨ **2026/10/21** — 📄 [论文](https://arxiv.org/abs/2610.28259)、🌐 [项目主页](https://6uooon9.github.io/GPT-GEAR/)和📦 [LIBERO-GeoMotion 数据集](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)已开放！更多演示请参考项目主页，也欢迎了解我们的方法和实验结果，交流想法与反馈。
 - 📄 **2026/10/20** — **论文报告**：📄 [*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](https://arxiv.org/abs/2610.28259)。我们分享了 GPT-6 Astra 在机器人操作中的能力、局限，以及值得继续探索的问题。
 
 <a id="overview"></a>
@@ -49,7 +52,11 @@
 
 ## 🧭 项目概览
 
-**看一看，试一试，再根据反馈调整。** GPT-GEAR 为模型提供了一组与机器人交互的工具，让它把对场景的理解一步步转化为动作。相机画面告诉它“现在是什么样”，参考示范提供“可以怎样做”的线索，而执行反馈帮助它决定下一步。在这个过程中，模型可以回看之前的观测、借鉴示范中的操作，并在每次行动后重新观察场景。我们用这样的闭环，把模型的推理与实际执行联系起来，也让每一次尝试都成为了解其能力的窗口。
+**看一看，试一试，再根据反馈调整。** GPT-GEAR 为模型提供了一组与机器人交互的工具，让它把对场景的理解一步步转化为动作。
+
+相机画面告诉它“现在是什么样”，参考示范提供“可以怎样做”的线索，而执行反馈帮助它决定下一步。在这个过程中，模型可以回看之前的观测、借鉴示范中的操作，并在每次行动后重新观察场景。
+
+我们用这样的闭环，把模型的推理与实际执行联系起来，也让每一次尝试都成为了解其能力的窗口。
 
 <p align="center">
   <a href="assets/readme/method.png">
@@ -67,7 +74,7 @@
 
 ## 🧠 具身能力分析
 
-**想让机器人把事情做好，先得看清空间、学会借鉴，也要读懂接触时的反馈。** 我们从这三个角度出发，看看模型能否估计与利用深度、把示范里的经验用到新场景，并根据触觉信息调整动作。下面这张图串起了我们最关心的三个问题。
+**想让机器人把事情做好，先得看清空间、学会借鉴，也要读懂接触时的反馈。** 我们从这三个角度出发，看看模型能否估计与利用深度、把示范里的经验用到新场景，并根据触觉信息调整动作。下面这张图串起了我们最关心的三个问题。详细分析欢迎参考我们的[论文](https://arxiv.org/abs/2610.28259)。
 
 <p align="center">
   <a href="assets/readme/embodied-capabilities.png">
@@ -117,7 +124,21 @@
 
 ## 📐 LIBERO-GeoMotion
 
-**知道物体该放在哪里，是否就能把它转到合适的角度、顺利送到目标位置？** 为了进一步探索空间理解与实际执行之间的差距，我们提出了 **LIBERO-GeoMotion**：一个基于 LIBERO 资产构建、面向几何约束操作的新数据集与评测基准，包含 **9 类任务、36 个场景变体**。从让长条物体穿过狭窄开口，到把书竖直放入窄槽、让杯柄朝向指定方向，任务围绕**抓取姿态对齐、放置时的物体重定向，以及几何与顺序约束下的协调运动**展开。我们希望借助这些目标直观、动作却不简单的任务，看看模型能否协调平移与旋转，并提前考虑动作对周围物体的影响。
+**机器人能否把物体转到合适的角度，顺利送到目标位置？** **LIBERO-GeoMotion** 是一个基于 LIBERO 资产构建、面向几何约束操作的独立仿真环境与评测基准，包含 **9 类任务、36 个场景变体**。
+
+从穿过狭窄开口、竖直放书，到对齐杯柄方向，这些任务考察**精确姿态对齐、平移与旋转协调，以及对动作后果的预判**。目标直观易懂，执行时却需要仔细协调动作，满足几何与操作顺序的约束。
+
+<p align="center">
+  <a href="assets/readme/libero-geomotion-tasks.png">
+    <img src="assets/readme/libero-geomotion-tasks.png" width="100%" alt="LIBERO-GeoMotion 九类任务概览：(a) 穿越狭窄通道搬运，(b) 书本竖直入槽，(c) 瓶子定向放置，(d) 保持盘子平放并绕障推动，(e) 书本入抽屉并关闭，(f) 单杯杯柄对齐并关门，(g) 搬运芒果且保持花瓶直立，(h) 包裹入抽屉并关闭，(i) 双杯杯柄分别对齐并关门。绿色虚线和箭头标出目标位置与方向，右上角小图展示最终状态。">
+  </a>
+</p>
+
+<p align="center">
+  <sub>九类任务概览 · 绿色标记提示目标位置与方向，右上角小图展示最终状态。🖼️ <a href="assets/readme/libero-geomotion-tasks.png">查看高清图 ↗</a></sub>
+</p>
+
+**具体执行起来，难在哪里？** 以下面的狭窄通道任务为例，机器人需要一边移动、一边调整长条物体的朝向，才能穿过开口并放到绿色垫上。成功与失败的过程对比，让平移与旋转的协调难点更直观。
 
 <p align="center">
   <a href="assets/readme/libero-geomotion.png">
@@ -126,10 +147,10 @@
 </p>
 
 <p align="center">
-  <sub>几何约束 · 姿态对齐 · 平移与旋转协调。🖼️ <a href="assets/readme/libero-geomotion.png">查看高清图 ↗</a></sub>
+  <sub>狭窄通道任务 · 成功与失败的操作过程对比。🖼️ <a href="assets/readme/libero-geomotion.png">查看高清图 ↗</a></sub>
 </p>
 
-在[论文](https://arxiv.org/abs/2610.28259)的评测中，GPT-6 Astra 的零样本成功率为 **11.1%**，加入上下文示范后提升至 **50.0%**。示范带来了帮助，也留下了值得继续探索的动作协调难题。📦 **LIBERO-GeoMotion 数据集即将发布，敬请期待！**
+在[论文](https://arxiv.org/abs/2610.28259)的评测中，GPT-6 Astra 的零样本成功率为 **11.1%**，加入上下文示范后提升至 **50.0%**。示范带来了帮助，也留下了值得继续探索的动作协调难题。📦 **[LIBERO-GeoMotion 已在 Hugging Face 发布](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)**，包含仿真器、资产、专家示范及安装教程。
 
 更多实验与分析可以在顶部的论文入口中找到。想亲手跑一跑？从下面的环境介绍和🚀 [快速开始](#快速开始)出发，欢迎分享你的发现！
 
@@ -144,6 +165,7 @@
 |---|---|---|---|
 | RoboDojo | `align_blocks` | 三视角 RGB、双臂状态 | 📚 [环境配置](docs/environments/robodojo.zh-CN.md) |
 | LIBERO-plus | `libero_spatial/0` | 双视角 RGB、单臂状态 | 📚 [环境配置](docs/environments/libero-plus.zh-CN.md) |
+| LIBERO-GeoMotion | `libero_rp/0` | 双视角 RGB、单臂状态 | 📚 [环境配置](docs/environments/libero-geomotion.zh-CN.md) |
 | RoboCasa GR1 | `PnPCupToDrawerClose` | RGB、双臂状态、测量深度 | 📚 [环境配置](docs/environments/robocasa-gr1.zh-CN.md) |
 | UniVTAC | `insert_HDMI` | RGB、机器人状态、触觉合力 | 📚 [环境配置](docs/environments/univtac.zh-CN.md) |
 | RoboTwin | `adjust_bottle` | 三视角 RGB、双臂状态 | 📚 [环境配置](docs/environments/robotwin.zh-CN.md) |
@@ -155,7 +177,7 @@
 
 ## 🔧 安装
 
-运行任务前，先安装你要使用的仿真环境、准备好资产，并跑通其原生示例；无需安装全部五个环境。🔧 [上游仓库与安装入口](docs/installation.zh-CN.md#先安装所需的仿真环境)汇总在安装指南中。下面的命令只安装 GPT-GEAR 工具。
+运行任务前，先安装你要使用的仿真环境、准备好资产，并跑通其原生示例；只需安装要使用的环境。🔧 [上游仓库与安装入口](docs/installation.zh-CN.md#先安装所需的仿真环境)汇总在安装指南中。下面的命令只安装 GPT-GEAR 工具。
 
 建议在 Linux 上使用独立的 Python 3.11+ 工具环境，以下以 Python 3.12 为例。在本仓库根目录执行：
 
@@ -262,7 +284,7 @@ gpt-gear summarize outputs/gr1_24x20
 |---|---|
 | 从安装到第一个任务 | 🔧 [安装指南](docs/installation.zh-CN.md) → 🚀 [环境运行指南](docs/running.zh-CN.md) → 📊 [查看结果](docs/results.zh-CN.md) |
 | 多任务评测与结果分析 | 🧪 [队列指南](docs/queues.zh-CN.md) → 📊 [结果与常见问题](docs/results.zh-CN.md) |
-| 各环境的资产、观测与评测选项 | 📚 [五个环境的配置指南](docs/README.zh-CN.md#环境配置) |
+| 各环境的资产、观测与评测选项 | 📚 [各环境配置指南](docs/README.zh-CN.md#环境配置) |
 | 控制、协议与环境适配 | 🏗️ [架构说明](docs/architecture.zh-CN.md) |
 | 测试、问题反馈与贡献 | 💬 [贡献指南](CONTRIBUTING.zh-CN.md) |
 
@@ -272,7 +294,7 @@ src/
 ├── control/         # 机器人控制与位姿增量
 ├── protocol/        # MCP 工具、HTTP 通信与反馈
 ├── perception/      # 相机标定、深度与观测模态
-├── environments/    # 五个仿真环境的适配
+├── environments/    # 各仿真环境的适配
 ├── demonstrations/  # 参考处理与视频文字生成
 └── prompts/         # 公共模型提示词
 configs/

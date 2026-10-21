@@ -4,9 +4,9 @@
 
 [Documentation](README.md) · Prerequisite: [Installation](installation.md) · Next: [Inspect results](results.md)
 
-This page provides single-episode commands for all five environments. Each run creates a separate simulation process and Codex session. None of the examples below requires reference demonstrations.
+This page provides single-episode commands for all supported environments. Each run creates a separate simulation process and Codex session. None of the examples below requires reference demonstrations.
 
-Read [before you run](#before-you-run), then choose your environment: [RoboDojo](#robodojo) · [LIBERO-plus](#libero-plus) · [RoboCasa GR1](#robocasa-gr1) · [UniVTAC](#univtac) · [RoboTwin](#robotwin). Consult other sections as needed: [Common options](#common-run-options) · [Model-free interface checks](#model-free-interface-checks) · [Results and next steps](#after-the-run).
+Read [before you run](#before-you-run), then choose your environment: [RoboDojo](#robodojo) · [LIBERO-plus](#libero-plus) · [LIBERO-GeoMotion](#libero-geomotion) · [RoboCasa GR1](#robocasa-gr1) · [UniVTAC](#univtac) · [RoboTwin](#robotwin). Consult other sections as needed: [Common options](#common-run-options) · [Model-free interface checks](#model-free-interface-checks) · [Results and next steps](#after-the-run).
 
 ## Before you run
 
@@ -55,6 +55,20 @@ gpt-gear run libero_spatial/0 outputs/libero_one \
 Tasks use `suite/task_id`. `--init-state-index` selects the task's initial state and defaults to `0`. Images default to 256×256, with a 20 Hz control frequency. The 600-native-step budget includes the first 10 initialization settling steps.
 
 See [LIBERO-plus configuration](environments/libero-plus.md) for source code, assets, and initial states.
+
+## LIBERO-GeoMotion
+
+```bash
+gpt-gear run libero_rp/0 outputs/geomotion_one \
+  --benchmark libero-geomotion \
+  --env-root /path/to/LIBERO-GeoMotion \
+  --sim-python /path/to/geomotion/bin/python \
+  --seed 0 --init-state-index 0 --max-native-steps 4000
+```
+
+Tasks range from `libero_rp/0` to `libero_rp/35`, with initial state 0. Images default to 256×256, with a 20 Hz control frequency. The budget is 4000 native steps without initialization settling.
+
+See [LIBERO-GeoMotion configuration](environments/libero-geomotion.md) for environment paths and references. Add references using the [shared reference options](reference-format.md).
 
 ## RoboCasa GR1
 
@@ -129,7 +143,7 @@ gpt-gear run --benchmark univtac --help
 
 ## Model-free interface checks
 
-LIBERO-plus, GR1, UniVTAC, and RoboTwin support `--smoke`. This starts a real simulator, saves the initial observation, executes one hold action, then saves the final state and video. It does not start Codex or call a model. The result is `interface_smoke_only` and does not count toward task success rate. RoboDojo does not currently provide this entry point; use the preflight and single-episode commands above.
+LIBERO-plus, LIBERO-GeoMotion, GR1, UniVTAC, and RoboTwin support `--smoke`. This starts a real simulator, saves the initial observation, executes one hold action, then saves the final state and video. It does not start Codex or call a model. The result is `interface_smoke_only` and does not count toward task success rate. RoboDojo does not currently provide this entry point; use the preflight and single-episode commands above.
 
 Complete `doctor` preflight first, then select your environment's command below. Run from the repository root and add this project's `src` to the simulation process's `PYTHONPATH`. Replace all paths; the output directory must not already exist:
 
@@ -144,6 +158,15 @@ export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
   libero_spatial/0 outputs/libero_interface --smoke \
   --benchmark libero-plus --env-root /path/to/LIBERO-plus \
   --sim-python /path/to/libero/bin/python --seed 0 --init-state-index 0
+```
+
+### LIBERO-GeoMotion interface check
+
+```bash
+/path/to/geomotion/bin/python -m environments.libero_geomotion.simulator \
+  libero_rp/0 outputs/geomotion_interface --smoke \
+  --benchmark libero-geomotion --env-root /path/to/LIBERO-GeoMotion \
+  --sim-python /path/to/geomotion/bin/python --seed 0 --init-state-index 0
 ```
 
 ### RoboCasa GR1 interface check
@@ -200,4 +223,4 @@ gpt-gear queue configs/single_task/libero_plus.json outputs/libero_config_one
 gpt-gear queue configs/single_task/libero_plus.json outputs/libero_config_one --run
 ```
 
-The first command prints the plan; the second runs one episode. See the [configuration guide](../configs/README.md) for all five environments. Use `configs/queues/` for batch reproduction.
+The first command prints the plan; the second runs one episode. See the [configuration guide](../configs/README.md) for all supported environments. Use `configs/queues/` for batch reproduction.

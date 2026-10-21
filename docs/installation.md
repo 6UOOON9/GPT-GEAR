@@ -21,12 +21,13 @@ RoboDojo can use an existing Python 3.11 environment, and LIBERO-plus can use an
 
 ### Install your simulation environment first
 
-**Before running robot tasks, follow the upstream instructions to install your chosen simulator, dependencies, and assets, and run its native example. You only need the environments you plan to use, not all five.** Installing GPT-GEAR does not install these environments or download assets automatically.
+**Before running robot tasks, follow the upstream instructions to install your chosen simulator, dependencies, and assets, and run its native example. You only need the environments you plan to use, not every supported environment.** Installing GPT-GEAR does not install these environments or download assets automatically.
 
-| Environment | Upstream repository | Installation and assets |
+| Environment | Source | Installation and assets |
 |---|---|---|
 | RoboDojo | [RoboDojo-Benchmark/RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo) | [Installation and downloads](https://robodojo-benchmark.com/doc/usage/install-and-download/) |
 | LIBERO-plus | [sylvestf/LIBERO-plus](https://github.com/sylvestf/LIBERO-plus) | [README Installation section](https://github.com/sylvestf/LIBERO-plus#readme), including extra dependencies and asset downloads |
+| LIBERO-GeoMotion | [uooon/LIBERO-GeoMotion](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion) | [Installation guide](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion#installation) |
 | RoboCasa GR1 | [robocasa/robocasa-gr1-tabletop-tasks](https://github.com/robocasa/robocasa-gr1-tabletop-tasks) | [Getting Started](https://github.com/robocasa/robocasa-gr1-tabletop-tasks#getting-started), including the matching robosuite and scene assets |
 | UniVTAC | [univtac/UniVTAC](https://github.com/univtac/UniVTAC) | [Installation Guide](https://github.com/univtac/UniVTAC/blob/main/docs/Installation.md) |
 | RoboTwin | [RoboTwin-Platform/RoboTwin](https://github.com/RoboTwin-Platform/RoboTwin) | [Install & Download](https://robotwin-platform.github.io/doc/usage/robotwin-install.html) |

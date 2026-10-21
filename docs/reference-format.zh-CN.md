@@ -29,15 +29,16 @@ source .venvs/codex-mcp/bin/activate
 |---|---|---|
 | RoboDojo | `robodojo` | `head`、`left_wrist`、`right_wrist` |
 | LIBERO-plus | `libero-plus` | `agentview`、`robot0_eye_in_hand` |
+| LIBERO-GeoMotion | `libero-geomotion` | `agentview`、`robot0_eye_in_hand` |
 | UniVTAC | `univtac` | `head`、`wrist` |
 | RoboCasa GR1 | `robocasa-gr1` | `egoview` |
 | RoboTwin | `robotwin` | `head_camera`、`left_camera`、`right_camera` |
 
-目前命令支持以上五种配置，不接受任意相机组合。
+目前命令支持以上配置，不接受任意相机组合。
 
 ## 2. 整理视频并生成文字
 
-选择与你的视频对应的一种配置执行即可：[RoboDojo](#robodojo三路视频) · [LIBERO-plus](#libero-plus两路视频) · [RoboCasa GR1](#robocasa-gr1单路视频) · [UniVTAC](#univtac两路视频) · [RoboTwin](#robotwin三路专家视频)。
+选择与你的视频对应的一种配置执行即可：[RoboDojo](#robodojo三路视频) · [LIBERO-plus](#libero-plus两路视频) · [LIBERO-GeoMotion](#libero-geomotion两路视频) · [RoboCasa GR1](#robocasa-gr1单路视频) · [UniVTAC](#univtac两路视频) · [RoboTwin](#robotwin三路专家视频)。
 
 ### RoboDojo：三路视频
 
@@ -136,6 +137,14 @@ gpt-gear reference annotate --benchmark libero-plus references/libero/pick_up_bo
 此流程沿用 LIBERO-plus 的视觉标注提示词，只使用视频图片和相机、时间标签，无需安装
 LIBERO 仿真环境或提供轨迹。两路视频分别抽帧，不要求逐帧同步。生成的 `steps.txt`
 用于评测时可以单独提供，也可搭配视频、轨迹或两者，见 [参考输入协议](reference-protocol.zh-CN.md)。
+
+### LIBERO-GeoMotion：两路视频
+
+使用导出的 `agentview.mp4` 和 `wrist.mp4`（各 256 × 256）及其 `videos.json`，指定 GeoMotion 的 benchmark 标识：
+
+```bash
+gpt-gear reference annotate --benchmark libero-geomotion /path/to/geomotion-references-256/task_000
+```
 
 ### RoboTwin：三路专家视频
 

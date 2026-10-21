@@ -29,12 +29,13 @@ Unless stated otherwise, run commands from the repository root with the tool env
 
 ## Environment configuration
 
-All five environments share the installation, run, and queue workflows. Guides in `environments/` cover their source trees, assets, specific options, and evaluation differences.
+All supported environments share the installation, run, and queue workflows. Guides in `environments/` cover their source trees, assets, specific options, and evaluation differences.
 
 | Environment | Configuration topics |
 |---|---|
 | [RoboDojo](environments/robodojo.md) | Submodules, evaluation layouts, and seed/layout selection |
 | [LIBERO-plus](environments/libero-plus.md) | Task variants, initial states, and native-step budgets |
+| [LIBERO-GeoMotion](environments/libero-geomotion.md) | Fixed geometric scenes, initialization, and references |
 | [RoboCasa GR1](environments/robocasa-gr1.md) | HDF5 environment configuration, dual-arm control, and measured depth |
 | [UniVTAC](environments/univtac.md) | Tactile modes, continuous gripper control, and control frequency |
 | [RoboTwin](environments/robotwin.md) | Clean/Random scenes, dual-arm control, and sample selection |

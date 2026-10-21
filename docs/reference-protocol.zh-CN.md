@@ -39,6 +39,7 @@
 |---|---|---|
 | RoboDojo | head / left_wrist / right_wrist | `reference annotate --benchmark robodojo` |
 | LIBERO-plus | agentview / robot0_eye_in_hand | `reference annotate --benchmark libero-plus` |
+| LIBERO-GeoMotion | agentview / robot0_eye_in_hand | `reference annotate --benchmark libero-geomotion` |
 | RoboCasa GR1 | egoview | `reference annotate --benchmark robocasa-gr1` |
 | UniVTAC | head / wrist | `reference annotate --benchmark univtac` |
 | RoboTwin | head_camera / left_camera / right_camera | `reference annotate --benchmark robotwin` |
@@ -119,6 +120,7 @@ gpt-gear run align_blocks outputs/robodojo_reference \
 |---|---|---|
 | RoboDojo | `robodojo-codex-trajectory-v1` | left_ee / right_ee，环境坐标 |
 | LIBERO-plus | `libero-codex-trajectory-v1` | robot0_grip_site，环境坐标 |
+| LIBERO-GeoMotion | `libero-codex-trajectory-v1` | robot0_grip_site，环境坐标 |
 | GR1 | `robocasa-gr1-trajectory-v1` | 双臂 grip site，环境坐标 |
 | UniVTAC | `univtac-codex-trajectory-v2` | gripper_center，robot_base |
 | RoboTwin | `robotwin-codex-dual-trajectory-v1` | 原生双臂 EE，环境坐标 |
@@ -132,6 +134,10 @@ gpt-gear run align_blocks outputs/robodojo_reference \
 `pose.reference` 为 `robot0_grip_site`。每条 action 包含 `dpos`、`dquat`、`gripper`；夹爪取 `open`、`close` 或 `null`，其中 `null` 表示未知。末条 action 为 `null`。`sampling` 包含视频声明、名义间隔、缺口和未知夹爪帧列表。
 
 视频目录可包含唯一的 `*agentview.mp4` 与 `*wrist.mp4`，或使用 `videos.json` 显式映射；公共映射标识为 `sim-reference-videos-v1`。
+
+### LIBERO-GeoMotion
+
+复用 [LIBERO 轨迹格式](#libero-plus)，视频包括 `agentview` 和腕部视角，每个视角均为 256 × 256，使用 `--benchmark libero-geomotion` 选择环境。参考输入与队列设置见[环境配置](environments/libero-geomotion.zh-CN.md#参考示范与评测配置)。缓存、模态组合和交付规则与其他环境相同。
 
 ### RoboCasa GR1
 

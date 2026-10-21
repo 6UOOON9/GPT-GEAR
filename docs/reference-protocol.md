@@ -38,6 +38,7 @@ This project provides video-to-text generation, format validation, frame samplin
 |---|---|---|
 | RoboDojo | head / left_wrist / right_wrist | `reference annotate --benchmark robodojo` |
 | LIBERO-plus | agentview / robot0_eye_in_hand | `reference annotate --benchmark libero-plus` |
+| LIBERO-GeoMotion | agentview / robot0_eye_in_hand | `reference annotate --benchmark libero-geomotion` |
 | RoboCasa GR1 | egoview | `reference annotate --benchmark robocasa-gr1` |
 | UniVTAC | head / wrist | `reference annotate --benchmark univtac` |
 | RoboTwin | head_camera / left_camera / right_camera | `reference annotate --benchmark robotwin` |
@@ -118,6 +119,7 @@ Select the format with `--benchmark`. All caches use `sim-reference-v1` and are 
 |---|---|---|
 | RoboDojo | `robodojo-codex-trajectory-v1` | left_ee / right_ee, environment frame |
 | LIBERO-plus | `libero-codex-trajectory-v1` | robot0_grip_site, environment frame |
+| LIBERO-GeoMotion | `libero-codex-trajectory-v1` | robot0_grip_site, environment frame |
 | GR1 | `robocasa-gr1-trajectory-v1` | Dual-arm grip sites, environment frame |
 | UniVTAC | `univtac-codex-trajectory-v2` | gripper_center, robot_base frame |
 | RoboTwin | `robotwin-codex-dual-trajectory-v1` | Native dual-arm EE, environment frame |
@@ -131,6 +133,10 @@ Uses dual-arm trajectories and a `robodojo-reference-videos-v1` or shared `sim-r
 `pose.reference` is `robot0_grip_site`. Each action contains `dpos`, `dquat`, and `gripper`. Gripper values are `open`, `close`, or `null`, with `null` meaning unknown. The final action is `null`. `sampling` contains video declarations, the nominal interval, gaps, and lists of frames with unknown gripper commands.
 
 A video directory can contain one matching `*agentview.mp4` and one matching `*wrist.mp4`, or use an explicit `videos.json` mapping. The shared mapping identifier is `sim-reference-videos-v1`.
+
+### LIBERO-GeoMotion
+
+Uses the [LIBERO trajectory format](#libero-plus) with `agentview` and wrist videos, each 256 × 256, selected with `--benchmark libero-geomotion`. See [environment configuration](environments/libero-geomotion.md#references-and-evaluation-configurations) for reference inputs and queue settings. Cache, modality, and delivery rules are shared with the other environments.
 
 ### RoboCasa GR1
 

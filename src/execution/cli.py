@@ -17,10 +17,10 @@ def doctor(argv):
     selector.add_argument('--task')
     selector.add_argument('--benchmark', required=True, choices=BENCHMARKS)
     if '-h' in argv or '--help' in argv:
-        print('Usage: gpt-gear doctor --benchmark {robodojo,libero-plus,robocasa-gr1,univtac,robotwin} --env-root PATH --sim-python PATH [--task TASK] [run options]')
+        print('Usage: gpt-gear doctor --benchmark {robodojo,libero-plus,libero-geomotion,robocasa-gr1,univtac,robotwin} --env-root PATH --sim-python PATH [--task TASK] [run options]')
         return 0
     selected, rest = selector.parse_known_args(argv)
-    task = selected.task or dict(robodojo='align_blocks', **{'libero-plus':'libero_spatial/0', 'robocasa-gr1':TASKS['robocasa-gr1'][0], 'univtac':'insert_HDMI', 'robotwin':'adjust_bottle'})[selected.benchmark]
+    task = selected.task or dict(robodojo='align_blocks', **{'libero-plus':'libero_spatial/0', 'libero-geomotion':'libero_rp/0', 'robocasa-gr1':TASKS['robocasa-gr1'][0], 'univtac':'insert_HDMI', 'robotwin':'adjust_bottle'})[selected.benchmark]
     args = parse_args([task, str(Path.cwd() / '.cache/doctor-unused'),
                        '--benchmark', selected.benchmark, *rest])
     backend = get_backend(args.benchmark)
@@ -28,6 +28,7 @@ def doctor(argv):
     info['mcp'] = preflight_mcp(args)
     names = {
         'robodojo': ('isaaclab', 'isaacsim', 'numpy', 'PIL', 'omegaconf', 'curobo'),
+        'libero-geomotion': ('geomotion', 'libero', 'robosuite', 'mujoco', 'numpy', 'PIL', 'torch', 'bddl', 'wand', 'skimage'),
         'libero-plus': ('libero', 'robosuite', 'mujoco', 'numpy', 'PIL', 'torch', 'bddl', 'wand', 'skimage'),
         'robocasa-gr1': ('robocasa', 'robosuite', 'mujoco', 'mink', 'numpy', 'PIL', 'h5py', 'scipy'),
         'robotwin': ('sapien', 'torch', 'numpy', 'PIL', 'yaml', 'envs'),

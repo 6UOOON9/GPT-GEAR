@@ -24,15 +24,16 @@ Put one demonstration's videos in each directory. Keep different views of the sa
 |---|---|---|
 | RoboDojo | `robodojo` | `head`, `left_wrist`, `right_wrist` |
 | LIBERO-plus | `libero-plus` | `agentview`, `robot0_eye_in_hand` |
+| LIBERO-GeoMotion | `libero-geomotion` | `agentview`, `robot0_eye_in_hand` |
 | UniVTAC | `univtac` | `head`, `wrist` |
 | RoboCasa GR1 | `robocasa-gr1` | `egoview` |
 | RoboTwin | `robotwin` | `head_camera`, `left_camera`, `right_camera` |
 
-The command supports these five configurations, not arbitrary camera combinations.
+The command supports the configurations above, not arbitrary camera combinations.
 
 ## 2. Organize videos and generate text
 
-Choose the configuration matching your videos: [RoboDojo](#robodojo-three-view-video) · [LIBERO-plus](#libero-plus-two-view-video) · [RoboCasa GR1](#robocasa-gr1-single-view-video) · [UniVTAC](#univtac-two-view-video) · [RoboTwin](#robotwin-three-view-expert-video).
+Choose the configuration matching your videos: [RoboDojo](#robodojo-three-view-video) · [LIBERO-plus](#libero-plus-two-view-video) · [LIBERO-GeoMotion](#libero-geomotion-two-view-video) · [RoboCasa GR1](#robocasa-gr1-single-view-video) · [UniVTAC](#univtac-two-view-video) · [RoboTwin](#robotwin-three-view-expert-video).
 
 ### RoboDojo: three-view video
 
@@ -123,6 +124,14 @@ With these names, `videos.json` is unnecessary. The wrist video's camera name is
 ```
 
 This workflow uses LIBERO-plus's visual annotation prompt and only video images, camera labels, and time labels. It does not require the LIBERO simulator or trajectories. The two videos are sampled independently; frame-by-frame synchronization is not required. During evaluation, the generated `steps.txt` can be used alone or with video, trajectories, or both. See the [reference-input protocol](reference-protocol.md).
+
+### LIBERO-GeoMotion: two-view video
+
+Use the exported `agentview.mp4` and `wrist.mp4` (each 256 × 256) and their `videos.json`, with the GeoMotion benchmark identifier:
+
+```bash
+gpt-gear reference annotate --benchmark libero-geomotion /path/to/geomotion-references-256/task_000
+```
 
 ### RoboTwin: three-view expert video
 

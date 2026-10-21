@@ -4,9 +4,9 @@
 
 [文档导航](README.zh-CN.md) · 前置：[安装与环境准备](installation.zh-CN.md) · 下一步：[查看结果](results.zh-CN.md)
 
-本页给出五个环境的单回合命令。每次运行都会创建独立的仿真进程与 Codex 会话；以下示例均不需要参考示范。
+本页给出所有支持环境的单回合命令。每次运行都会创建独立的仿真进程与 Codex 会话；以下示例均不需要参考示范。
 
-先阅读[运行前](#运行前)，再选择你的环境：[RoboDojo](#robodojo) · [LIBERO-plus](#libero-plus) · [RoboCasa GR1](#robocasa-gr1) · [UniVTAC](#univtac) · [RoboTwin](#robotwin)。其他内容可按需查阅：[常用选项](#常用运行选项) · [无模型接口检查](#无模型接口检查) · [查看结果与后续操作](#结束后做什么)。
+先阅读[运行前](#运行前)，再选择你的环境：[RoboDojo](#robodojo) · [LIBERO-plus](#libero-plus) · [LIBERO-GeoMotion](#libero-geomotion) · [RoboCasa GR1](#robocasa-gr1) · [UniVTAC](#univtac) · [RoboTwin](#robotwin)。其他内容可按需查阅：[常用选项](#常用运行选项) · [无模型接口检查](#无模型接口检查) · [查看结果与后续操作](#结束后做什么)。
 
 ## 运行前
 
@@ -55,6 +55,20 @@ gpt-gear run libero_spatial/0 outputs/libero_one \
 任务标识为 `suite/task_id`。`--init-state-index` 选择任务的初始化状态，默认 `0`。默认图像为 256×256，控制频率 20 Hz；600 个原生步的预算包含前 10 个稳定初始化步。
 
 源码、资产与初始化状态的说明见 [LIBERO-plus 环境配置](environments/libero-plus.zh-CN.md)。
+
+## LIBERO-GeoMotion
+
+```bash
+gpt-gear run libero_rp/0 outputs/geomotion_one \
+  --benchmark libero-geomotion \
+  --env-root /path/to/LIBERO-GeoMotion \
+  --sim-python /path/to/geomotion/bin/python \
+  --seed 0 --init-state-index 0 --max-native-steps 4000
+```
+
+任务为 `libero_rp/0` 至 `libero_rp/35`，只支持初态 0。默认图像为 256×256，控制频率为 20 Hz。预算为 4000 个原生步，无初始化预热。
+
+环境路径与参考说明见 [LIBERO-GeoMotion 环境配置](environments/libero-geomotion.zh-CN.md)。添加参考时使用[公共参考参数](reference-format.zh-CN.md)。
 
 ## RoboCasa GR1
 
@@ -129,7 +143,7 @@ gpt-gear run --benchmark univtac --help
 
 ## 无模型接口检查
 
-LIBERO-plus、GR1、UniVTAC 和 RoboTwin 支持 `--smoke` 检查。它启动真实仿真，保存初始观测，执行一次保持动作，再保存末态和录像；不启动 Codex，不调用模型，结果为 `interface_smoke_only`，不计入任务成功率。RoboDojo 当前没有这一入口，使用前面的预检和单回合命令验证。
+LIBERO-plus、LIBERO-GeoMotion、GR1、UniVTAC 和 RoboTwin 支持 `--smoke` 检查。它启动真实仿真，保存初始观测，执行一次保持动作，再保存末态和录像；不启动 Codex，不调用模型，结果为 `interface_smoke_only`，不计入任务成功率。RoboDojo 当前没有这一入口，使用前面的预检和单回合命令验证。
 
 先完成 `doctor` 预检，再选择下面对应环境的命令。在仓库根目录执行，将本项目 `src` 加入仿真进程的 `PYTHONPATH`；替换所有路径，输出目录必须尚不存在：
 
@@ -144,6 +158,15 @@ export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
   libero_spatial/0 outputs/libero_interface --smoke \
   --benchmark libero-plus --env-root /path/to/LIBERO-plus \
   --sim-python /path/to/libero/bin/python --seed 0 --init-state-index 0
+```
+
+### LIBERO-GeoMotion 接口检查
+
+```bash
+/path/to/geomotion/bin/python -m environments.libero_geomotion.simulator \
+  libero_rp/0 outputs/geomotion_interface --smoke \
+  --benchmark libero-geomotion --env-root /path/to/LIBERO-GeoMotion \
+  --sim-python /path/to/geomotion/bin/python --seed 0 --init-state-index 0
 ```
 
 ### RoboCasa GR1 接口检查
@@ -200,4 +223,4 @@ gpt-gear queue configs/single_task/libero_plus.json outputs/libero_config_one
 gpt-gear queue configs/single_task/libero_plus.json outputs/libero_config_one --run
 ```
 
-第一条只打印计划，第二条运行一个回合。五种环境的配置清单见[配置说明](../configs/README.zh-CN.md)；批量复现使用 `configs/queues/`。
+第一条只打印计划，第二条运行一个回合。各环境的配置清单见[配置说明](../configs/README.zh-CN.md)；批量复现使用 `configs/queues/`。

@@ -84,7 +84,8 @@ def scan_videos(directory, benchmark="robodojo"):
     directory = Path(directory).expanduser().resolve(strict=True)
     if benchmark != 'robodojo' and not (directory / 'videos.json').exists():
         videos = {}
-        cameras = {'libero-plus': (('agentview', 'agentview.mp4'), ('robot0_eye_in_hand', 'wrist.mp4')),
+        cameras = {'libero-geomotion': (('agentview', 'agentview.mp4'), ('robot0_eye_in_hand', 'wrist.mp4')),
+                   'libero-plus': (('agentview', 'agentview.mp4'), ('robot0_eye_in_hand', 'wrist.mp4')),
                    'robotwin': tuple((name, name + '.mp4') for name in ('head_camera', 'left_camera', 'right_camera')),
                    'robocasa-gr1': (('egoview', 'egoview.mp4'),),
                    'univtac': (('head', 'head.mp4'), ('wrist', 'wrist.mp4'))}[benchmark]

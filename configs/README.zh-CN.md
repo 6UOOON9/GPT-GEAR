@@ -17,6 +17,7 @@
 |---|---|---:|
 | [robodojo.json](queues/robodojo.json) | RoboDojo：42 个任务，seed 0、layout 9；其中 34 个提供参考输入，其余 8 个不带参考 | 42 |
 | [libero_plus.json](queues/libero_plus.json) | LIBERO-plus：5 个基础任务 × 10 个扰动变体，每项运行一次 | 50 |
+| [libero_geomotion.json](queues/libero_geomotion.json) | LIBERO-GeoMotion：36 场景；6 类有示范（24 场景），3 类无示范（12 场景） | 36 |
 | [robocasa_gr1.json](queues/robocasa_gr1.json) | RoboCasa GR1：24 个任务 × 20 个预设 seed | 480 |
 | [univtac.json](queues/univtac.json) | UniVTAC：8 个任务 × 20 个预设 seed，默认 `force` 模式 | 160 |
 | [robotwin.json](queues/robotwin.json) | RoboTwin：50 个任务 × 2 种配置 × 5 个 seed（均为 `0–4`） | 500 |
@@ -35,6 +36,7 @@ LIBERO-plus 的完整任务标识与执行顺序见 [队列配置](queues/libero
 |---|---|---|
 | [robodojo.json](single_task/robodojo.json) | RoboDojo `align_blocks` | seed 0、layout 0 |
 | [libero_plus.json](single_task/libero_plus.json) | LIBERO-plus `libero_spatial/0` | seed 0、init state 0 |
+| [libero_geomotion.json](single_task/libero_geomotion.json) | LIBERO-GeoMotion `libero_rp/0` | seed 0，固定初态 0，无参考输入 |
 | [robocasa_gr1.json](single_task/robocasa_gr1.json) | RoboCasa GR1 `PnPCupToDrawerClose` | seed 1365783547 |
 | [univtac.json](single_task/univtac.json) | UniVTAC `insert_HDMI` | seed 1468828686、`force` |
 | [robotwin.json](single_task/robotwin.json) | RoboTwin `adjust_bottle` | seed 0、`clean` |

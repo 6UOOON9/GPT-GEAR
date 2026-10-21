@@ -8,7 +8,7 @@ This guide is for developers who want to understand the control flow, change too
 
 ## How processes cooperate
 
-The shared entry point is `gpt-gear`, implemented in `execution.cli`, with functional packages directly under `src/`. Commands use `--benchmark robodojo|libero-plus|robocasa-gr1|univtac|robotwin`. A benchmark selects a simulation task system; LIBERO's suite is part of the task identifier `suite/task_id`.
+The shared entry point is `gpt-gear`, implemented in `execution.cli`, with functional packages directly under `src/`. Commands use `--benchmark robodojo|libero-plus|libero-geomotion|robocasa-gr1|univtac|robotwin`. A benchmark selects a simulation task system; LIBERO's suite is part of the task identifier `suite/task_id`.
 
 ```text
 gpt-gear run / queue
@@ -57,7 +57,7 @@ Each environment directory contains `backend.py`, `simulator.py`, `native.py`, `
 
 `environments/backends.py` lazily loads `environments/<environment>/backend.py` by benchmark. Each backend uses only the standard library and handles resource location, task identity, and subprocess commands/environment variables. `environments/common.py` shares launch arguments and reference caching. The common CLI and queues pass source and data paths.
 
-LIBERO-plus, GR1, UniVTAC, and RoboTwin share the process lifecycle in `environments/simulator.py`. The shared entry point manages preflight, environment configuration, reference caches, Session, error results, and resource cleanup. Backends declare module origins and dependency lists; environment entry points provide callbacks for native-environment construction, prelaunch configuration, and application initialization. SIGINT/SIGTERM interrupt startup or set cancellation state in an active Session. Resources close in Session → native → application order; cleanup continues if a stage fails, and original signal handlers are restored. Startup failures record the original error using already-resolved identity instead of resolving the task again.
+LIBERO-plus, LIBERO-GeoMotion, GR1, UniVTAC, and RoboTwin share the process lifecycle in `environments/simulator.py`. The shared entry point manages preflight, environment configuration, reference caches, Session, error results, and resource cleanup. Backends declare module origins and dependency lists; environment entry points provide callbacks for native-environment construction, prelaunch configuration, and application initialization. SIGINT/SIGTERM interrupt startup or set cancellation state in an active Session. Resources close in Session → native → application order; cleanup continues if a stage fails, and original signal handlers are restored. Startup failures record the original error using already-resolved identity instead of resolving the task again.
 
 `Session` does not read host-specific environment fields. It relies on the native adapter's `benchmark`, `identity`, `control_profile`, `control_metadata()`, `observe()`, `execute()`, `status()`, `ended()`, `finalize()`, and `result()`. Each adapter implements host calls and result conversion; see [environment-specific differences](#environment-specific-adapter-differences).
 
@@ -79,13 +79,13 @@ Camera RGB and robot proprioception are delivered through an allowlist. Fixed ca
 
 See the [reference-input guide](reference-protocol.md) for usage and formats.
 
-Reference caches use `sim-reference-v1` and explicitly bind the benchmark. The five benchmarks have separate trajectory validators but share video processing, digests, path-boundary checks, and the delivery state machine. Successful observe delivery must precede one-time read_reference delivery before act is allowed. Complete original trajectory numbers are not rewritten.
+Reference caches use `sim-reference-v1` and explicitly bind the benchmark. Trajectory validators are organized by format but share video processing, digests, path-boundary checks, and the delivery state machine. Successful observe delivery must precede one-time read_reference delivery before act is allowed. Complete original trajectory numbers are not rewritten.
 
 `demonstrations/reference.py` handles only the CLI. `media.py` handles view discovery, sampling, decoding, and image validation. `trajectory.py` dispatches environment validators and packages trajectories losslessly. `cache.py` assembles and reads caches and sets output budgets. Environment validators reuse checks for frame indices, counts, finite vectors, and unit quaternions from `common.py`. Each environment still defines action semantics, unknown gripper values, dual-arm structure, and sampling-gap rules.
 
 Users prepare references for every environment before evaluation, including RoboDojo. Video export and trajectory generation happen outside this project; this project only provides optional text generation from existing videos. `run` / `queue --run` validate existing files, sample video frames, assemble caches, and deliver them. They do not call the text generator. `reference prepare` is an offline preflight entry point for that cache workflow, not a generator of demonstrations from raw data.
 
-All five environments share `video_to_steps.py` and `prepare_reference_text.py` for text generation. Each environment's `reference.py` declares required cameras and an optional image limit, while `prompts/reference_text.md` defines visual annotation rules, including for RoboDojo. The generator loads the environment-specific prompt without falling back to a shared annotation prompt. The shared layer handles independent video sampling, read-only model calls, numbering validation, atomic publication, and auditing. RoboTwin retains three cameras and a total limit of 42 images. `--reference-fps` selects the sampling rate, defaulting to 1 FPS; the actual rate is written to the prompt, audit, and any existing provenance.
+All environments share `video_to_steps.py` and `prepare_reference_text.py` for text generation. Each environment's `reference.py` declares required cameras and an optional image limit, while `prompts/reference_text.md` defines visual annotation rules, including for RoboDojo. The generator loads the environment-specific prompt without falling back to a shared annotation prompt. The shared layer handles independent video sampling, read-only model calls, numbering validation, atomic publication, and auditing. RoboTwin retains three cameras and a total limit of 42 images. `--reference-fps` selects the sampling rate, defaulting to 1 FPS; the actual rate is written to the prompt, audit, and any existing provenance.
 
 ## Failure handling and run isolation
 
@@ -108,6 +108,10 @@ RoboDojo uses the original factory and `run_eval`. Temporary reference replaceme
 LIBERO-plus calls the original `OffScreenRenderEnv`, `set_init_state`, `step`, and `check_success`, without changing host source. Before host modules are imported, `prepare_environment` generates episode-specific `libero_config/config.yaml` and obtains suite/task_id from the preflight identity.
 
 Actions invert scaling using `OSC_POSE`'s actual input/output ranges, with the real grip site as control point. Initialization steps count toward the native-step budget. `result()` wraps `check_success` and video recording. See [LIBERO-plus configuration](environments/libero-plus.md) for tasks and initialization options.
+
+### LIBERO-GeoMotion
+
+Connects to the shared lifecycle as a peer of LIBERO-plus. Both adapters reuse OSC control, observations, and video from `environments/libero_native.py`, and the trajectory protocol from `environments/libero_reference.py`. Benchmark-specific initialization stays in its own environment package; reference caching and result summaries use the shared workflow. See [LIBERO-GeoMotion configuration](environments/libero-geomotion.md) for task options.
 
 ### RoboCasa GR1
 

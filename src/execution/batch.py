@@ -67,10 +67,10 @@ def load_jobs(path, *, env_root=None, sim_python=None):
         job['host'] = dict(resolved[job['environment']])
         benchmark = job['host']['benchmark']
         task = job.get('task')
-        pattern = r'[A-Za-z0-9_]+/[0-9]+' if benchmark == 'libero-plus' else r'[A-Za-z0-9_]+'
+        pattern = r'[A-Za-z0-9_]+/[0-9]+' if benchmark in ('libero-plus', 'libero-geomotion') else r'[A-Za-z0-9_]+'
         if not isinstance(task, str) or not re.fullmatch(pattern, task):
             raise ValueError('invalid task identifier')
-        if benchmark == 'libero-plus':
+        if benchmark in ('libero-plus', 'libero-geomotion'):
             suite, task_id = task.split('/')
             task = job['task'] = f'{suite}/{int(task_id)}'
         validate_task(benchmark, task)

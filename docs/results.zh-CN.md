@@ -45,7 +45,7 @@ gpt-gear summarize outputs/robotwin_queue
 | `server.log` / `codex_stderr.log` | 仿真与模型侧诊断日志 |
 | `session.json` | 本地会话连接信息，含令牌，不应公开 |
 
-RoboDojo 使用仿真目录下原生 `eval_result/` 中的评分与录像，具体路径见结果文件。LIBERO-plus 录像横向并排显示两路相机；RoboTwin 为三路，并用 `video_timeline.jsonl` 记录视频帧、物理时间与原生调用的对应关系。
+RoboDojo 使用仿真目录下原生 `eval_result/` 中的评分与录像，具体路径见结果文件。LIBERO-plus 和 LIBERO-GeoMotion 录像横向并排显示两路相机；RoboTwin 为三路，并用 `video_timeline.jsonl` 记录视频帧、物理时间与原生调用的对应关系。
 
 RoboTwin 录像按实际物理时间以 25 fps 采样，包含初始和末态，不记录模型推理等待时间；编码失败不会发布 `episode.mp4`，已生成的 partial 文件保留，回合按 `runtime_error` 汇总，不进入成功率。其结果文件同时记录未进行专家筛选的标识。
 
@@ -65,7 +65,7 @@ RoboTwin 录像按实际物理时间以 25 fps 采样，包含初始和末态，
 
 ### 找不到布局、任务或 HDF5
 
-RoboDojo 的布局由任务、seed、layout 共同决定；LIBERO-plus 任务写成 `suite/task_id`；UniVTAC 任务名区分大小写。GR1 即使不使用参考也需要 `<任务名>.hdf5` 中的环境配置。按 [环境运行指南](running.zh-CN.md) 核对参数。
+RoboDojo 的布局由任务、seed、layout 共同决定；LIBERO-plus 和 LIBERO-GeoMotion 任务写成 `suite/task_id`，GeoMotion 只支持固定初态 0；UniVTAC 任务名区分大小写。GR1 即使不使用参考也需要 `<任务名>.hdf5` 中的环境配置。按 [环境运行指南](running.zh-CN.md) 核对参数。
 
 ### 输出目录已存在
 

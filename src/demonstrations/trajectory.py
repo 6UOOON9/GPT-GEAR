@@ -5,6 +5,7 @@ from pathlib import Path
 from .common import ReferenceError, compact_json, sha256_file, source_file, strict_json
 
 TRAJECTORY_FORMATS = {'robodojo': 'robodojo-codex-trajectory-v1', 'libero-plus': 'libero-codex-trajectory-v1',
+                      'libero-geomotion': 'libero-codex-trajectory-v1',
                       'robocasa-gr1': 'robocasa-gr1-trajectory-v1', 'univtac': 'univtac-codex-trajectory-v2',
                       'robotwin': 'robotwin-codex-dual-trajectory-v1'}
 

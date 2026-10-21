@@ -1,0 +1,468 @@
+{
+  "version": 2,
+  "environments": {
+    "geomotion": {
+      "benchmark": "libero-geomotion",
+      "env_root": "/path/to/LIBERO-GeoMotion",
+      "sim_python": "/path/to/geomotion/bin/python"
+    }
+  },
+  "episodes": [
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/0",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_000",
+        "text": "/path/to/geomotion-references-256/task_000/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_000/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/1",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_000",
+        "text": "/path/to/geomotion-references-256/task_000/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_000/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/2",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_000",
+        "text": "/path/to/geomotion-references-256/task_000/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_000/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/3",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_000",
+        "text": "/path/to/geomotion-references-256/task_000/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_000/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/4",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_004",
+        "text": "/path/to/geomotion-references-256/task_004/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_004/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/5",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_004",
+        "text": "/path/to/geomotion-references-256/task_004/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_004/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/6",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_004",
+        "text": "/path/to/geomotion-references-256/task_004/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_004/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/7",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_004",
+        "text": "/path/to/geomotion-references-256/task_004/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_004/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/8",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_008",
+        "text": "/path/to/geomotion-references-256/task_008/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_008/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/9",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_008",
+        "text": "/path/to/geomotion-references-256/task_008/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_008/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/10",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_008",
+        "text": "/path/to/geomotion-references-256/task_008/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_008/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/11",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_008",
+        "text": "/path/to/geomotion-references-256/task_008/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_008/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/12",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/13",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/14",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/15",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/16",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/17",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/18",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/19",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/20",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/21",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/22",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/23",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/24",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_026",
+        "text": "/path/to/geomotion-references-256/task_026/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_026/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/25",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_026",
+        "text": "/path/to/geomotion-references-256/task_026/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_026/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/26",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_026",
+        "text": "/path/to/geomotion-references-256/task_026/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_026/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/27",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_026",
+        "text": "/path/to/geomotion-references-256/task_026/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_026/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/28",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_028",
+        "text": "/path/to/geomotion-references-256/task_028/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_028/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/29",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_028",
+        "text": "/path/to/geomotion-references-256/task_028/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_028/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/30",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_028",
+        "text": "/path/to/geomotion-references-256/task_028/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_028/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/31",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_028",
+        "text": "/path/to/geomotion-references-256/task_028/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_028/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/32",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_028",
+        "text": "/path/to/geomotion-references-256/task_028/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_028/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/33",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_028",
+        "text": "/path/to/geomotion-references-256/task_028/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_028/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/34",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_034",
+        "text": "/path/to/geomotion-references-256/task_034/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_034/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    },
+    {
+      "environment": "geomotion",
+      "task": "libero_rp/35",
+      "seed": 0,
+      "init_state_index": 0,
+      "max_native_steps": 4000,
+      "image_size": 256,
+      "reference": {
+        "video": "/path/to/geomotion-references-256/task_034",
+        "text": "/path/to/geomotion-references-256/task_034/steps.md",
+        "trajectory": "/path/to/geomotion-references-256/task_034/trajectory.json",
+        "mode": "sequence",
+        "fps": 1.0
+      }
+    }
+  ]
+}

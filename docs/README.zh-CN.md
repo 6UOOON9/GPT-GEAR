@@ -29,12 +29,13 @@
 
 ## 环境配置
 
-五个环境使用相同的安装、运行和队列流程。环境专属文档集中在 `environments/`，说明对应环境的源码、资产、专属选项和评测差异。
+所有支持的环境使用相同的安装、运行和队列流程。环境专属文档集中在 `environments/`，说明对应环境的源码、资产、专属选项和评测差异。
 
 | 环境 | 专属配置 |
 |---|---|
 | [RoboDojo](environments/robodojo.zh-CN.md) | 子模块与评测布局、seed / layout 选择 |
 | [LIBERO-plus](environments/libero-plus.zh-CN.md) | 任务变体、初始化状态与原生步预算 |
+| [LIBERO-GeoMotion](environments/libero-geomotion.zh-CN.md) | 固定几何场景、初始化与参考示范 |
 | [RoboCasa GR1](environments/robocasa-gr1.zh-CN.md) | HDF5 环境配置、双臂操作与测量深度 |
 | [UniVTAC](environments/univtac.zh-CN.md) | 触觉模式、连续夹爪与控制步频 |
 | [RoboTwin](environments/robotwin.zh-CN.md) | Clean / Random 场景、双臂操作与样本选择 |

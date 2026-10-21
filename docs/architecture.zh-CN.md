@@ -8,7 +8,7 @@
 
 ## 进程如何协作
 
-公共入口为 `gpt-gear`，实现在 `execution.cli`，功能包直接位于 `src/`；命令使用 `--benchmark robodojo|libero-plus|robocasa-gr1|univtac|robotwin`。benchmark 表示所选仿真任务体系，LIBERO 的 suite 则是任务标识 `suite/task_id` 的一部分。
+公共入口为 `gpt-gear`，实现在 `execution.cli`，功能包直接位于 `src/`；命令使用 `--benchmark robodojo|libero-plus|libero-geomotion|robocasa-gr1|univtac|robotwin`。benchmark 表示所选仿真任务体系，LIBERO 的 suite 则是任务标识 `suite/task_id` 的一部分。
 
 ```text
 gpt-gear run / queue
@@ -60,7 +60,7 @@ gpt-gear run / queue
 
 `environments/backends.py` 按 benchmark 延迟加载 `environments/<环境>/backend.py`。各环境后端只使用标准库，负责资源定位、任务身份与子进程命令/环境；公共启动参数和参考缓存由 `environments/common.py` 复用。源码与数据路径由公共 CLI 和队列传递。
 
-LIBERO-plus、GR1、UniVTAC 和 RoboTwin 共用 `environments/simulator.py` 的进程生命周期：
+LIBERO-plus、LIBERO-GeoMotion、GR1、UniVTAC 和 RoboTwin 共用 `environments/simulator.py` 的进程生命周期：
 预检、环境配置、参考缓存、Session、错误结果和资源关闭由公共入口管理。
 backend 声明模块来源和依赖清单；各环境入口通过回调提供原生环境构造、
 启动前配置和应用初始化。
@@ -94,7 +94,7 @@ UniVTAC 通过此回调管理模型动作预算，Session 不读写其内部计�
 
 使用方法和数据格式见 [参考输入指南](reference-protocol.zh-CN.md)。
 
-参考缓存为 `sim-reference-v1`，显式绑定 benchmark；五个 benchmark 的轨迹验证器分开，共用视频处理、摘要、路径边界和交付状态机。先成功交付 observe，再一次性 read_reference，然后才允许 act。原始完整轨迹数值不重写。
+参考缓存为 `sim-reference-v1`，显式绑定 benchmark；轨迹验证器按格式组织，共用视频处理、摘要、路径边界和交付状态机。先成功交付 observe，再一次性 read_reference，然后才允许 act。原始完整轨迹数值不重写。
 
 `demonstrations/reference.py` 只负责 CLI；`media.py` 负责视角扫描、采样、解码和图片校验，
 `trajectory.py` 负责环境验证器分发和无损轨迹打包，`cache.py` 负责缓存组装、读取及输出预算。
@@ -106,7 +106,7 @@ UniVTAC 通过此回调管理模型动作预算，Session 不读写其内部计�
 缓存组装及交付，不调用文字生成器。`reference prepare` 是该缓存流程的
 离线预检入口，不负责从原始数据生成示范。
 
-五个环境的文字生成共用 `video_to_steps.py` 与 `prepare_reference_text.py`：
+所有环境的文字生成共用 `video_to_steps.py` 与 `prepare_reference_text.py`：
 环境 `reference.py` 声明所需相机和可选图片上限，各环境的 `prompts/reference_text.md`
 描述视觉标注规则（包括 RoboDojo），生成器按环境加载，不使用公共标注提示词回退；
 公共层负责独立视频采样、只读模型调用、编号格式校验、原子发布和审计。
@@ -135,6 +135,10 @@ RoboDojo 使用原版工厂和 `run_eval`，临时引用替换在创建环境后
 LIBERO-plus 调用原版 `OffScreenRenderEnv`、`set_init_state`、`step` 和 `check_success`，不修改宿主源码。`prepare_environment` 在导入宿主模块前生成回合专属 `libero_config/config.yaml`，并从预检身份中取得 suite/task_id。
 
 动作按 `OSC_POSE` 的实际输入/输出范围反解缩放，控制点为真实 grip site；初始化步骤计入原生步预算。`result()` 包装 `check_success` 和录像。任务与初始化选项见 [LIBERO-plus 环境配置](environments/libero-plus.zh-CN.md)。
+
+### LIBERO-GeoMotion
+
+与 LIBERO-plus 同级接入公共生命周期。两个适配器共用 `environments/libero_native.py` 的 OSC 控制、观测和录像，以及 `environments/libero_reference.py` 的轨迹协议。环境专属的初始化逻辑留在自己的环境目录。示范缓存与结果汇总使用公共流程。任务选项见 [LIBERO-GeoMotion 环境配置](environments/libero-geomotion.zh-CN.md)。
 
 ### RoboCasa GR1
 

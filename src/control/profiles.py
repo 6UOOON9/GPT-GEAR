@@ -16,7 +16,7 @@ def control_profile(benchmark):
         translation_step=dict(minimum=0.001, maximum=0.02, default=0.01),
         rotation_step=dict(minimum=0.005, maximum=0.10, default=0.05),
         budget_unit='synchronized_take_action' if benchmark == 'robodojo' else 'env_step',
-        cameras=['agentview', 'robot0_eye_in_hand'] if benchmark == 'libero-plus' else None,
+        cameras=['agentview', 'robot0_eye_in_hand'] if benchmark in ('libero-plus', 'libero-geomotion') else None,
     )
     if benchmark == 'robotwin':
         for arm in arms:

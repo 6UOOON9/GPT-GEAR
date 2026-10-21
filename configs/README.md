@@ -17,6 +17,7 @@ Both use `version: 2` and are loaded by `gpt-gear queue`; `episodes` in `single_
 |---|---|---:|
 | [robodojo.json](queues/robodojo.json) | RoboDojo: 42 tasks, seed 0, layout 9; 34 with reference inputs and 8 without | 42 |
 | [libero_plus.json](queues/libero_plus.json) | LIBERO-plus: 5 base tasks × 10 perturbation variants, one run each | 50 |
+| [libero_geomotion.json](queues/libero_geomotion.json) | LIBERO-GeoMotion: 36 scenes; 6 families with references (24 scenes), 3 without (12 scenes) | 36 |
 | [robocasa_gr1.json](queues/robocasa_gr1.json) | RoboCasa GR1: 24 tasks × 20 preset seeds | 480 |
 | [univtac.json](queues/univtac.json) | UniVTAC: 8 tasks × 20 preset seeds, `force` mode by default | 160 |
 | [robotwin.json](queues/robotwin.json) | RoboTwin: 50 tasks × 2 configurations × 5 seeds (`0–4` for each) | 500 |
@@ -35,6 +36,7 @@ For complete LIBERO-plus task identifiers and execution order, see `episodes` in
 |---|---|---|
 | [robodojo.json](single_task/robodojo.json) | RoboDojo `align_blocks` | seed 0, layout 0 |
 | [libero_plus.json](single_task/libero_plus.json) | LIBERO-plus `libero_spatial/0` | seed 0, init state 0 |
+| [libero_geomotion.json](single_task/libero_geomotion.json) | LIBERO-GeoMotion `libero_rp/0` | seed 0, fixed state 0, no reference inputs |
 | [robocasa_gr1.json](single_task/robocasa_gr1.json) | RoboCasa GR1 `PnPCupToDrawerClose` | seed 1365783547 |
 | [univtac.json](single_task/univtac.json) | UniVTAC `insert_HDMI` | seed 1468828686, `force` |
 | [robotwin.json](single_task/robotwin.json) | RoboTwin `adjust_bottle` | seed 0, `clean` |

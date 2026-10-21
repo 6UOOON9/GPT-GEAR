@@ -22,7 +22,7 @@ The model session lasts for one episode; the next episode in a queue starts a ne
 | Term | Meaning in this project |
 |---|---|
 | benchmark | A simulation task suite such as RoboDojo or LIBERO-plus, selected with `--benchmark` |
-| task | A specific task; LIBERO-plus uses `suite/task_id`, while other environments generally use task names |
+| task | A specific task; LIBERO-plus and LIBERO-GeoMotion use `suite/task_id`, while other environments generally use task names |
 | episode | A complete evaluation with a fixed task and initial conditions |
 | attempt | One execution attempt for an episode; a queue retry creates a new attempt |
 | native step | The execution-budget unit declared by the backend; it is not necessarily one physics tick |
@@ -49,8 +49,8 @@ Every environment provides current RGB images and robot proprioception. Camera c
 
 | Optional input | Purpose | Availability |
 |---|---|---|
-| Reference video and trajectory | Show a related procedure; video can be used alone, while trajectories must accompany text or video | All five environments |
-| Reference text | Describe steps, alone or combined with video, trajectories, or both | All five environments |
+| Reference video and trajectory | Show a related procedure; video can be used alone, while trajectories must accompany text or video | All supported environments |
+| Reference text | Describe steps, alone or combined with video, trajectories, or both | All supported environments |
 | Depth-estimation declarations | Require the model to record image-based depth estimates without providing measured ground truth | Enabled through run options |
 | Measured depth | Query depth and back-projected positions for pixels in saved RGB observations | GR1 |
 | Tactile images / resultant forces | Add observations for contact-rich manipulation | UniVTAC |
