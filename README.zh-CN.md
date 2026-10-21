@@ -10,18 +10,18 @@
 </p>
 
 <p align="center">
-  📄 <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
-  🌐 <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
-  📊 <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
-  📚 <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
-  ⚖️ <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
+  <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
+  <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
+  <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
+  <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
 </p>
 
 <p align="center">
   📰 <a href="#news">最新动态</a> &nbsp;·&nbsp;
   🧭 <a href="#overview">项目概览</a> &nbsp;·&nbsp;
   🧠 <a href="#embodied-capabilities">具身能力分析</a> &nbsp;·&nbsp;
-  📊 <a href="#results">评测结果</a> &nbsp;·&nbsp;
+  📊 <a href="#results">评测结果</a><br>
   🤖 <a href="#capability-profile">能力画像</a> &nbsp;·&nbsp;
   🚀 <a href="#快速开始">快速开始</a> &nbsp;·&nbsp;
   📚 <a href="#documentation-and-code">文档与代码</a>
