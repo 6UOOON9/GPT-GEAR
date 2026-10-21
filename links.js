@@ -1,7 +1,7 @@
-// Fill in these URLs when the paper and code repository are ready.
+// Published paper and code repository.
 window.PROJECT_LINKS = {
-  arxiv: "",
-  code: ""
+  arxiv: "https://arxiv.org/abs/2610.28259",
+  code: "https://github.com/6UOOON9/GPT-GEAR"
 };
 
 document.querySelectorAll('[data-project-link]').forEach(link => {
