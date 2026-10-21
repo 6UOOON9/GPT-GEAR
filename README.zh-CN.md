@@ -23,6 +23,7 @@
   🧠 <a href="#embodied-capabilities">具身能力分析</a> &nbsp;·&nbsp;
   📊 <a href="#results">评测结果</a><br>
   🤖 <a href="#capability-profile">能力画像</a> &nbsp;·&nbsp;
+  📐 <a href="#libero-geomotion">LIBERO-GeoMotion</a> &nbsp;·&nbsp;
   🚀 <a href="#快速开始">快速开始</a> &nbsp;·&nbsp;
   📚 <a href="#documentation-and-code">文档与代码</a>
 </p>
@@ -111,6 +112,24 @@
 <p align="center">
   <sub>基准表现 · 能力画像 · 真机验证。🖼️ <a href="assets/readme/capability-profile-real-world.png">查看高清图 ↗</a></sub>
 </p>
+
+<a id="libero-geomotion"></a>
+
+## 📐 LIBERO-GeoMotion
+
+**知道物体该放在哪里，是否就能把它转到合适的角度、顺利送到目标位置？** 为了进一步探索空间理解与实际执行之间的差距，我们提出了 **LIBERO-GeoMotion**：一个基于 LIBERO 资产构建、面向几何约束操作的新数据集与评测基准，包含 **9 类任务、36 个场景变体**。从让长条物体穿过狭窄开口，到把书竖直放入窄槽、让杯柄朝向指定方向，任务围绕**抓取姿态对齐、放置时的物体重定向，以及几何与顺序约束下的协调运动**展开。我们希望借助这些目标直观、动作却不简单的任务，看看模型能否协调平移与旋转，并提前考虑动作对周围物体的影响。
+
+<p align="center">
+  <a href="assets/readme/libero-geomotion.png">
+    <img src="assets/readme/libero-geomotion.png" width="100%" alt="LIBERO-GeoMotion 狭窄通道任务：机器人需要协调长条物体的平移与旋转，将其穿过开口并放到绿色垫上；上下两行展示成功与失败的操作过程。">
+  </a>
+</p>
+
+<p align="center">
+  <sub>几何约束 · 姿态对齐 · 平移与旋转协调。🖼️ <a href="assets/readme/libero-geomotion.png">查看高清图 ↗</a></sub>
+</p>
+
+在[论文](https://arxiv.org/abs/2610.28259)的评测中，GPT-6 Astra 的零样本成功率为 **11.1%**，加入上下文示范后提升至 **50.0%**。示范带来了帮助，也留下了值得继续探索的动作协调难题。📦 **LIBERO-GeoMotion 数据集即将发布，敬请期待！**
 
 更多实验与分析可以在顶部的论文入口中找到。想亲手跑一跑？从下面的环境介绍和🚀 [快速开始](#快速开始)出发，欢迎分享你的发现！
 

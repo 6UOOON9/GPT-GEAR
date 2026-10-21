@@ -23,6 +23,7 @@
   🧠 <a href="#embodied-capabilities">Capabilities</a> &nbsp;·&nbsp;
   📊 <a href="#results">Results</a><br>
   🤖 <a href="#capability-profile">Capability Profile</a> &nbsp;·&nbsp;
+  📐 <a href="#libero-geomotion">LIBERO-GeoMotion</a> &nbsp;·&nbsp;
   🚀 <a href="#quick-start">Quick Start</a> &nbsp;·&nbsp;
   📚 <a href="#documentation-and-code">Documentation</a>
 </p>
@@ -109,6 +110,24 @@ Our work explores **depth perception, embodied in-context learning, and tactile 
 <p align="center">
   <sub>Benchmark performance · Capability profile · Real-world validation. 🖼️ <a href="assets/readme/capability-profile-real-world.png">View full-resolution figure ↗</a></sub>
 </p>
+
+<a id="libero-geomotion"></a>
+
+## 📐 LIBERO-GeoMotion
+
+**Knowing where an object belongs is one thing—can the robot turn it to the right angle and get it there?** To further explore the gap between spatial understanding and physical execution, we introduce **LIBERO-GeoMotion**, a new dataset and benchmark built on LIBERO assets for geometry-constrained manipulation, with **9 task families and 36 scene variants**. From moving an elongated object through a narrow opening to placing a book upright in a slot or pointing a mug handle in a specified direction, the tasks probe **grasp orientation alignment, object reorientation for placement, and coordinated motion under geometric and sequential constraints**. With straightforward goals but demanding motions, we ask whether the model can coordinate translation and rotation while anticipating how its actions affect nearby objects.
+
+<p align="center">
+  <a href="assets/readme/libero-geomotion.png">
+    <img src="assets/readme/libero-geomotion.png" width="100%" alt="LIBERO-GeoMotion narrow-passage task: the robot must coordinate translation and rotation to move an elongated object through an opening and onto a green pad. The two rows show successful and failed execution sequences.">
+  </a>
+</p>
+
+<p align="center">
+  <sub>Geometric constraints · Pose alignment · Coordinated translation and rotation. 🖼️ <a href="assets/readme/libero-geomotion.png">View full-resolution figure ↗</a></sub>
+</p>
+
+In our [paper](https://arxiv.org/abs/2610.28259), GPT-6 Astra achieves **11.1%** zero-shot success, rising to **50.0%** with contextual demonstrations. Demonstrations help, while challenges in motion coordination leave room for further exploration. 📦 **The LIBERO-GeoMotion dataset is coming soon—stay tuned!**
 
 Find more experiments and analysis in the paper linked above. Want to try it yourself? Start with the environments below and the 🚀 [quick start](#quick-start), and let us know what you discover!
 
