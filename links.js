@@ -1,7 +1,8 @@
-// Published paper and code repository.
+// Published paper, code repository, and dataset.
 window.PROJECT_LINKS = {
   arxiv: "https://arxiv.org/abs/2610.28259",
-  code: "https://github.com/6UOOON9/GPT-GEAR"
+  code: "https://github.com/6UOOON9/GPT-GEAR",
+  dataset: "https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"
 };
 
 document.querySelectorAll('[data-project-link]').forEach(link => {
@@ -15,6 +16,6 @@ document.querySelectorAll('[data-project-link]').forEach(link => {
     link.rel = 'noopener noreferrer';
     link.removeAttribute('aria-disabled');
     link.removeAttribute('tabindex');
-    link.title = link.dataset.projectLink === 'arxiv' ? 'Read on arXiv' : 'View code on GitHub';
+    link.title = { arxiv: 'Read on arXiv', code: 'View code on GitHub', dataset: 'View LIBERO-GeoMotion on Hugging Face' }[link.dataset.projectLink];
   } catch { /* Leave the placeholder inactive until a valid URL is provided. */ }
 });
