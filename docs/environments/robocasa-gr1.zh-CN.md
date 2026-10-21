@@ -48,6 +48,6 @@ RGB 与深度同次渲染并同步翻转到左上原点，每份观测保存带 
 
 ## 参考与评测配置
 
-参考轨迹格式为 `robocasa-gr1-trajectory-v1`，视频使用 egoview。文件须提前准备；创建环境所需的 HDF5 不会自动转换成参考视频或轨迹。参考包不包含实时测量深度，详细字段见 [参考协议](../reference-protocol.zh-CN.md#robocasa-gr1)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
+参考轨迹格式为 `robocasa-gr1-trajectory-v1`，视频使用 egoview。文件须提前准备；创建环境所需的 HDF5 不会自动转换成参考视频或轨迹。参考包不包含实时测量深度，详细字段见 [上下文学习指南](../reference-protocol.zh-CN.md#robocasa-gr1)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
 
 [单任务配置](../../configs/single_task/robocasa_gr1.json) 使用 `PnPCupToDrawerClose`。[队列配置](../../configs/queues/robocasa_gr1.json) 包含 24 任务 × 20 seed，共 480 回合，seed 沿用来源项目预设，不代表官方 seed split。测量深度开关参与回合身份计算；执行与续跑步骤见 [队列指南](../queues.zh-CN.md)。

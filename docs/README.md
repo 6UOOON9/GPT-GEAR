@@ -4,9 +4,9 @@
 
 [Back to the project](../README.md)
 
-If you are new to GPT-GEAR, start with installation and a task without reference demonstrations. Once that works, add queues or references. Documentation is available in English and Simplified Chinese; use the links beneath each title to switch languages. Commands, options, and data fields retain their code names.
+If you are new to GPT-GEAR, start with installation and a task without demonstrations. Once that works, try in-context learning (ICL) or batch evaluation. Documentation is available in English and Simplified Chinese; use the links beneath each title to switch languages. Commands, options, and data fields retain their code names.
 
-Suggested reading order: [Installation](installation.md) → [Run a task](running.md) → [Inspect results](results.md). You only need the configuration and commands for the environment you use.
+Suggested reading order: [Installation](installation.md) → [Run a task](running.md) → [Inspect results](results.md) → [In-context learning (optional)](reference-protocol.md). You only need the configuration and commands for the environment you use.
 
 Unless stated otherwise, run commands from the repository root with the tool environment activated. Replace `/path/to/...` with local paths. Each single-episode `run` needs a fresh output directory; queues can resume with the original configuration.
 
@@ -20,11 +20,13 @@ Unless stated otherwise, run commands from the repository root with the tool env
 | [Queues and batch evaluation](queues.md) | Write configurations, inspect plans, run, and resume after a single episode works |
 | [Project overview](project-overview.md) | Understand the roles of the model, tools, controller, and simulator |
 
-## Reference demonstrations (optional)
+<a id="reference-demonstrations-optional"></a>
+
+## In-context learning (optional)
 
 | Guide | When to use it |
 |---|---|
-| [Reference inputs and format protocol](reference-protocol.md) | Add video, trajectories, and text to evaluation, or build format converters |
+| [In-context learning guide](reference-protocol.md) | Add video, trajectories, and text to evaluation, or build format converters |
 | [Generate textual steps from video](reference-format.md) | Turn demonstration videos into readable instructions; skip this if text is already available |
 
 ## Environment configuration

@@ -2,7 +2,7 @@
 
 **English** | [简体中文](reference-format.zh-CN.md)
 
-[Documentation](README.md) · Next: [Use references in evaluation](reference-protocol.md)
+[Documentation](README.md) · Next: [Use in-context learning in evaluation](reference-protocol.md)
 
 This tutorial shows how to turn demonstration videos you have prepared into English numbered steps in `steps.txt`. This project provides only text generation; prepare videos yourself in advance. Generating text does not require trajectories, the original dataset, or a simulation environment.
 
@@ -43,11 +43,10 @@ Prepare this directory:
 references/robodojo/stack_blocks/
 ├── head.mp4
 ├── left_wrist.mp4
-├── right_wrist.mp4
-└── videos.json
+└── right_wrist.mp4
 ```
 
-`videos.json` maps the three cameras to files:
+These filenames require no `videos.json`. Filenames ending in `head.mp4`, `left_wrist.mp4`, and `right_wrist.mp4` are also supported, with exactly one match per suffix. To use other filenames, add a `videos.json` mapping, which takes precedence when present:
 
 ```json
 {
@@ -123,7 +122,7 @@ With these names, `videos.json` is unnecessary. The wrist video's camera name is
 }
 ```
 
-This workflow uses LIBERO-plus's visual annotation prompt and only video images, camera labels, and time labels. It does not require the LIBERO simulator or trajectories. The two videos are sampled independently; frame-by-frame synchronization is not required. During evaluation, the generated `steps.txt` can be used alone or with video, trajectories, or both. See the [reference-input protocol](reference-protocol.md).
+This workflow uses LIBERO-plus's visual annotation prompt and only video images, camera labels, and time labels. It does not require the LIBERO simulator or trajectories. The two videos are sampled independently; frame-by-frame synchronization is not required. During evaluation, the generated `steps.txt` can be used alone or with video, trajectories, or both. See the [in-context learning guide](reference-protocol.md).
 
 ### LIBERO-GeoMotion: two-view video
 
@@ -219,7 +218,7 @@ gpt-gear reference annotate --help
 
 ## 5. Use text in evaluation
 
-Text generation only needs video. When adding `steps.txt` to evaluation, supply text alone or combine it with video, trajectories, or both. Trajectories cannot be used alone. Review generated steps first, run offline validation as described in the [reference-input guide](reference-protocol.md), and pass selected original file paths to `run` or a queue.
+Text generation only needs video. When adding `steps.txt` to evaluation, supply text alone or combine it with video, trajectories, or both. Trajectories cannot be used alone. Review generated steps first, run offline validation as described in the [in-context learning guide](reference-protocol.md), and pass selected original file paths to `run` or a queue.
 
 ## Common problems
 

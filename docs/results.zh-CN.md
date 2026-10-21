@@ -2,7 +2,7 @@
 
 [English](results.md) | **简体中文**
 
-[文档导航](README.zh-CN.md) · [单回合运行](running.zh-CN.md) · [队列评测](queues.zh-CN.md)
+[文档导航](README.zh-CN.md) · [单回合运行](running.zh-CN.md) · [队列评测](queues.zh-CN.md) · [上下文学习（ICL）](reference-protocol.zh-CN.md)
 
 回合结束后，先查看汇总，再按需要检查官方结果、录像和日志。模型最后说“完成”或调用 `finish`，都不能替代仿真环境的成功判定。
 
@@ -85,7 +85,7 @@ RoboDojo 的布局由任务、seed、layout 共同决定；LIBERO-plus 和 LIBER
 
 ### 参考校验失败
 
-用 `reference prepare` 单独检查已有文件。常见原因包括缺少视频映射、格式不匹配、摘要不一致、路径越界，或只提供轨迹而未搭配文字或视频。纯文字参考受支持；未提供视频时不能指定 `mode`、`fps`。修正原始文件后使用新输出目录，详见 [参考输入指南](reference-protocol.zh-CN.md)。
+用 `reference prepare` 单独检查已有文件。常见原因包括视频文件缺失或匹配不唯一、视频映射不完整、格式不匹配、摘要不一致、路径越界，或只提供轨迹而未搭配文字或视频。纯文字参考受支持；未提供视频时不能指定 `mode`、`fps`。修正原始文件后使用新输出目录，详见 [上下文学习指南](reference-protocol.zh-CN.md)。
 
 ### 动作结果不确定，或工具图片交付失败
 

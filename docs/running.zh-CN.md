@@ -2,9 +2,9 @@
 
 [English](running.md) | **简体中文**
 
-[文档导航](README.zh-CN.md) · 前置：[安装与环境准备](installation.zh-CN.md) · 下一步：[查看结果](results.zh-CN.md)
+[文档导航](README.zh-CN.md) · 前置：[安装与环境准备](installation.zh-CN.md) · 下一步：[查看结果](results.zh-CN.md) · [上下文学习（可选）](reference-protocol.zh-CN.md)
 
-本页给出所有支持环境的单回合命令。每次运行都会创建独立的仿真进程与 Codex 会话；以下示例均不需要参考示范。
+本页给出所有支持环境的单回合命令。每次运行都会创建独立的仿真进程与 Codex 会话；以下示例均不使用示范。想加入示范文字、视频或轨迹，可按 [上下文学习（ICL）指南](reference-protocol.zh-CN.md) 配置。
 
 先阅读[运行前](#运行前)，再选择你的环境：[RoboDojo](#robodojo) · [LIBERO-plus](#libero-plus) · [LIBERO-GeoMotion](#libero-geomotion) · [RoboCasa GR1](#robocasa-gr1) · [UniVTAC](#univtac) · [RoboTwin](#robotwin)。其他内容可按需查阅：[常用选项](#常用运行选项) · [无模型接口检查](#无模型接口检查) · [查看结果与后续操作](#结束后做什么)。
 
@@ -68,7 +68,7 @@ gpt-gear run libero_rp/0 outputs/geomotion_one \
 
 任务为 `libero_rp/0` 至 `libero_rp/35`，只支持初态 0。默认图像为 256×256，控制频率为 20 Hz。预算为 4000 个原生步，无初始化预热。
 
-环境路径与参考说明见 [LIBERO-GeoMotion 环境配置](environments/libero-geomotion.zh-CN.md)。添加参考时使用[公共参考参数](reference-format.zh-CN.md)。
+环境路径与参考说明见 [LIBERO-GeoMotion 环境配置](environments/libero-geomotion.zh-CN.md)。添加示范时，按[上下文学习指南](reference-protocol.zh-CN.md)配置。
 
 ## RoboCasa GR1
 
@@ -212,7 +212,12 @@ export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 gpt-gear summarize outputs/libero_one
 ```
 
-将路径换成刚才的输出目录，按 [结果指南](results.zh-CN.md) 查看成功判定、录像和日志。需要更多任务时使用 [队列](queues.zh-CN.md)；需要参考视频或轨迹时，先按 [参考输入指南](reference-protocol.zh-CN.md) 准备文件，再启动新回合。
+将路径换成刚才的输出目录，按 [结果指南](results.zh-CN.md) 查看成功判定、录像和日志。
+
+接下来可以：
+
+- 尝试 [上下文学习（ICL）](reference-protocol.zh-CN.md)：准备示范文字、视频或轨迹，再启动新回合。
+- 使用 [队列](queues.zh-CN.md) 评测更多任务。
 
 ### 用 JSON 保存单任务配置（可选）
 

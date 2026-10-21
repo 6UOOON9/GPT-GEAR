@@ -103,7 +103,7 @@ GR1 的 `robosuite_root` 和 `data_root` 仍需在 JSON 中修改。混合环境
 }
 ```
 
-按需提供 `text`、`video`、`trajectory`；轨迹必须搭配文字或视频。无视频时不能指定 `mode`、`fps`。参数指向原始文件，不指向 `reference prepare` 生成的缓存。完整规则见 [参考输入指南](reference-protocol.zh-CN.md)。
+按需提供 `text`、`video`、`trajectory`；轨迹必须搭配文字或视频。无视频时不能指定 `mode`、`fps`。参数指向原始文件，不指向 `reference prepare` 生成的缓存。完整规则见 [上下文学习指南](reference-protocol.zh-CN.md)。
 
 新增组合的 `reference` 写法如下（相对路径以队列配置文件所在目录为基准）：
 
@@ -162,4 +162,4 @@ outputs/robotwin_queue/
 
 `summarize` 使用每个回合最新一次尝试，按 benchmark 分组，UniVTAC 另按触觉模式、RoboTwin 另按 Clean / Random 汇总。不跨环境平均原始评分。
 
-旧 v1 配置需要迁移到 v2；旧结果不会被改写，不支持的格式不计入当前成功率。字段含义和排障方法见 [结果指南](results.zh-CN.md)。
+字段含义和排障方法见 [结果指南](results.zh-CN.md)。

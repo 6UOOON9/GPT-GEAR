@@ -82,9 +82,10 @@ def camera_names(cameras):
 
 def scan_videos(directory, benchmark="robodojo"):
     directory = Path(directory).expanduser().resolve(strict=True)
-    if benchmark != 'robodojo' and not (directory / 'videos.json').exists():
+    if not (directory / 'videos.json').exists():
         videos = {}
-        cameras = {'libero-geomotion': (('agentview', 'agentview.mp4'), ('robot0_eye_in_hand', 'wrist.mp4')),
+        cameras = {'robodojo': tuple((name, name + '.mp4') for name in ('head', 'left_wrist', 'right_wrist')),
+                   'libero-geomotion': (('agentview', 'agentview.mp4'), ('robot0_eye_in_hand', 'wrist.mp4')),
                    'libero-plus': (('agentview', 'agentview.mp4'), ('robot0_eye_in_hand', 'wrist.mp4')),
                    'robotwin': tuple((name, name + '.mp4') for name in ('head_camera', 'left_camera', 'right_camera')),
                    'robocasa-gr1': (('egoview', 'egoview.mp4'),),
@@ -101,7 +102,7 @@ def scan_videos(directory, benchmark="robodojo"):
         or manifest.get("format") not in ("sim-reference-videos-v1", "robodojo-reference-videos-v1")
         or not isinstance(manifest.get("videos"), dict)
     ):
-        raise ReferenceError("videos.json must declare robodojo-reference-videos-v1 and videos")
+        raise ReferenceError("videos.json must declare sim-reference-videos-v1 or robodojo-reference-videos-v1 and videos")
     camera_names(list(manifest["videos"]))
     return {camera: source_file(directory, filename) for camera, filename in manifest["videos"].items()}
 

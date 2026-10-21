@@ -28,6 +28,6 @@ RoboTwin 提供双臂操作、三视角 RGB 和 Clean / Random 场景配置。�
 
 ## 参考与评测配置
 
-参考轨迹格式为 `robotwin-codex-dual-trajectory-v1`，文件须提前准备。视频映射与动作语义见 [参考协议](../reference-protocol.zh-CN.md#robotwin)，三路视频生成文字见 [文字生成教程](../reference-format.zh-CN.md#robotwin三路专家视频)。
+参考轨迹格式为 `robotwin-codex-dual-trajectory-v1`，文件须提前准备。视频映射与动作语义见 [上下文学习指南](../reference-protocol.zh-CN.md#robotwin)，三路视频生成文字见 [文字生成教程](../reference-format.zh-CN.md#robotwin三路专家视频)。
 
 [单任务配置](../../configs/single_task/robotwin.json) 使用 `adjust_bottle`、seed 0、`clean`。[队列配置](../../configs/queues/robotwin.json) 包含 50 任务 × 2 种配置 × 5 seed，共 500 回合。执行与续跑见 [队列指南](../queues.zh-CN.md)，录像与日志见 [结果指南](../results.zh-CN.md)。

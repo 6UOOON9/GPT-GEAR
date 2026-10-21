@@ -28,6 +28,6 @@ Keep tasks, seeds, budgets, and input conditions matched when comparing Clean an
 
 ## References and evaluation configurations
 
-Reference trajectories use `robotwin-codex-dual-trajectory-v1`. Prepare files in advance. See the [reference protocol](../reference-protocol.md#robotwin) for video mappings and action semantics, and the [text-generation guide](../reference-format.md#robotwin-three-view-expert-video) for three-view video annotation.
+Reference trajectories use `robotwin-codex-dual-trajectory-v1`. Prepare files in advance. See the [in-context learning guide](../reference-protocol.md#robotwin) for video mappings and action semantics, and the [text-generation guide](../reference-format.md#robotwin-three-view-expert-video) for three-view video annotation.
 
 The [single-task configuration](../../configs/single_task/robotwin.json) uses `adjust_bottle`, seed 0, and `clean`. The [queue configuration](../../configs/queues/robotwin.json) contains 50 tasks × 2 configurations × 5 seeds, totaling 500 episodes. See the [queue guide](../queues.md) for execution and resuming, and the [results guide](../results.md) for videos and logs.

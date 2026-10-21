@@ -40,7 +40,7 @@ Actions use `robot0.gripper_position_m` for finger position in meters, with rang
 
 ## References and evaluation configurations
 
-References use the continuous-gripper format `univtac-codex-trajectory-v2`. Old binary-gripper demonstrations are not automatically converted. Video views are head / wrist; reference packages do not contain live tactile data. See the [reference protocol](../reference-protocol.md#univtac) for fields and the [video-to-text guide](../reference-format.md) for text generation.
+References use the continuous-gripper format `univtac-codex-trajectory-v2`. Old binary-gripper demonstrations are not automatically converted. Video views are head / wrist; reference packages do not contain live tactile data. See the [in-context learning guide](../reference-protocol.md#univtac) for fields and the [video-to-text guide](../reference-format.md) for text generation.
 
 The [single-task configuration](../../configs/single_task/univtac.json) uses `insert_HDMI`. The [queue configuration](../../configs/queues/univtac.json) contains 8 tasks × 20 seeds, totaling 160 episodes. Seeds follow source-project presets, not an official seed split.
 

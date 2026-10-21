@@ -25,7 +25,7 @@ LIBERO-GeoMotion 提供单臂操作、双视角 RGB，以及 9 类任务的 36 �
 
 ## 参考示范与评测配置
 
-按[上游文档](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)准备示范，通过公共参考参数选择视频、文字和轨迹。参考轨迹格式为 `libero-codex-trajectory-v1`，控制点为 `robot0_grip_site`。字段说明见[参考协议](../reference-protocol.zh-CN.md#libero-geomotion)，文字生成见[视频转文字指南](../reference-format.zh-CN.md#libero-geomotion两路视频)。
+按[上游文档](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)准备示范，通过公共参考参数选择视频、文字和轨迹。参考轨迹格式为 `libero-codex-trajectory-v1`，控制点为 `robot0_grip_site`。字段说明见[上下文学习指南](../reference-protocol.zh-CN.md#libero-geomotion)，文字生成见[视频转文字指南](../reference-format.zh-CN.md#libero-geomotion两路视频)。
 
 [单任务配置](../../configs/single_task/libero_geomotion.json) 使用 `libero_rp/0`，不带参考。[完整队列](../../configs/queues/libero_geomotion.json) 包含 9 类任务、36 个场景，每项使用 seed 0、init state 0 和 4000 个原生步。
 

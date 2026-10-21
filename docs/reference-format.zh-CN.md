@@ -2,7 +2,7 @@
 
 [English](reference-format.md) | **简体中文**
 
-[文档导航](README.zh-CN.md) · 下一步：[将参考用于评测](reference-protocol.zh-CN.md)
+[文档导航](README.zh-CN.md) · 下一步：[在评测中使用上下文学习](reference-protocol.zh-CN.md)
 
 本教程介绍如何将自行准备好的示范视频转换为英文编号步骤 `steps.txt`。
 本项目只提供文字生成过程；视频由使用者提前准备。生成文字无需轨迹、原始数据集或仿真环境。
@@ -48,11 +48,10 @@ source .venvs/codex-mcp/bin/activate
 references/robodojo/stack_blocks/
 ├── head.mp4
 ├── left_wrist.mp4
-├── right_wrist.mp4
-└── videos.json
+└── right_wrist.mp4
 ```
 
-`videos.json` 用于指定三路相机对应的文件：
+按以上方式命名时无需 `videos.json`；也支持文件名以 `head.mp4`、`left_wrist.mp4`、`right_wrist.mp4` 结尾，每种后缀须恰好匹配一个文件。若要使用其他文件名，可添加 `videos.json` 显式指定三路相机对应的文件；存在映射文件时优先使用映射：
 
 ```json
 {
@@ -136,7 +135,7 @@ gpt-gear reference annotate --benchmark libero-plus references/libero/pick_up_bo
 
 此流程沿用 LIBERO-plus 的视觉标注提示词，只使用视频图片和相机、时间标签，无需安装
 LIBERO 仿真环境或提供轨迹。两路视频分别抽帧，不要求逐帧同步。生成的 `steps.txt`
-用于评测时可以单独提供，也可搭配视频、轨迹或两者，见 [参考输入协议](reference-protocol.zh-CN.md)。
+用于评测时可以单独提供，也可搭配视频、轨迹或两者，见 [上下文学习指南](reference-protocol.zh-CN.md)。
 
 ### LIBERO-GeoMotion：两路视频
 
@@ -241,7 +240,7 @@ gpt-gear reference annotate --help
 
 ## 5. 将文字用于评测
 
-文字生成只需要视频；把 `steps.txt` 加入评测时可以只提供文字，也可搭配视频、轨迹或两者。轨迹不能单独用于评测。先检查生成步骤是否准确，再按 [参考输入指南](reference-protocol.zh-CN.md) 运行离线校验，并将所选原始文件路径传给 `run` 或队列。
+文字生成只需要视频；把 `steps.txt` 加入评测时可以只提供文字，也可搭配视频、轨迹或两者。轨迹不能单独用于评测。先检查生成步骤是否准确，再按 [上下文学习指南](reference-protocol.zh-CN.md) 运行离线校验，并将所选原始文件路径传给 `run` 或队列。
 
 ## 常见问题
 

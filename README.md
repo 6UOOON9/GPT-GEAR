@@ -227,6 +227,8 @@ gpt-gear run libero_spatial/0 outputs/libero_first_run \
 
 This starts the simulator and calls the model. The output directory must not already exist; do not create it beforehand. To select a model, append `--codex-model MODEL_NAME`.
 
+To add demonstration text, video, or trajectories to this task, follow the 🎬 [in-context learning (ICL) guide](docs/reference-protocol.md).
+
 <a id="3-inspect-the-results"></a>
 
 ### 📊 3. Inspect the results
@@ -257,14 +259,15 @@ gpt-gear summarize outputs/gr1_24x20
 A queue can contain multiple tasks, seeds, or environments. See the 🧪 [queue guide](docs/queues.md) for configuration, resuming, and retries.
 
 <a id="reference-demonstrations"></a>
+<a id="in-context-learning"></a>
 
-## 🎬 Reference demonstrations
+## 🎬 Embodied In-Context Learning
 
-Reference inputs are optional. Supply text or video alone, or combine text, video, and trajectories to explore different input settings. Astra draws on the demonstrated procedure while making decisions for the current scene.
+Embodied in-context learning (ICL) provides Astra with demonstrations in its context to guide decisions in the current scene. Demonstrations are optional: supply text or video alone, or combine them with action trajectories to compare input settings.
 
-Prepare reference files before evaluation for every environment. This project generates textual steps from existing videos, validates inputs, and reads references. It does not download data, export videos, or generate trajectories; export those from your simulation environment.
+Prepare demonstration files before evaluation for every environment. This project generates textual steps from existing videos, validates inputs, and delivers demonstrations to the model. It does not download data, export videos, or generate trajectories; export those from your simulation environment.
 
-- 🎬 [Use reference demonstrations in evaluation](docs/reference-protocol.md)
+- 🎬 [Use in-context learning in evaluation](docs/reference-protocol.md)
 - 🎬 [Generate textual steps from existing videos (optional)](docs/reference-format.md)
 
 <a id="documentation-and-code"></a>
@@ -273,7 +276,7 @@ Prepare reference files before evaluation for every environment. This project ge
 
 | Topic | Where to start |
 |---|---|
-| Installation through your first task | 🔧 [Installation](docs/installation.md) → 🚀 [Running a task](docs/running.md) → 📊 [Results](docs/results.md) |
+| Installation through your first task | 🔧 [Installation](docs/installation.md) → 🚀 [Running a task](docs/running.md) → 📊 [Results](docs/results.md) → 🎬 [In-context learning (optional)](docs/reference-protocol.md) |
 | Multi-task evaluation and result analysis | 🧪 [Queues](docs/queues.md) → 📊 [Results and troubleshooting](docs/results.md) |
 | Assets, observations, and evaluation options | 📚 [Environment configuration guides](docs/README.md#environment-configuration) |
 | Control, protocols, and environment adapters | 🏗️ [Architecture](docs/architecture.md) |
@@ -291,7 +294,6 @@ src/
 configs/
 ├── queues/          # Evaluation reproduction and condition comparisons
 └── single_task/     # Single-task tests, one episode per file
-tests/               # Offline regression tests
 docs/                # User and developer documentation
 └── environments/    # Environment-specific configuration guides
 ```

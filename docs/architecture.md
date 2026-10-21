@@ -77,7 +77,7 @@ Camera RGB and robot proprioception are delivered through an allowlist. Fixed ca
 
 ## Reference inputs and caching
 
-See the [reference-input guide](reference-protocol.md) for usage and formats.
+See the [in-context learning guide](reference-protocol.md) for usage and formats.
 
 Reference caches use `sim-reference-v1` and explicitly bind the benchmark. Trajectory validators are organized by format but share video processing, digests, path-boundary checks, and the delivery state machine. Successful observe delivery must precede one-time read_reference delivery before act is allowed. Complete original trajectory numbers are not rewritten.
 

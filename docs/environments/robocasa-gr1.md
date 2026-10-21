@@ -48,6 +48,6 @@ Queries return positive optical-axis Z depth and visible-surface coordinates bac
 
 ## References and evaluation configurations
 
-Reference trajectories use `robocasa-gr1-trajectory-v1`, and video uses egoview. Prepare files in advance; the HDF5 needed to create the environment is not automatically converted to reference video or trajectories. Reference packages do not contain live measured depth. See the [reference protocol](../reference-protocol.md#robocasa-gr1) for fields and the [video-to-text guide](../reference-format.md) for text generation.
+Reference trajectories use `robocasa-gr1-trajectory-v1`, and video uses egoview. Prepare files in advance; the HDF5 needed to create the environment is not automatically converted to reference video or trajectories. Reference packages do not contain live measured depth. See the [in-context learning guide](../reference-protocol.md#robocasa-gr1) for fields and the [video-to-text guide](../reference-format.md) for text generation.
 
 The [single-task configuration](../../configs/single_task/robocasa_gr1.json) uses `PnPCupToDrawerClose`. The [queue configuration](../../configs/queues/robocasa_gr1.json) contains 24 tasks × 20 seeds, totaling 480 episodes. Seeds follow source-project presets, not an official seed split. The measured-depth setting participates in episode identity. See the [queue guide](../queues.md) for execution and resuming.

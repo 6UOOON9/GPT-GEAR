@@ -40,7 +40,7 @@ UniVTAC 提供单臂操作、双视角 RGB 和可选触觉输入。本页说明�
 
 ## 参考与评测配置
 
-参考使用 `univtac-codex-trajectory-v2` 连续夹爪格式，不自动转换旧二值夹爪示范。视频视角为 head / wrist；参考包不包含实时触觉。详细字段见 [参考协议](../reference-protocol.zh-CN.md#univtac)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
+参考使用 `univtac-codex-trajectory-v2` 连续夹爪格式，不自动转换旧二值夹爪示范。视频视角为 head / wrist；参考包不包含实时触觉。详细字段见 [上下文学习指南](../reference-protocol.zh-CN.md#univtac)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
 
 [单任务配置](../../configs/single_task/univtac.json) 使用 `insert_HDMI`。[队列配置](../../configs/queues/univtac.json) 包含 8 任务 × 20 seed，共 160 回合，seed 沿用来源项目预设，不代表官方 seed split。
 

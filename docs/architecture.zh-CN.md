@@ -92,7 +92,7 @@ UniVTAC 通过此回调管理模型动作预算，Session 不读写其内部计�
 
 ## 参考输入与缓存
 
-使用方法和数据格式见 [参考输入指南](reference-protocol.zh-CN.md)。
+使用方法和数据格式见 [上下文学习指南](reference-protocol.zh-CN.md)。
 
 参考缓存为 `sim-reference-v1`，显式绑定 benchmark；轨迹验证器按格式组织，共用视频处理、摘要、路径边界和交付状态机。先成功交付 observe，再一次性 read_reference，然后才允许 act。原始完整轨迹数值不重写。
 

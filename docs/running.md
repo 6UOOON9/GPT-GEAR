@@ -2,9 +2,9 @@
 
 **English** | [简体中文](running.zh-CN.md)
 
-[Documentation](README.md) · Prerequisite: [Installation](installation.md) · Next: [Inspect results](results.md)
+[Documentation](README.md) · Prerequisite: [Installation](installation.md) · Next: [Inspect results](results.md) · [In-context learning (optional)](reference-protocol.md)
 
-This page provides single-episode commands for all supported environments. Each run creates a separate simulation process and Codex session. None of the examples below requires reference demonstrations.
+This page provides single-episode commands for all supported environments. Each run creates a separate simulation process and Codex session. The examples below run without demonstrations. To provide demonstration text, video, or trajectories, follow the [in-context learning (ICL) guide](reference-protocol.md).
 
 Read [before you run](#before-you-run), then choose your environment: [RoboDojo](#robodojo) · [LIBERO-plus](#libero-plus) · [LIBERO-GeoMotion](#libero-geomotion) · [RoboCasa GR1](#robocasa-gr1) · [UniVTAC](#univtac) · [RoboTwin](#robotwin). Consult other sections as needed: [Common options](#common-run-options) · [Model-free interface checks](#model-free-interface-checks) · [Results and next steps](#after-the-run).
 
@@ -68,7 +68,7 @@ gpt-gear run libero_rp/0 outputs/geomotion_one \
 
 Tasks range from `libero_rp/0` to `libero_rp/35`, with initial state 0. Images default to 256×256, with a 20 Hz control frequency. The budget is 4000 native steps without initialization settling.
 
-See [LIBERO-GeoMotion configuration](environments/libero-geomotion.md) for environment paths and references. Add references using the [shared reference options](reference-format.md).
+See [LIBERO-GeoMotion configuration](environments/libero-geomotion.md) for environment paths and references. Add demonstrations using the [in-context learning guide](reference-protocol.md).
 
 ## RoboCasa GR1
 
@@ -212,7 +212,12 @@ A passing interface check only establishes that scene loading, a hold action, an
 gpt-gear summarize outputs/libero_one
 ```
 
-Replace the path with your output directory and follow the [results guide](results.md) to inspect success, videos, and logs. Use a [queue](queues.md) for more tasks. To add reference video or trajectories, prepare files using the [reference-input guide](reference-protocol.md), then start a new episode.
+Replace the path with your output directory and follow the [results guide](results.md) to inspect success, videos, and logs.
+
+Next, you can:
+
+- Try [in-context learning (ICL)](reference-protocol.md): prepare demonstration text, video, or trajectories, then start a new episode.
+- Use a [queue](queues.md) to evaluate more tasks.
 
 ### Save a single-task configuration in JSON (optional)
 

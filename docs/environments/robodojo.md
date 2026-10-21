@@ -30,6 +30,6 @@ RoboDojo does not accept `--init-state-index` or `--max-native-steps`. Run the s
 
 ## References and evaluation configurations
 
-Prepare reference files before evaluation. Trajectories use `robodojo-codex-trajectory-v1` with dual-arm `left_ee` / `right_ee` semantics. See the [reference protocol](../reference-protocol.md#6-robodojo-trajectory-and-video-format) for fields and video mappings, and the [video-to-text guide](../reference-format.md) for text generation.
+Prepare reference files before evaluation. Trajectories use `robodojo-codex-trajectory-v1` with dual-arm `left_ee` / `right_ee` semantics. See the [in-context learning guide](../reference-protocol.md#robodojo) for trajectory and video formats, and the [video-to-text guide](../reference-format.md) for text generation.
 
 The [single-task configuration](../../configs/single_task/robodojo.json) uses `align_blocks`, seed 0, layout 0. The [queue configuration](../../configs/queues/robodojo.json) contains 42 tasks with seed 0 and layout 9, including 34 with references. Update environment and reference paths before running. See the [queue guide](../queues.md) for execution and resuming.

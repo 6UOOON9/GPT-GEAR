@@ -25,7 +25,7 @@ Before the first run, you can perform a [model-free interface check](../running.
 
 ## References and evaluation configurations
 
-Prepare demonstrations using the [upstream documentation](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion). Select video, text, and trajectories through the shared reference options. Reference trajectories use `libero-codex-trajectory-v1`, with `robot0_grip_site` as the control point. See the [reference protocol](../reference-protocol.md#libero-geomotion) for fields and the [video-to-text guide](../reference-format.md#libero-geomotion-two-view-video) for text generation.
+Prepare demonstrations using the [upstream documentation](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion). Select video, text, and trajectories through the shared reference options. Reference trajectories use `libero-codex-trajectory-v1`, with `robot0_grip_site` as the control point. See the [in-context learning guide](../reference-protocol.md#libero-geomotion) for fields and the [video-to-text guide](../reference-format.md#libero-geomotion-two-view-video) for text generation.
 
 The [single-task configuration](../../configs/single_task/libero_geomotion.json) uses `libero_rp/0` without references. The [full queue](../../configs/queues/libero_geomotion.json) contains 36 scenes across 9 task families, each with seed 0, init state 0, and 4000 native steps.
 

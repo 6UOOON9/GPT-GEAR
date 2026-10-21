@@ -30,6 +30,6 @@ RoboDojo 不接受 `--init-state-index` 或 `--max-native-steps`。先运行公�
 
 ## 参考与评测配置
 
-参考文件需在评测前准备。轨迹格式为 `robodojo-codex-trajectory-v1`，使用双臂 `left_ee` / `right_ee` 语义；字段和视频映射见 [参考协议](../reference-protocol.zh-CN.md#6-robodojo-轨迹与视频格式详解)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
+参考文件需在评测前准备。轨迹格式为 `robodojo-codex-trajectory-v1`，使用双臂 `left_ee` / `right_ee` 语义；轨迹与视频格式见 [上下文学习指南](../reference-protocol.zh-CN.md#robodojo)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
 
 [单任务配置](../../configs/single_task/robodojo.json) 使用 `align_blocks`、seed 0、layout 0。[队列配置](../../configs/queues/robodojo.json) 包含 42 个任务，使用 seed 0、layout 9，其中 34 个带参考；运行前需修改环境路径及参考路径。执行与续跑步骤见 [队列指南](../queues.zh-CN.md)。

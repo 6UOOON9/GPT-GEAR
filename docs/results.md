@@ -2,7 +2,7 @@
 
 **English** | [简体中文](results.zh-CN.md)
 
-[Documentation](README.md) · [Single-episode runs](running.md) · [Queues](queues.md)
+[Documentation](README.md) · [Single-episode runs](running.md) · [Queues](queues.md) · [In-context learning (ICL)](reference-protocol.md)
 
 After an episode, start with the summary, then inspect official results, videos, and logs as needed. A final model message saying “done,” or a call to `finish`, does not replace the simulator's success judgment.
 
@@ -85,7 +85,7 @@ First inspect `server.log` for asset, rendering, GPU, or dependency errors. If t
 
 ### Reference validation fails
 
-Check existing files separately with `reference prepare`. Common causes include missing video mappings, format mismatches, digest mismatches, paths escaping allowed boundaries, or supplying a trajectory without text or video. Text-only references are supported; without video, `mode` and `fps` cannot be specified. Correct the original files and use a new output directory. See [reference inputs](reference-protocol.md).
+Check existing files separately with `reference prepare`. Common causes include missing or ambiguous video files, incomplete video mappings, format mismatches, digest mismatches, paths escaping allowed boundaries, or supplying a trajectory without text or video. Text-only references are supported; without video, `mode` and `fps` cannot be specified. Correct the original files and use a new output directory. See the [in-context learning guide](reference-protocol.md).
 
 ### An action result is uncertain, or tool image delivery fails
 

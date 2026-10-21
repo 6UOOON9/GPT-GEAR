@@ -55,7 +55,7 @@ Every environment provides current RGB images and robot proprioception. Camera c
 | Measured depth | Query depth and back-projected positions for pixels in saved RGB observations | GR1 |
 | Tactile images / resultant forces | Add observations for contact-rich manipulation | UniVTAC |
 
-GR1 enables measured depth by default; other environments require depth-estimation declarations by default. The two modes cannot be enabled together. Prepare reference files in advance; this project only provides the video-to-text generation step. See [reference inputs](reference-protocol.md).
+GR1 enables measured depth by default; other environments require depth-estimation declarations by default. The two modes cannot be enabled together. Prepare reference files in advance; this project only provides the video-to-text generation step. See the [in-context learning guide](reference-protocol.md).
 
 ## Interpreting evaluation results
 
@@ -66,5 +66,5 @@ Summaries distinguish valid successes, valid task failures, invalid samples, and
 ## Further reading
 
 - To run tasks, start with [installation](installation.md) and [single-episode commands](running.md).
-- To compare conditions, read about [queues](queues.md) and [reference inputs](reference-protocol.md).
+- To compare conditions, read the [queue guide](queues.md) and [in-context learning guide](reference-protocol.md).
 - To change the implementation, read the [architecture](architecture.md) and [contribution guide](../CONTRIBUTING.md).

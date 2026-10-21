@@ -55,7 +55,7 @@ GPT-GEAR 用一个持续的 Codex 会话，在机器人仿真任务中完成“�
 | 测量深度 | 查询已保存 RGB 对应像素的深度与反投影位置 | GR1 |
 | 触觉图像 / 合力 | 为接触操作提供额外观测 | UniVTAC |
 
-GR1 默认启用测量深度，其他环境默认要求深度估计声明；这两种模式不能同时开启。参考文件需要提前准备，只有视频转文字的生成过程由本项目提供，见 [参考输入指南](reference-protocol.zh-CN.md)。
+GR1 默认启用测量深度，其他环境默认要求深度估计声明；这两种模式不能同时开启。参考文件需要提前准备，只有视频转文字的生成过程由本项目提供，见 [上下文学习指南](reference-protocol.zh-CN.md)。
 
 ## 如何理解评测结果
 
@@ -66,5 +66,5 @@ GR1 默认启用测量深度，其他环境默认要求深度估计声明；这�
 ## 继续阅读
 
 - 想跑任务：从 [安装](installation.zh-CN.md) 和 [单回合命令](running.zh-CN.md) 开始。
-- 想比较多组条件：阅读 [队列评测](queues.zh-CN.md) 和 [参考输入](reference-protocol.zh-CN.md)。
+- 想比较多组条件：阅读 [队列评测](queues.zh-CN.md) 和 [上下文学习指南](reference-protocol.zh-CN.md)。
 - 想修改实现：阅读 [架构](architecture.zh-CN.md) 和 [贡献指南](../CONTRIBUTING.zh-CN.md)。

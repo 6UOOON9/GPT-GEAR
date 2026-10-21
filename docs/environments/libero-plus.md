@@ -27,6 +27,6 @@ Each episode generates its own `libero_config/config.yaml`, selected through the
 
 ## References and evaluation configurations
 
-Reference trajectories use `libero-codex-trajectory-v1`, with `robot0_grip_site` as the control point. See the [reference protocol](../reference-protocol.md#libero-plus) for video views and action fields, and the [video-to-text guide](../reference-format.md) for text generation.
+Reference trajectories use `libero-codex-trajectory-v1`, with `robot0_grip_site` as the control point. See the [in-context learning guide](../reference-protocol.md#libero-plus) for video views and action fields, and the [video-to-text guide](../reference-format.md) for text generation.
 
 The [single-task configuration](../../configs/single_task/libero_plus.json) uses `libero_spatial/0`. The [queue configuration](../../configs/queues/libero_plus.json) contains 50 variants of 5 base tasks, each with seed 0, init state 0, 600 native steps, and no references. See its `episodes` for complete task IDs and execution order. For execution and resuming, see the [queue guide](../queues.md).

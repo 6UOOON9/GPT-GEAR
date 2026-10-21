@@ -234,6 +234,8 @@ gpt-gear run libero_spatial/0 outputs/libero_first_run \
 
 该命令会启动仿真并调用模型。输出目录必须尚不存在，无需提前创建。指定模型时，在命令末尾加 `--codex-model 模型名`。
 
+想为这个任务加入示范文字、视频或轨迹，可以继续阅读 🎬 [上下文学习（ICL）指南](docs/reference-protocol.zh-CN.md)。
+
 <a id="3-查看结果"></a>
 <a id="3-inspect-the-results"></a>
 
@@ -267,14 +269,15 @@ gpt-gear summarize outputs/gr1_24x20
 
 <a id="使用参考示范"></a>
 <a id="reference-demonstrations"></a>
+<a id="in-context-learning"></a>
 
-## 🎬 使用参考示范
+## 🎬 具身上下文学习
 
-参考输入是可选的。你可以单独提供文字或视频，也可以组合文字、视频和轨迹。你可以自由搭配多种选择，探索更多可能。Astra会参考已有操作过程，并结合当前场景进行决策。
+具身上下文学习（Embodied In-Context Learning，ICL）将示范放入模型上下文，帮助 Astra 结合当前场景进行决策。示范是可选的：可以单独提供文字或视频，也可以搭配动作轨迹，比较不同输入组合的效果。
 
-所有环境的参考文件都需在评测前准备。本项目提供从已有视频到文字步骤的生成、输入校验和读取。不下载数据、导出视频或生成轨迹（这些需要你从仿真环境里面自行导出）。
+所有环境的示范文件都需在评测前准备。本项目提供从已有视频到文字步骤的生成、输入校验和示范读取。不下载数据、导出视频或生成轨迹（这些需要你从仿真环境里面自行导出）。
 
-- 🎬 [将参考示范用于评测](docs/reference-protocol.zh-CN.md)
+- 🎬 [在评测中使用上下文学习](docs/reference-protocol.zh-CN.md)
 - 🎬 [根据已有视频生成文字步骤（可选）](docs/reference-format.zh-CN.md)
 
 <a id="文档与代码"></a>
@@ -284,7 +287,7 @@ gpt-gear summarize outputs/gr1_24x20
 
 | 想了解的内容 | 入口 |
 |---|---|
-| 从安装到第一个任务 | 🔧 [安装指南](docs/installation.zh-CN.md) → 🚀 [环境运行指南](docs/running.zh-CN.md) → 📊 [查看结果](docs/results.zh-CN.md) |
+| 从安装到第一个任务 | 🔧 [安装指南](docs/installation.zh-CN.md) → 🚀 [环境运行指南](docs/running.zh-CN.md) → 📊 [查看结果](docs/results.zh-CN.md) → 🎬 [上下文学习（可选）](docs/reference-protocol.zh-CN.md) |
 | 多任务评测与结果分析 | 🧪 [队列指南](docs/queues.zh-CN.md) → 📊 [结果与常见问题](docs/results.zh-CN.md) |
 | 各环境的资产、观测与评测选项 | 📚 [各环境配置指南](docs/README.zh-CN.md#环境配置) |
 | 控制、协议与环境适配 | 🏗️ [架构说明](docs/architecture.zh-CN.md) |
@@ -302,7 +305,6 @@ src/
 configs/
 ├── queues/          # 评测复现与条件对比队列
 └── single_task/     # 单任务测试，每份 1 个 episode
-tests/               # 离线回归测试
 docs/                # 通用使用与开发文档
 └── environments/    # 各仿真环境的配置指南
 ```

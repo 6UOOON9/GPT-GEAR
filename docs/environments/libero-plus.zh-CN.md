@@ -27,6 +27,6 @@ LIBERO-plus 提供单臂操作、双视角 RGB 和多种任务变体。本页说
 
 ## 参考与评测配置
 
-参考轨迹格式为 `libero-codex-trajectory-v1`，控制点为 `robot0_grip_site`。视频视角和动作字段见 [参考协议](../reference-protocol.zh-CN.md#libero-plus)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
+参考轨迹格式为 `libero-codex-trajectory-v1`，控制点为 `robot0_grip_site`。视频视角和动作字段见 [上下文学习指南](../reference-protocol.zh-CN.md#libero-plus)，文字生成见 [视频文字教程](../reference-format.zh-CN.md)。
 
 [单任务配置](../../configs/single_task/libero_plus.json) 使用 `libero_spatial/0`。[队列配置](../../configs/queues/libero_plus.json) 包含 5 个基础任务的 50 个变体，每项使用 seed 0、init state 0 和 600 个原生步，不带参考；完整任务标识与执行顺序以配置中的 `episodes` 为准。执行与续跑步骤见 [队列指南](../queues.zh-CN.md)。
