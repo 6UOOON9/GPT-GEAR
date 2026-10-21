@@ -37,7 +37,7 @@ Our work explores **depth perception, embodied in-context learning, and tactile 
 
 ## News
 
-- ✨ **2026/10/21** — Our paper and project page are now available! Visit the project page for more demos, explore our method and results, and share your thoughts and feedback.
+- ✨ **2026/10/21** — Our paper and project page are now available! Visit the [project page](https://6uooon9.github.io/GPT-GEAR/) for more demos, explore our method and results, and share your thoughts and feedback.
 - 📄 **2026/10/20** — **Research report**: [*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](assets/Analysis_of_Astra_in_Robotic_Manipulation.pdf). We share GPT-6 Astra's capabilities and limitations in robotic manipulation, along with questions for further exploration.
 
 <a id="overview"></a>
