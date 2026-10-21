@@ -37,7 +37,7 @@
 
 ## News
 
-- ✨ **2026/10/21** — 论文与项目主页已开放！更多demo请参考我们的主页，也欢迎了解我们的方法和实验结果，交流想法与反馈。
+- ✨ **2026/10/21** — 论文与项目主页已开放！更多demo请参考我们的[主页](https://6UOOON9.github.io/GPT-GEAR)，也欢迎了解我们的方法和实验结果，交流想法与反馈。
 - 📄 **2026/10/20** — **论文报告**：[*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](assets/Analysis_of_Astra_in_Robotic_Manipulation.pdf)。我们分享了 GPT-6 Astra 在机器人操作中的能力、局限，以及值得继续探索的问题。
 
 <a id="overview"></a>
