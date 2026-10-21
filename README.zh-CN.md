@@ -5,8 +5,8 @@
 <p align="center">🌐 <a href="README.md">English</a> | <strong>🌐 简体中文</strong></p>
 
 <p align="center">
-  <strong>探索视觉语言模型的具身能力与闭环机器人控制</strong><br>
-  <sub>感知 · 推理 · 行动 · 验证</sub>
+  <strong>Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning</strong><br>
+  <sub>探索视觉语言模型的具身能力与闭环机器人控制</sub>
 </p>
 
 <p align="center">

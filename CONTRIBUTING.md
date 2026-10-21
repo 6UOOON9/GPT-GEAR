@@ -38,7 +38,7 @@ Continue using the simulator's original interpreter. Shared code should remain c
 
 ## Running checks
 
-Offline tests do not require a GPU, simulation assets, or model calls:
+If you have the local `tests/` directory, offline tests do not require a GPU, simulation assets, or model calls:
 
 ```bash
 python -m pytest -q
@@ -47,7 +47,7 @@ gpt-gear reference annotate --help
 gpt-gear reference prepare --help
 ```
 
-CI runs the full CPU test suite on Python 3.11 / 3.12 and checks the simulation core on Python 3.10. Tests cover real HTTP / STDIO MCP communication, mock hosts, control contracts, reference media, and queues. Passing offline tests does not replace validation in a real simulator.
+The `tests/` directory is kept locally and excluded from Git. This repository does not configure automated GitHub Actions tests. On a fresh clone, use the CLI help commands above to check startup. Passing offline tests does not replace validation in a real simulator.
 
 For documentation-only changes, check links, code blocks, command options, and example configurations against the current implementation. For control or adapter changes, add tests that reproduce the behavior difference and record which checks actually ran.
 

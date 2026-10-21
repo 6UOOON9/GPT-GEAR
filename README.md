@@ -5,8 +5,8 @@
 <p align="center"><strong>🌐 English</strong> | 🌐 <a href="README.zh-CN.md">简体中文</a></p>
 
 <p align="center">
-  <strong>Exploring embodied capabilities and closed-loop robot control with vision-language models</strong><br>
-  <sub>Perceive · Reason · Act · Verify</sub>
+  <strong>Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning</strong><br>
+  <sub>Exploring embodied capabilities and closed-loop robot control with vision-language models</sub>
 </p>
 
 <p align="center">

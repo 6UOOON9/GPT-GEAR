@@ -38,7 +38,7 @@ source .venvs/codex-mcp/bin/activate
 
 ## 运行检查
 
-离线测试不需要 GPU、仿真资产或模型调用：
+如果本地已有 `tests/` 目录，可以运行离线测试，无需 GPU、仿真资产或模型调用：
 
 ```bash
 python -m pytest -q
@@ -47,7 +47,7 @@ gpt-gear reference annotate --help
 gpt-gear reference prepare --help
 ```
 
-CI 在 Python 3.11 / 3.12 上运行完整 CPU 测试，并在 Python 3.10 上检查仿真核心。测试覆盖真实 HTTP / STDIO MCP 通信、模拟宿主、控制契约、参考媒体和队列等；离线通过不替代真实仿真验证。
+`tests/` 目录仅保留在本地，不纳入 Git。仓库不配置 GitHub Actions 自动测试。新克隆的仓库可使用上述命令行帮助命令检查启动是否正常；离线通过不替代真实仿真验证。
 
 仅修改文档时，重点检查链接、代码块、命令参数和示例配置与当前实现一致。修改控制或环境适配时，增加能复现行为差异的测试，并记录实际运行过的检查。
 
