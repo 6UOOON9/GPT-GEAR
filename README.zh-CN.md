@@ -12,9 +12,9 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
   <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
-  <a href="https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"><img src="https://img.shields.io/badge/Hugging_Face-LIBERO--GeoMotion-FFD21E?style=flat-square&logo=huggingface" alt="LIBERO-GeoMotion on Hugging Face"></a>
-  <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
-  <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
+  <a href="https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"><img src="https://img.shields.io/badge/Dataset-LIBERO--GeoMotion-FFD21E?style=flat-square&logo=huggingface" alt="LIBERO-GeoMotion on Hugging Face"></a>
+  <a href="#results"><img src="https://img.shields.io/badge/Eval-Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
+  <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-Guide-D78337?style=flat-square" alt="Getting started documentation"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
 </p>
 
@@ -33,11 +33,13 @@
 
 **让通用视觉语言模型直接操控机器人，会发生什么？它的表现真的有我们期待的那么好吗？**
 
-欢迎来到 **GPT-GEAR**！我们提供了一个**支持多个仿真环境的机器人控制与评测框架**，把模型交互、参考示范、闭环执行和批量评测串在一起，让你更方便地探索通用模型的机器人操作能力。在这里，模型通过相机观察场景、参考示范学习操作，再亲自尝试，并根据机器人的反馈调整下一步。从理解一句指令到完成一次抓取，我们希望看看：**模型已经能做到什么，又会在哪里遇到困难？**
+欢迎来到 **GPT-GEAR**！我们提供了一个**支持多个仿真环境的机器人控制与评测框架**，把模型交互、参考示范、闭环执行和批量评测串在一起，让你更方便地探索通用模型的机器人操作能力。
+
+在这里，模型通过相机观察场景、参考示范学习操作，再亲自尝试，并根据机器人的反馈调整下一步。从理解一句指令到完成一次抓取，我们希望看看：**模型已经能做到什么，又会在哪里遇到困难？**
 
 这项工作从**深度感知、具身上下文学习和触觉理解**出发，在 **LIBERO-plus、RoboTwin、UniVTAC、RoboCasa GR1 和 RoboDojo** 五个环境中探索模型的具身能力。我们还发布了 **[LIBERO-GeoMotion](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)**，包含 9 类几何约束操作任务、36 个场景，用于进一步探索模型的空间理解与动作协调能力。
 
-欢迎阅读论文、浏览项目主页，也欢迎用这里的代码试试自己的任务，和我们一起探索通用模型走向物理世界的可能性！
+欢迎阅读[论文](https://arxiv.org/abs/2610.28259)、浏览[项目主页](https://6uooon9.github.io/GPT-GEAR/)，也欢迎用这里的代码试试自己的任务，和我们一起探索通用模型走向物理世界的可能性！
 
 <a id="news"></a>
 
@@ -74,7 +76,7 @@
 
 ## 🧠 具身能力分析
 
-**想让机器人把事情做好，先得看清空间、学会借鉴，也要读懂接触时的反馈。** 我们从这三个角度出发，看看模型能否估计与利用深度、把示范里的经验用到新场景，并根据触觉信息调整动作。下面这张图串起了我们最关心的三个问题。详细分析欢迎参考我们的[论文](https://arxiv.org/abs/2610.28259)。
+**想让机器人把事情做好，先得看清空间、学会借鉴，也要读懂接触时的反馈。** 我们从这三个角度出发，看看模型能否估计与利用深度、把示范里的经验用到新场景，并根据触觉信息调整动作。下面这张图串起了我们最关心的三个问题。详细分析欢迎参考我们的📄 [论文](https://arxiv.org/abs/2610.28259)。
 
 <p align="center">
   <a href="assets/readme/embodied-capabilities.png">
@@ -90,7 +92,7 @@
 
 ## 📊 评测结果
 
-**同一个模型，面对不同的机器人操作挑战，会有怎样的表现？** 我们在五个基准上进行了评测。下图中的红色标记展示了 **GPT-6 Astra** 的表现：既能看到它的潜力，也能看到仍待跨越的差距。
+**同一个模型，面对不同的机器人操作挑战，会有怎样的表现？** 我们在五个基准上进行了评测。下图展示了 **GPT-6 Astra** 的表现：既能看到它的潜力，也能看到仍待跨越的差距。
 
 <p align="center">
   <a href="assets/readme/results.png">

@@ -12,9 +12,9 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
   <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
-  <a href="https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"><img src="https://img.shields.io/badge/Hugging_Face-LIBERO--GeoMotion-FFD21E?style=flat-square&logo=huggingface" alt="LIBERO-GeoMotion on Hugging Face"></a>
-  <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
-  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
+  <a href="https://huggingface.co/datasets/uooon/LIBERO-GeoMotion"><img src="https://img.shields.io/badge/Dataset-LIBERO--GeoMotion-FFD21E?style=flat-square&logo=huggingface" alt="LIBERO-GeoMotion on Hugging Face"></a>
+  <a href="#results"><img src="https://img.shields.io/badge/Eval-Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
+  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Guide-D78337?style=flat-square" alt="Getting started documentation"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
 </p>
 
@@ -33,11 +33,13 @@
 
 **What happens when a general-purpose vision-language model directly takes control of a robot? Does it really perform as well as we expect?**
 
-Welcome to **GPT-GEAR**! We provide a **robot control and evaluation framework spanning multiple simulation environments**, bringing model interaction, reference demonstrations, closed-loop execution, and batch evaluation together so you can explore what general-purpose models can do with robots. Here, a model observes a scene through cameras, learns from demonstrations, tries an action, and adjusts its next move using the robot's feedback. From understanding an instruction to completing a grasp, we ask: **what can the model already do, and where does it still struggle?**
+Welcome to **GPT-GEAR**! We provide a **robot control and evaluation framework spanning multiple simulation environments**, bringing model interaction, reference demonstrations, closed-loop execution, and batch evaluation together so you can explore what general-purpose models can do with robots.
+
+Here, a model observes a scene through cameras, learns from demonstrations, tries an action, and adjusts its next move using the robot's feedback. From understanding an instruction to completing a grasp, we ask: **what can the model already do, and where does it still struggle?**
 
 Our work explores **depth perception, embodied in-context learning, and tactile understanding** across five environments: **LIBERO-plus, RoboTwin, UniVTAC, RoboCasa GR1, and RoboDojo**. We also release **[LIBERO-GeoMotion](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)**, with 36 scenes across 9 geometry-constrained manipulation task families, to further explore spatial understanding and motion coordination.
 
-Take a look at the paper and project page, try your own tasks with the code, and join us in exploring how general-purpose models can interact with the physical world!
+Take a look at the [paper](https://arxiv.org/abs/2610.28259) and [project page](https://6uooon9.github.io/GPT-GEAR/), try your own tasks with the code, and join us in exploring how general-purpose models can interact with the physical world!
 
 <a id="news"></a>
 
@@ -72,7 +74,7 @@ This loop connects reasoning with execution and makes each attempt an opportunit
 
 ## 🧠 Embodied Capabilities
 
-**Getting a robot to complete a task starts with understanding space, learning from examples, and making sense of contact.** We explore these three abilities: can the model estimate and use depth, apply lessons from a demonstration to a new scene, and adjust its actions using tactile feedback? The figure below brings these questions together. For a detailed analysis, see our [paper](https://arxiv.org/abs/2610.28259).
+**Getting a robot to complete a task starts with understanding space, learning from examples, and making sense of contact.** We explore these three abilities: can the model estimate and use depth, apply lessons from a demonstration to a new scene, and adjust its actions using tactile feedback? The figure below brings these questions together. For a detailed analysis, see our 📄 [paper](https://arxiv.org/abs/2610.28259).
 
 <p align="center">
   <a href="assets/readme/embodied-capabilities.png">
@@ -88,7 +90,7 @@ This loop connects reasoning with execution and makes each attempt an opportunit
 
 ## 📊 Results
 
-**How does the same model handle different robotic manipulation challenges?** We evaluate it on five benchmarks. The red marks below show **GPT-6 Astra**'s performance, highlighting both its potential and the gaps that remain.
+**How does the same model handle different robotic manipulation challenges?** We evaluate it on five benchmarks. The figure below shows **GPT-6 Astra**'s performance, highlighting both its potential and the gaps that remain.
 
 <p align="center">
   <a href="assets/readme/results.png">
