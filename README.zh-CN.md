@@ -2,7 +2,7 @@
   <img src="assets/readme/gpt-gear-banner.png" width="100%" alt="GPT-GEAR — GPT-Generalist End-effector Action Reasoning">
 </h1>
 
-<p align="center"><a href="README.md">🌐 English</a> | <strong>🌐 简体中文</strong></p>
+<p align="center">🌐 <a href="README.md">English</a> | <strong>🌐 简体中文</strong></p>
 
 <p align="center">
   <strong>探索视觉语言模型的具身能力与闭环机器人控制</strong><br>
@@ -10,21 +10,21 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2610.28259">📄 <img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
-  <a href="https://6uooon9.github.io/GPT-GEAR/">🌐 <img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
-  <a href="#results">📊 <img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
-  <a href="docs/README.zh-CN.md">📚 <img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
-  <a href="LICENSE">⚖️ <img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
+  📄 <a href="https://arxiv.org/abs/2610.28259"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Read the paper on arXiv"></a>
+  🌐 <a href="https://6uooon9.github.io/GPT-GEAR/"><img src="https://img.shields.io/badge/Project-Page-357ABD?style=flat-square" alt="GPT-GEAR project page"></a>
+  📊 <a href="#results"><img src="https://img.shields.io/badge/Evaluation-5_Benchmarks-459B6C?style=flat-square" alt="Evaluation on five benchmarks"></a>
+  📚 <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-Getting_Started-D78337?style=flat-square" alt="Getting started documentation"></a>
+  ⚖️ <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_Apache--2.0-64748B?style=flat-square" alt="MIT and Apache-2.0 licenses"></a>
 </p>
 
 <p align="center">
-  <a href="#news">📰 最新动态</a> &nbsp;·&nbsp;
-  <a href="#overview">🧭 项目概览</a> &nbsp;·&nbsp;
-  <a href="#embodied-capabilities">🧠 具身能力分析</a> &nbsp;·&nbsp;
-  <a href="#results">📊 评测结果</a> &nbsp;·&nbsp;
-  <a href="#capability-profile">🤖 能力画像</a> &nbsp;·&nbsp;
-  <a href="#快速开始">🚀 快速开始</a> &nbsp;·&nbsp;
-  <a href="#documentation-and-code">📚 文档与代码</a>
+  📰 <a href="#news">最新动态</a> &nbsp;·&nbsp;
+  🧭 <a href="#overview">项目概览</a> &nbsp;·&nbsp;
+  🧠 <a href="#embodied-capabilities">具身能力分析</a> &nbsp;·&nbsp;
+  📊 <a href="#results">评测结果</a> &nbsp;·&nbsp;
+  🤖 <a href="#capability-profile">能力画像</a> &nbsp;·&nbsp;
+  🚀 <a href="#快速开始">快速开始</a> &nbsp;·&nbsp;
+  📚 <a href="#documentation-and-code">文档与代码</a>
 </p>
 
 ---
@@ -39,8 +39,8 @@
 
 ## 📰 最新动态
 
-- ✨ **2026/10/21** — [📄 论文](https://arxiv.org/abs/2610.28259)与[🌐 项目主页](https://6uooon9.github.io/GPT-GEAR/)已开放！更多demo请参考我们的[主页](https://6uooon9.github.io/GPT-GEAR/)，也欢迎了解我们的方法和实验结果，交流想法与反馈。
-- 📄 **2026/10/20** — **论文报告**：[📄 *Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](https://arxiv.org/abs/2610.28259)。我们分享了 GPT-6 Astra 在机器人操作中的能力、局限，以及值得继续探索的问题。
+- ✨ **2026/10/21** — 📄 [论文](https://arxiv.org/abs/2610.28259)与🌐 [项目主页](https://6uooon9.github.io/GPT-GEAR/)已开放！更多demo请参考我们的[主页](https://6uooon9.github.io/GPT-GEAR/)，也欢迎了解我们的方法和实验结果，交流想法与反馈。
+- 📄 **2026/10/20** — **论文报告**：📄 [*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](https://arxiv.org/abs/2610.28259)。我们分享了 GPT-6 Astra 在机器人操作中的能力、局限，以及值得继续探索的问题。
 
 <a id="overview"></a>
 <a id="method"></a>
@@ -57,7 +57,7 @@
 </p>
 
 <p align="center">
-  <sub>GPT-GEAR 项目概览 · 观察、参考、行动与反馈，串起模型和机器人的交互。<a href="assets/readme/method.png">🖼️ 查看高清图 ↗</a></sub>
+  <sub>GPT-GEAR 项目概览 · 观察、参考、行动与反馈，串起模型和机器人的交互。🖼️ <a href="assets/readme/method.png">查看高清图 ↗</a></sub>
 </p>
 
 <a id="embodied-capabilities"></a>
@@ -75,7 +75,7 @@
 </p>
 
 <p align="center">
-  <sub>深度感知 · 具身上下文学习 · 触觉理解。<a href="assets/readme/embodied-capabilities.png">🖼️ 查看高清图 ↗</a></sub>
+  <sub>深度感知 · 具身上下文学习 · 触觉理解。🖼️ <a href="assets/readme/embodied-capabilities.png">查看高清图 ↗</a></sub>
 </p>
 
 <a id="results"></a>
@@ -91,7 +91,7 @@
 </p>
 
 <p align="center">
-  <sub>五个机器人操作基准上的表现。<a href="assets/readme/results.png">🖼️ 查看高清图 ↗</a></sub>
+  <sub>五个机器人操作基准上的表现。🖼️ <a href="assets/readme/results.png">查看高清图 ↗</a></sub>
 </p>
 
 <a id="capability-profile"></a>
@@ -100,7 +100,7 @@
 
 ## 🤖 能力画像
 
-**从仿真中的分数，到真实机器人的一次抓取，我们想把模型的表现看得更完整一些。** 下面的雷达图汇总了基准表现与不同能力维度，右侧则展示了真实机器人上的操作，以及零样本与上下文学习（ICL）的对比。欢迎到我们的[🌐 项目主页](https://6uooon9.github.io/GPT-GEAR/)看看更多 demo，一起观察机器人实际操作时的表现！
+**从仿真中的分数，到真实机器人的一次抓取，我们想把模型的表现看得更完整一些。** 下面的雷达图汇总了基准表现与不同能力维度，右侧则展示了真实机器人上的操作，以及零样本与上下文学习（ICL）的对比。欢迎到我们的🌐 [项目主页](https://6uooon9.github.io/GPT-GEAR/)看看更多 demo，一起观察机器人实际操作时的表现！
 
 <p align="center">
   <a href="assets/readme/capability-profile-real-world.png">
@@ -109,10 +109,10 @@
 </p>
 
 <p align="center">
-  <sub>基准表现 · 能力画像 · 真机验证。<a href="assets/readme/capability-profile-real-world.png">🖼️ 查看高清图 ↗</a></sub>
+  <sub>基准表现 · 能力画像 · 真机验证。🖼️ <a href="assets/readme/capability-profile-real-world.png">查看高清图 ↗</a></sub>
 </p>
 
-更多实验与分析可以在顶部的论文入口中找到。想亲手跑一跑？从下面的环境介绍和[🚀 快速开始](#快速开始)出发，欢迎分享你的发现！
+更多实验与分析可以在顶部的论文入口中找到。想亲手跑一跑？从下面的环境介绍和🚀 [快速开始](#快速开始)出发，欢迎分享你的发现！
 
 ---
 
@@ -123,20 +123,20 @@
 
 | 环境 | 任务示例 | 默认输入 | 使用指南 |
 |---|---|---|---|
-| RoboDojo | `align_blocks` | 三视角 RGB、双臂状态 | [📚 环境配置](docs/environments/robodojo.zh-CN.md) |
-| LIBERO-plus | `libero_spatial/0` | 双视角 RGB、单臂状态 | [📚 环境配置](docs/environments/libero-plus.zh-CN.md) |
-| RoboCasa GR1 | `PnPCupToDrawerClose` | RGB、双臂状态、测量深度 | [📚 环境配置](docs/environments/robocasa-gr1.zh-CN.md) |
-| UniVTAC | `insert_HDMI` | RGB、机器人状态、触觉合力 | [📚 环境配置](docs/environments/univtac.zh-CN.md) |
-| RoboTwin | `adjust_bottle` | 三视角 RGB、双臂状态 | [📚 环境配置](docs/environments/robotwin.zh-CN.md) |
+| RoboDojo | `align_blocks` | 三视角 RGB、双臂状态 | 📚 [环境配置](docs/environments/robodojo.zh-CN.md) |
+| LIBERO-plus | `libero_spatial/0` | 双视角 RGB、单臂状态 | 📚 [环境配置](docs/environments/libero-plus.zh-CN.md) |
+| RoboCasa GR1 | `PnPCupToDrawerClose` | RGB、双臂状态、测量深度 | 📚 [环境配置](docs/environments/robocasa-gr1.zh-CN.md) |
+| UniVTAC | `insert_HDMI` | RGB、机器人状态、触觉合力 | 📚 [环境配置](docs/environments/univtac.zh-CN.md) |
+| RoboTwin | `adjust_bottle` | 三视角 RGB、双臂状态 | 📚 [环境配置](docs/environments/robotwin.zh-CN.md) |
 
-依赖和资产要求见 [🔧 安装指南](docs/installation.zh-CN.md)。
+依赖和资产要求见 🔧 [安装指南](docs/installation.zh-CN.md)。
 
 <a id="安装"></a>
 <a id="installation"></a>
 
 ## 🔧 安装
 
-运行任务前，先安装你要使用的仿真环境、准备好资产，并跑通其原生示例；无需安装全部五个环境。[🔧 上游仓库与安装入口](docs/installation.zh-CN.md#先安装所需的仿真环境)汇总在安装指南中。下面的命令只安装 GPT-GEAR 工具。
+运行任务前，先安装你要使用的仿真环境、准备好资产，并跑通其原生示例；无需安装全部五个环境。🔧 [上游仓库与安装入口](docs/installation.zh-CN.md#先安装所需的仿真环境)汇总在安装指南中。下面的命令只安装 GPT-GEAR 工具。
 
 建议在 Linux 上使用独立的 Python 3.11+ 工具环境，以下以 Python 3.12 为例。在本仓库根目录执行：
 
@@ -154,14 +154,14 @@ gpt-gear --help
 - 至少一个已能运行的仿真环境，以及它自己的 Python 解释器、资产和渲染依赖。
 - 录像或视频参考所需的 FFmpeg；视频参考还需要 FFprobe。
 
-仿真 Python 与工具 Python 分开使用。安装本项目不会安装仿真器或下载资产，完整准备步骤见 [🔧 安装指南](docs/installation.zh-CN.md)。
+仿真 Python 与工具 Python 分开使用。安装本项目不会安装仿真器或下载资产，完整准备步骤见 🔧 [安装指南](docs/installation.zh-CN.md)。
 
 <a id="快速开始"></a>
 <a id="quick-start"></a>
 
 ## 🚀 快速开始
 
-以下以已准备好的 LIBERO-plus 为例。所有命令在本仓库根目录执行，将 `/path/to/...` 替换为本机路径；其他环境的命令见 [🚀 环境运行指南](docs/running.zh-CN.md)。
+以下以已准备好的 LIBERO-plus 为例。所有命令在本仓库根目录执行，将 `/path/to/...` 替换为本机路径；其他环境的命令见 🚀 [环境运行指南](docs/running.zh-CN.md)。
 
 <a id="1-检查环境"></a>
 <a id="1-check-the-environment"></a>
@@ -200,16 +200,16 @@ gpt-gear run libero_spatial/0 outputs/libero_first_run \
 gpt-gear summarize outputs/libero_first_run
 ```
 
-`result.json` 保存官方结果，`episode.mp4` 保存录像，`observations/` 保存观测。结果分类与排障方法见 [📊 结果与常见问题](docs/results.zh-CN.md)。
+`result.json` 保存官方结果，`episode.mp4` 保存录像，`observations/` 保存观测。结果分类与排障方法见 📊 [结果与常见问题](docs/results.zh-CN.md)。
 
 <a id="批量评测"></a>
 <a id="batch-evaluation"></a>
 
 ## 🧪 批量评测
 
-配置按用途分为 [🧪 `configs/queues/`](configs/queues/)（复现评测流程与条件对比）和 [⚙️ `configs/single_task/`](configs/single_task/)（指定单个任务，每份只跑 1 个 episode）。完整清单见[⚙️ 配置说明](configs/README.zh-CN.md)。
+配置按用途分为 🧪 [`configs/queues/`](configs/queues/)（复现评测流程与条件对比）和 ⚙️ [`configs/single_task/`](configs/single_task/)（指定单个任务，每份只跑 1 个 episode）。完整清单见⚙️ [配置说明](configs/README.zh-CN.md)。
 
-下面以 RoboCasa GR1 的 24 任务 × 20 seed 队列为例。先将[🧪 配置](configs/queues/robocasa_gr1.json)中的环境路径改为本机路径，再检查计划并执行：
+下面以 RoboCasa GR1 的 24 任务 × 20 seed 队列为例。先将🧪 [配置](configs/queues/robocasa_gr1.json)中的环境路径改为本机路径，再检查计划并执行：
 
 ```bash
 # 打印计划，不启动仿真或模型。
@@ -220,7 +220,7 @@ gpt-gear queue configs/queues/robocasa_gr1.json outputs/gr1_24x20 --run
 gpt-gear summarize outputs/gr1_24x20
 ```
 
-一个队列可包含多个任务、seed 或环境。配置格式、续跑与重试见 [🧪 队列指南](docs/queues.zh-CN.md)。
+一个队列可包含多个任务、seed 或环境。配置格式、续跑与重试见 🧪 [队列指南](docs/queues.zh-CN.md)。
 
 <a id="使用参考示范"></a>
 <a id="reference-demonstrations"></a>
@@ -231,8 +231,8 @@ gpt-gear summarize outputs/gr1_24x20
 
 所有环境的参考文件都需在评测前准备。本项目提供从已有视频到文字步骤的生成、输入校验和读取。不下载数据、导出视频或生成轨迹（这些需要你从仿真环境里面自行导出）。
 
-- [🎬 将参考示范用于评测](docs/reference-protocol.zh-CN.md)
-- [🎬 根据已有视频生成文字步骤（可选）](docs/reference-format.zh-CN.md)
+- 🎬 [将参考示范用于评测](docs/reference-protocol.zh-CN.md)
+- 🎬 [根据已有视频生成文字步骤（可选）](docs/reference-format.zh-CN.md)
 
 <a id="文档与代码"></a>
 <a id="documentation-and-code"></a>
@@ -241,11 +241,11 @@ gpt-gear summarize outputs/gr1_24x20
 
 | 想了解的内容 | 入口 |
 |---|---|
-| 从安装到第一个任务 | [🔧 安装指南](docs/installation.zh-CN.md) → [🚀 环境运行指南](docs/running.zh-CN.md) → [📊 查看结果](docs/results.zh-CN.md) |
-| 多任务评测与结果分析 | [🧪 队列指南](docs/queues.zh-CN.md) → [📊 结果与常见问题](docs/results.zh-CN.md) |
-| 各环境的资产、观测与评测选项 | [📚 五个环境的配置指南](docs/README.zh-CN.md#环境配置) |
-| 控制、协议与环境适配 | [🏗️ 架构说明](docs/architecture.zh-CN.md) |
-| 测试、问题反馈与贡献 | [💬 贡献指南](CONTRIBUTING.zh-CN.md) |
+| 从安装到第一个任务 | 🔧 [安装指南](docs/installation.zh-CN.md) → 🚀 [环境运行指南](docs/running.zh-CN.md) → 📊 [查看结果](docs/results.zh-CN.md) |
+| 多任务评测与结果分析 | 🧪 [队列指南](docs/queues.zh-CN.md) → 📊 [结果与常见问题](docs/results.zh-CN.md) |
+| 各环境的资产、观测与评测选项 | 📚 [五个环境的配置指南](docs/README.zh-CN.md#环境配置) |
+| 控制、协议与环境适配 | 🏗️ [架构说明](docs/architecture.zh-CN.md) |
+| 测试、问题反馈与贡献 | 💬 [贡献指南](CONTRIBUTING.zh-CN.md) |
 
 ```text
 src/
@@ -269,11 +269,11 @@ docs/                # 通用使用与开发文档
 
 ## 💬 参与社区
 
-欢迎通过仓库 Issues 分享问题、复现记录和新环境需求，也欢迎提交文档改进、测试或环境适配。提交前请参考 [💬 贡献指南](CONTRIBUTING.zh-CN.md)，说明运行环境、复现步骤和验证范围。
+欢迎通过仓库 Issues 分享问题、复现记录和新环境需求，也欢迎提交文档改进、测试或环境适配。提交前请参考 💬 [贡献指南](CONTRIBUTING.zh-CN.md)，说明运行环境、复现步骤和验证范围。
 
 <a id="许可与致谢"></a>
 <a id="license-and-acknowledgments"></a>
 
 ## ⚖️ 许可与致谢
 
-本项目复用了 [🌐 RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo)、[🌐 RPent](https://github.com/RLinf/RPent) 以及相关环境适配中的实现。不同来源文件保留相应的 MIT 或 Apache-2.0 许可与署名，详见 [⚖️ LICENSE](LICENSE)、[⚖️ NOTICE](NOTICE) 和 [⚖️ 许可证目录](licenses/)。仿真环境、数据集和资产需另行准备。
+本项目复用了 🌐 [RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo)、🌐 [RPent](https://github.com/RLinf/RPent) 以及相关环境适配中的实现。不同来源文件保留相应的 MIT 或 Apache-2.0 许可与署名，详见 ⚖️ [LICENSE](LICENSE)、⚖️ [NOTICE](NOTICE) 和 ⚖️ [许可证目录](licenses/)。仿真环境、数据集和资产需另行准备。
