@@ -288,9 +288,8 @@ src/
 ├── control/         # Robot control and pose deltas
 ├── protocol/        # MCP tools, HTTP communication, and feedback
 ├── perception/      # Camera calibration, depth, and observation modalities
-├── environments/    # Adapters for supported simulation environments
-├── demonstrations/  # Reference processing and video-to-text generation
-└── prompts/         # Shared model instructions
+├── environments/    # Environment adapters and their prompts/ assets
+└── demonstrations/  # Reference processing and video-to-text generation
 configs/
 ├── queues/          # Evaluation reproduction and condition comparisons
 └── single_task/     # Single-task tests, one episode per file

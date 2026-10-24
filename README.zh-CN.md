@@ -299,9 +299,8 @@ src/
 ├── control/         # 机器人控制与位姿增量
 ├── protocol/        # MCP 工具、HTTP 通信与反馈
 ├── perception/      # 相机标定、深度与观测模态
-├── environments/    # 各仿真环境的适配
-├── demonstrations/  # 参考处理与视频文字生成
-└── prompts/         # 公共模型提示词
+├── environments/    # 各仿真环境的适配及其 prompts/ 资源
+└── demonstrations/  # 参考处理与视频文字生成
 configs/
 ├── queues/          # 评测复现与条件对比队列
 └── single_task/     # 单任务测试，每份 1 个 episode

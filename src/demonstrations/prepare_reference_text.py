@@ -165,7 +165,7 @@ def generate(video, output, *, model=None, timeout=CODEX_TIMEOUT, audit_director
             images.append(frames / image["file"])
             labels.append(dict(attachment=index, **label))
             inputs.append(dict(file="frames/" + image["file"], sha256=image["sha256"], **labels[-1]))
-        specific = files(environment_package(benchmark)).joinpath('prompts/reference_text.md')
+        specific = files(environment_package(benchmark)).joinpath('prompts/annotation.md')
         prompt = specific.read_text(encoding="utf-8")
         prompt += f"\n\nReference sampling rate: {fps} FPS."
         prompt += "\n\nImage attachment index (in order):\n" + json.dumps(labels, ensure_ascii=False)

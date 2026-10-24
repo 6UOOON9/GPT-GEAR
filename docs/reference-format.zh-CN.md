@@ -133,7 +133,6 @@ gpt-gear reference annotate --benchmark libero-plus references/libero/pick_up_bo
 }
 ```
 
-此流程沿用 LIBERO-plus 的视觉标注提示词，只使用视频图片和相机、时间标签，无需安装
 LIBERO 仿真环境或提供轨迹。两路视频分别抽帧，不要求逐帧同步。生成的 `steps.txt`
 用于评测时可以单独提供，也可搭配视频、轨迹或两者，见 [上下文学习指南](reference-protocol.zh-CN.md)。
 

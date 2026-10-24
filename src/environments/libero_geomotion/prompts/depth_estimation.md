@@ -17,6 +17,3 @@ The host validates observation identity, fields, finite numbers, image bounds an
 positive depth before motion; this validates syntax, NOT accuracy or object coverage.
 If the object cannot be estimated from current evidence, do not fabricate precision
 or issue an unsupported action; end safely subject to the existing safety rules.
-
-The declaration is for this ONE synchronized decision. All configured arm actions remain mandatory;
-object coverage follows the actual interaction, not a quota of one object per arm.

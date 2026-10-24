@@ -27,7 +27,7 @@ from execution.config import FINALIZE_GRACE, parse_args, positive_seconds
 from execution.artifacts import write_json
 from protocol.contracts import capabilities, validate_capabilities
 from protocol.feedback import DEFAULT_TOOL_OUTPUT_TOKEN_LIMIT, FEEDBACK_FORMAT_VERSION
-from prompts import evaluation_prompt
+from execution.prompts import evaluation_prompt
 from demonstrations.cache import (
     DIRECTORY, MANIFEST, TOOL as REFERENCE_TOOL,
     load_manifest, output_token_limit, prepare as prepare_reference,

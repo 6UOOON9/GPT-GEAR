@@ -122,7 +122,7 @@ With these names, `videos.json` is unnecessary. The wrist video's camera name is
 }
 ```
 
-This workflow uses LIBERO-plus's visual annotation prompt and only video images, camera labels, and time labels. It does not require the LIBERO simulator or trajectories. The two videos are sampled independently; frame-by-frame synchronization is not required. During evaluation, the generated `steps.txt` can be used alone or with video, trajectories, or both. See the [in-context learning guide](reference-protocol.md).
+It does not require the LIBERO simulator or trajectories. The two videos are sampled independently; frame-by-frame synchronization is not required. During evaluation, the generated `steps.txt` can be used alone or with video, trajectories, or both. See the [in-context learning guide](reference-protocol.md).
 
 ### LIBERO-GeoMotion: two-view video
 

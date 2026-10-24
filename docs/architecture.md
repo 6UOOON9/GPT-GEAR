@@ -85,7 +85,7 @@ Reference caches use `sim-reference-v1` and explicitly bind the benchmark. Traje
 
 Users prepare references for every environment before evaluation, including RoboDojo. Video export and trajectory generation happen outside this project; this project only provides optional text generation from existing videos. `run` / `queue --run` validate existing files, sample video frames, assemble caches, and deliver them. They do not call the text generator. `reference prepare` is an offline preflight entry point for that cache workflow, not a generator of demonstrations from raw data.
 
-All environments share `video_to_steps.py` and `prepare_reference_text.py` for text generation. Each environment's `reference.py` declares required cameras and an optional image limit, while `prompts/reference_text.md` defines visual annotation rules, including for RoboDojo. The generator loads the environment-specific prompt without falling back to a shared annotation prompt. The shared layer handles independent video sampling, read-only model calls, numbering validation, atomic publication, and auditing. RoboTwin retains three cameras and a total limit of 42 images. `--reference-fps` selects the sampling rate, defaulting to 1 FPS; the actual rate is written to the prompt, audit, and any existing provenance.
+All environments share `video_to_steps.py` and `prepare_reference_text.py` for text generation. Each environment's `reference.py` declares required cameras and an optional image limit, while `prompts/annotation.md` defines visual annotation rules, including for RoboDojo. The generator loads the environment-specific prompt without falling back to a shared annotation prompt. The shared layer handles independent video sampling, read-only model calls, numbering validation, atomic publication, and auditing. RoboTwin retains three cameras and a total limit of 42 images. `--reference-fps` selects the sampling rate, defaulting to 1 FPS; the actual rate is written to the prompt, audit, and any existing provenance.
 
 ## Failure handling and run isolation
 
@@ -135,7 +135,9 @@ Observations contain head_camera / left_camera / right_camera and proprioception
 
 ## Prompt assembly
 
-`prompts.evaluation_prompt` reads shared rules and environment-specific rules under `environments/<environment>/prompts/` through package resources. Every environment has its own `control.md`; GR1 also has `measured_depth.md`. Shared prompts do not enumerate other environments' gripper semantics. Depth-estimation declarations are constrained to the arms actually configured. Capability JSON and reference/depth switches are generated from episode configuration; the launcher saves the final text and computes its digest. Wheels include both shared and environment-specific prompts, so loading does not depend on the working directory.
+`execution.prompts.evaluation_prompt` reads the selected environment's assets under `environments/<environment>/prompts/` through package resources. Each environment independently maintains `control.md`, `depth_estimation.md`, `reference.md`, and `annotation.md`; GR1 also has `measured_depth.md`.
+
+Online prompts are composed in this order: control instructions, enabled depth-estimation instructions, enabled reference instructions, control/observation capability JSON, then enabled measured-depth instructions. `annotation.md` is used only by the offline text generator. The launcher saves the final text and computes its digest; wheels contain every environment's prompt assets, and reads do not depend on the working directory.
 
 ## Suggested order for adding an environment
 

@@ -107,7 +107,7 @@ UniVTAC 通过此回调管理模型动作预算，Session 不读写其内部计�
 离线预检入口，不负责从原始数据生成示范。
 
 所有环境的文字生成共用 `video_to_steps.py` 与 `prepare_reference_text.py`：
-环境 `reference.py` 声明所需相机和可选图片上限，各环境的 `prompts/reference_text.md`
+环境 `reference.py` 声明所需相机和可选图片上限，各环境的 `prompts/annotation.md`
 描述视觉标注规则（包括 RoboDojo），生成器按环境加载，不使用公共标注提示词回退；
 公共层负责独立视频采样、只读模型调用、编号格式校验、原子发布和审计。
 RoboTwin 保留三路相机与合计 42 张图片上限；采样率可由 `--reference-fps` 指定，
@@ -162,7 +162,9 @@ native 将每个活动臂的增量转为绝对 EE 位姿，保持未活动臂的
 
 ## Prompt 如何组装
 
-`prompts.evaluation_prompt` 使用包资源读取公共规则和 `environments/<环境>/prompts/` 下的专属规则。所有环境都有独立的 `control.md`；GR1 额外保存 `measured_depth.md`。公共 Prompt 不再列举其他环境的夹爪语义，深度估计声明按实际配置的机械臂集合约束。能力 JSON、参考开关和深度开关继续随回合配置生成；启动器保存最终文本并计算摘要。wheel 同时包含公共与环境专属 Prompt，读取不依赖工作目录。
+`execution.prompts.evaluation_prompt` 通过包资源读取 `environments/<环境>/prompts/` 下选中环境的提示词。每个环境独立维护 `control.md`、`depth_estimation.md`、`reference.md` 和 `annotation.md`；GR1 另有 `measured_depth.md`。
+
+在线提示词按以下顺序组装：控制正文、启用的深度估计说明、启用的参考说明、控制与观察能力 JSON、启用的测量深度说明。`annotation.md` 仅供离线文字生成器使用。启动器保存最终文本并计算摘要；wheel 包含全部环境提示词资源，读取不依赖工作目录。
 
 ## 接入新环境的建议顺序
 

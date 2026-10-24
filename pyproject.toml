@@ -25,7 +25,6 @@ license-files = ["LICENSE", "NOTICE", "licenses/*.txt"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-prompts = ["*.md"]
 environments = ["*/prompts/*.md", "tasks.json"]
 
 [tool.pytest.ini_options]

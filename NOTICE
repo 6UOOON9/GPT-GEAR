@@ -1,3 +1,24 @@
+2026-10-24: Prompt assets are independently owned by each environment.
+Control and auxiliary prompt sources:
+- RoboDojo/src/eval_client/codex_control/prompts/ (sibling checkout).
+- LIBERO-plus/libero/codex_control/prompts/ (sibling checkout); the adapted
+  assets are also copied into LIBERO-GeoMotion without cross-environment imports.
+- astra-as-policy.zip: astra-as-policy/UniVTAC/univtac_control/prompts/ and
+  astra-as-policy/robocasa/robocasa_control/prompts/ (not experiment variants).
+- robotwin_eval_clean_20261019.zip: robotwin_eval/prompts/.
+- robotwin_reference_text_generation_20261020.zip:
+  robotwin_reference_text_generation_20261020/libero/codex_control/prompts/reference_text.md
+  supplies RoboTwin's annotation.md.
+Control files are named control.md; offline reference_text.md files are named
+annotation.md. Embedded reference instructions are extracted into reference.md.
+Adaptations cover the sim MCP name, action.arms and required per-arm max_steps,
+current state/feedback fields and control limits, optional reference modalities,
+configured sensors, RGB-sized depth, and operator-selected sampling rates.
+Only RoboDojo retains its source's safe-return-to-initial-pose instruction.
+The Python composer lives in execution.prompts; there is no shared prompt asset
+package or runtime dependency on these source checkouts/archives. Existing source
+copyright and license attribution below continues to apply.
+
 2026-10-21: RoboTwin expert-video text generation is adapted from
 robotwin_reference_text_generation_20261020.zip into the shared annotation workflow.
 The three-camera visual prompt and 42-image limit are retained, with explicit

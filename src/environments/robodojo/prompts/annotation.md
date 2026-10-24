@@ -1,8 +1,8 @@
 # Visual reference step annotation
 
 You are annotating the attached RGB reference images, not controlling a robot.
-Inspect EVERY attached image from RoboDojo's head, left_wrist and right_wrist cameras.
-The image index lists camera and source timestamp in attachment order. Each video was sampled
+Inspect EVERY attached image from all supplied cameras (head, left_wrist and
+right_wrist for RoboDojo). The image index lists camera and source timestamp in attachment order. Each video was sampled
 independently at the rate specified below, retaining the first and last frames with duplicates removed.
 The camera videos need not be frame-synchronous; gaps can hide important events.
 
