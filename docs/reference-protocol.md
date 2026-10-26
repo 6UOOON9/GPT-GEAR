@@ -109,6 +109,8 @@ gpt-gear run align_blocks outputs/robodojo_reference \
 
 Keep options matching your combination: text-only uses `--reference-text`; text + trajectory uses `--reference-text` and `--trajectory`; text + video uses `--reference-text` and `--reference-video`.
 
+For `run` and `queue`, sequence references default to at most 48 images per view. Set `--reference-max-frames` (minimum 2) to change the limit; an episode's `reference.max_frames` overrides the queue CLI value. If sampling at `--reference-fps` exceeds the limit, select frames evenly across the full video, including both endpoints; otherwise keep the FPS sampling. Trajectory records remain unchanged. This limit does not apply to offline `reference prepare` or text annotation.
+
 Even after offline validation, pass the selected **original video directory, trajectory descriptor JSON, or text file**, not a cache directory. The launcher validates again and builds an episode-specific cache. Failures stop the run rather than silently falling back to no reference.
 
 Queues use a `reference` object inside each episode; see the [queue guide](queues.md#add-references-to-an-episode). Other environments use the same options, but file formats must match `--benchmark`.

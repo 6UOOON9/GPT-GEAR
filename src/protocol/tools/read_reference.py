@@ -2,9 +2,11 @@
 import base64
 from functools import partial
 import hashlib
+from io import BytesIO
 import time
 
 from mcp import types
+from PIL import Image
 
 from demonstrations.cache import TOOL as NAME, cache_directory, load_manifest, load_text, load_trajectory
 from demonstrations.media import image_labels
@@ -48,7 +50,7 @@ def render_reference(client, metrics):
     manifest = load_manifest(client.output, client.manifest.get("reference_manifest_sha256"))
     summary = {key: manifest[key] for key in (
         "source_sha256", "mode", "view_layout", "requested_fps", "requested_num_frames", "actual_num_frames",
-        "total_video_frames", "image_count", "camera_order", "modalities") if key in manifest}
+        "total_video_frames", "image_count", "camera_order", "modalities", "max_frames") if key in manifest}
     trajectory_info = manifest.get("trajectory")
     summary["trajectory_record_count"] = trajectory_info["record_count"] if trajectory_info else 0
     content = [text(dict(ok=True, reference=summary,
@@ -67,11 +69,16 @@ def render_reference(client, metrics):
         shape = [int.from_bytes(raw[20:24], "big"), int.from_bytes(raw[16:20], "big")]
         if shape != image["shape"] or hashlib.sha256(raw).hexdigest() != image["sha256"]:
             raise ValueError("cached reference RGB changed")
+        # Keep the validated lossless cache; compress only the transport payload.
+        encoded = BytesIO()
+        with Image.open(BytesIO(raw)) as rgb:
+            rgb.convert("RGB").save(encoded, format="JPEG", quality=95)
+        delivered = encoded.getvalue()
         content.extend([
             text(label),
-            types.ImageContent(type="image", mimeType="image/png", data=base64.b64encode(raw).decode("ascii")),
+            types.ImageContent(type="image", mimeType="image/jpeg", data=base64.b64encode(delivered).decode("ascii")),
         ])
-        size += len(raw)
+        size += len(delivered)
     if "text" in manifest:
         content.append(types.TextContent(type="text", text=load_text(client.output, manifest)))
         metrics.update(reference_text_sha256=manifest["text"]["sha256"],

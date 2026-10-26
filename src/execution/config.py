@@ -6,10 +6,11 @@ import sys
 
 from environments.benchmarks import BENCHMARKS, episode_options, validate_task
 from perception.depth import boolean_string
-from demonstrations.media import positive_fps
+from demonstrations.media import DEFAULT_REFERENCE_MAX_FRAMES, frame_limit, positive_fps
 from demonstrations.common import reference_modalities
 
 MCP_PYTHON = Path(sys.executable)
+DEFAULT_CODEX_CONTEXT_WINDOW = 272000
 # Keep reference frames on the caller's data disk, not the system /tmp.
 REFERENCE_TEMP_ROOT = Path.cwd() / '.cache/gpt-gear'
 FINALIZE_GRACE = 120.0
@@ -29,7 +30,7 @@ def episode_settings(benchmark, values):
     return dict(result, seed=seed, depth_estimation=depth)
 
 
-def reference_settings(*, video=None, trajectory=None, text=None, mode=None, fps=None):
+def reference_settings(*, video=None, trajectory=None, text=None, mode=None, fps=None, max_frames=None):
     """Validate reference combinations and return normalized sampling settings."""
     if video is None and (mode is not None or fps is not None):
         raise ValueError('reference sampling options require --reference-video')
@@ -41,6 +42,11 @@ def reference_settings(*, video=None, trajectory=None, text=None, mode=None, fps
         raise ValueError('--reference-fps is only valid with --reference-mode sequence')
     if fps is not None and (type(fps) not in (int, float) or not math.isfinite(fps) or fps <= 0):
         raise ValueError('reference fps must be a finite positive number')
+    if max_frames is not None:
+        if video is None or mode != 'sequence':
+            raise ValueError('--reference-max-frames requires a sequence reference video')
+        if type(max_frames) is not int or max_frames < 2:
+            raise ValueError('--reference-max-frames must be an integer of at least 2')
     return mode, 1.0 if fps is None else fps
 
 
@@ -51,6 +57,13 @@ def nonnegative_integer(value):
         raise argparse.ArgumentTypeError('must be a nonnegative integer') from None
     if number < 0:
         raise argparse.ArgumentTypeError('must be a nonnegative integer')
+    return number
+
+
+def positive_integer(value):
+    number = nonnegative_integer(value)
+    if number == 0:
+        raise argparse.ArgumentTypeError('must be a positive integer')
     return number
 
 
@@ -83,12 +96,16 @@ def parse_args(argv=None):
     for key in ('connect', 'idle', 'request'):
         parser.add_argument('--codex_' + key + '_timeout', type=positive_seconds, default=600.)
     parser.add_argument('--codex-model')
+    parser.add_argument('--codex-context-window', type=positive_integer, default=DEFAULT_CODEX_CONTEXT_WINDOW,
+                        help='Codex context window (default: 272000); must be supported by the selected model')
     parser.add_argument('--depth-estimation', type=boolean_string, default=None)
     parser.add_argument('--reference-video', type=Path)
     parser.add_argument('--reference-text', type=Path)
     parser.add_argument('--trajectory', type=Path)
     parser.add_argument('--reference-mode', choices=('endpoints', 'sequence'), default=None)
     parser.add_argument('--reference-fps', type=positive_fps, default=None)
+    parser.add_argument('--reference-max-frames', type=frame_limit,
+                        help='Maximum sequence images per view (default: 48); uniformly sample if exceeded')
     parser.add_argument('--layout-id', dest='layout_id',
                         type=nonnegative_integer, default=None,
                         help='Select one layout variant within the evaluation seed')
@@ -123,7 +140,9 @@ def parse_args(argv=None):
                 raise ValueError(key + ' requires robocasa-gr1')
         args.reference_mode, args.reference_fps = reference_settings(
             video=args.reference_video, trajectory=args.trajectory, text=args.reference_text,
-            mode=args.reference_mode, fps=args.reference_fps)
+            mode=args.reference_mode, fps=args.reference_fps, max_frames=args.reference_max_frames)
+        if args.reference_video is not None and args.reference_mode == 'sequence' and args.reference_max_frames is None:
+            args.reference_max_frames = DEFAULT_REFERENCE_MAX_FRAMES
     except ValueError as exc:
         parser.error(str(exc))
     if not 1 <= args.port <= 65535:

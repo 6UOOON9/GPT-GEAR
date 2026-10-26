@@ -10,7 +10,8 @@ import signal
 import subprocess
 import sys
 from environments.benchmarks import BENCHMARKS, DEFAULTS, EPISODE_OPTIONS, PATH_OPTIONS, validate_task
-from execution.config import episode_settings, reference_settings
+from execution.config import DEFAULT_CODEX_CONTEXT_WINDOW, episode_settings, positive_integer, reference_settings
+from demonstrations.media import DEFAULT_REFERENCE_MAX_FRAMES, frame_limit
 
 
 def classify(output):
@@ -36,6 +37,9 @@ def load_jobs(path, *, env_root=None, sim_python=None):
     data = json.loads(path.read_text())
     if data.get('version') != 2 or not isinstance(data.get('episodes'), list) or not data['episodes']:
         raise ValueError('queue requires version=2 and nonempty episodes')
+    context_window = data.get('codex_context_window')
+    if 'codex_context_window' in data and (type(context_window) is not int or context_window <= 0):
+        raise ValueError('queue codex_context_window must be a positive integer')
     environments = data.get('environments')
     if not isinstance(environments, dict) or not environments:
         raise ValueError('queue requires named environments')
@@ -62,6 +66,8 @@ def load_jobs(path, *, env_root=None, sim_python=None):
         if not isinstance(entry, dict) or set(entry) - allowed:
             raise ValueError('unknown episode option')
         job = dict(entry)
+        if context_window is not None:
+            job['codex_context_window'] = context_window
         if job.get('environment') not in resolved:
             raise ValueError('episode references unknown environment')
         job['host'] = dict(resolved[job['environment']])
@@ -95,7 +101,7 @@ def load_jobs(path, *, env_root=None, sim_python=None):
         job['id'] = f"{job['environment']}_{task.replace('/', '_')}_{digest}"
         reference = job.get('reference')
         if reference is not None:
-            if not isinstance(reference, dict) or set(reference) - {'video', 'trajectory', 'text', 'mode', 'fps'}:
+            if not isinstance(reference, dict) or set(reference) - {'video', 'trajectory', 'text', 'mode', 'fps', 'max_frames'}:
                 raise ValueError('invalid reference options')
             reference = job['reference'] = dict(reference)
             for key in ('video', 'trajectory', 'text'):
@@ -137,10 +143,18 @@ def command(job, output, args):
         result += ['--' + key.replace('_', '-'), host[key]]
     if args.codex_model:
         result += ['--codex-model', args.codex_model]
+    context_window = getattr(args, 'codex_context_window', None)
+    if context_window is None:
+        context_window = job.get('codex_context_window', DEFAULT_CODEX_CONTEXT_WINDOW)
+    result += ['--codex-context-window', str(context_window)]
     mapping = {'video': '--reference-video', 'text': '--reference-text', 'trajectory': '--trajectory',
-               'mode': '--reference-mode', 'fps': '--reference-fps'}
+               'mode': '--reference-mode', 'fps': '--reference-fps', 'max_frames': '--reference-max-frames'}
     for key, value in job.get('reference', {}).items():
         result.extend([mapping[key], str(value)])
+    reference = job.get('reference', {})
+    if ('video' in reference and reference.get('mode', 'sequence') == 'sequence'
+            and 'max_frames' not in reference and getattr(args, 'reference_max_frames', None) is not None):
+        result += ['--reference-max-frames', str(args.reference_max_frames)]
     return result
 
 
@@ -155,6 +169,10 @@ def main(argv=None):
     p.add_argument('--codex-mcp-python', type=Path, default=MCP_PYTHON)
     p.add_argument('--cache-dir', type=Path, default=REFERENCE_TEMP_ROOT)
     p.add_argument('--codex-model')
+    p.add_argument('--codex-context-window', type=positive_integer,
+                   help='Override queue codex_context_window for every episode (fallback: 272000)')
+    p.add_argument('--reference-max-frames', type=frame_limit, default=DEFAULT_REFERENCE_MAX_FRAMES,
+                   help='Maximum sequence images per view unless overridden by the episode (default: 48)')
     p.add_argument('--device-id', type=int, default=0)
     p.add_argument('--port', type=int, default=8092)
     p.add_argument('--run', action='store_true', help='execute; otherwise only print the plan')

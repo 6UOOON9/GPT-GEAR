@@ -129,7 +129,7 @@ It does not require the LIBERO simulator or trajectories. The two videos are sam
 Use the exported `agentview.mp4` and `wrist.mp4` (each 256 × 256) and their `videos.json`, with the GeoMotion benchmark identifier:
 
 ```bash
-gpt-gear reference annotate --benchmark libero-geomotion /path/to/geomotion-references-256/task_000
+gpt-gear reference annotate --benchmark libero-geomotion /path/to/references/libero-geomotion/task_000
 ```
 
 ### RoboTwin: three-view expert video

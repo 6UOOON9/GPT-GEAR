@@ -141,7 +141,7 @@ LIBERO 仿真环境或提供轨迹。两路视频分别抽帧，不要求逐帧�
 使用导出的 `agentview.mp4` 和 `wrist.mp4`（各 256 × 256）及其 `videos.json`，指定 GeoMotion 的 benchmark 标识：
 
 ```bash
-gpt-gear reference annotate --benchmark libero-geomotion /path/to/geomotion-references-256/task_000
+gpt-gear reference annotate --benchmark libero-geomotion /path/to/references/libero-geomotion/task_000
 ```
 
 ### RoboTwin：三路专家视频

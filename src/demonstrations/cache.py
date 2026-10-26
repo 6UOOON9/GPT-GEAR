@@ -15,7 +15,7 @@ DIRECTORY = "reference"
 MANIFEST = "manifest.json"
 
 
-def prepare(video, destination, *, trajectory=None, text=None, mode="sequence", fps=1.0, timeout=600.0, benchmark="robodojo"):
+def prepare(video, destination, *, trajectory=None, text=None, mode="sequence", fps=1.0, timeout=600.0, benchmark="robodojo", max_frames=None):
     """Image sampling never touches the complete trajectory. No text provenance claim."""
     started = time.monotonic()
     modalities = reference_modalities(video=video, trajectory=trajectory, text=text)
@@ -32,7 +32,10 @@ def prepare(video, destination, *, trajectory=None, text=None, mode="sequence", 
         check_correspondence(trajectory, scan_videos(video, benchmark))
     destination = Path(destination)
     if video is not None:
-        manifest = prepare_images(video, destination, mode=mode, fps=fps, timeout=timeout, benchmark=benchmark)
+        manifest = prepare_images(video, destination, mode=mode, fps=fps, timeout=timeout,
+                                  benchmark=benchmark, max_frames=max_frames)
+        if max_frames is not None:
+            manifest['max_frames'] = max_frames
     else:
         destination.mkdir(parents=True, exist_ok=False)
         manifest = dict(frames=[], actual_num_frames=0, image_count=0, camera_order=[])
@@ -131,19 +134,17 @@ def load_manifest(output, expected_sha256=None):
 
 
 def output_token_limit(output):
-    """Conservative per-tool budget, including image serialization overhead.
+    """Conservative text budget for direct MCP output, including image labels.
 
-    A byte-sized token budget avoids tokenizer/model assumptions. This is only
-    an output truncation budget, not a promise that any model context will fit.
+    Image blocks do not consume Codex's per-tool truncation budget. Keep text
+    headroom without treating encoded image bytes as tokens; transport and
+    model-context limits are enforced separately.
     """
     manifest = load_manifest(output)
-    directory = cache_directory(output)
     size = len(compact_json(manifest).encode("utf-8")) + 16384
     if "text" in manifest:
         size += manifest["text"]["text_bytes"]
     if "trajectory" in manifest:
         size += manifest["trajectory"]["text_bytes"]
-    for frame in manifest["frames"]:
-        for image in frame["images"]:
-            size += 4 * ((checked_cache_file(directory, image["file"]).stat().st_size + 2) // 3) + 1024
+    size += manifest["image_count"] * 1024
     return size * 2  # JSON escaping and MCP envelope headroom; never round trajectory values.

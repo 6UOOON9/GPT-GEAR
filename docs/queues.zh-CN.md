@@ -71,6 +71,7 @@ gpt-gear queue configs/queues/my_robotwin_queue.json outputs/my_robotwin_queue -
 | 命令行中的路径 | 相对于当前工作目录 |
 | seed、初始化选择、预算、模态 | 放在每个 episode 中，使用下划线字段，如 `max_native_steps` |
 | 模型、GPU、端口、缓存 | 可通过 `queue` 命令的公共选项指定 |
+| 上下文窗口 | JSON 顶层 `codex_context_window` 应用于整个队列；优先级：显式 `--codex-context-window`、队列配置、默认值 272000。 |
 | 环境选择 | 使用 `benchmark`，命令行没有 `--backend` 别名 |
 
 只有一个命名环境时，可在命令行覆盖两项路径：

@@ -123,6 +123,8 @@ See [RoboTwin configuration](environments/robotwin.md) for assets, observations,
 | Option | Purpose |
 |---|---|
 | `--codex-model MODEL_NAME` | Override the local default model configuration |
+| `--codex-context-window TOKENS` | Codex context window, default 272000. Use a size supported by the selected model; automatic context compaction remains enabled. |
+| `--reference-max-frames 48` | Maximum sequence images per view (minimum 2); see [reference sampling](reference-protocol.md#4-add-references-to-an-episode-or-queue). |
 | `--device-id 0` | Select the GPU |
 | `--port 8092` | Select the local control port |
 | `--depth-estimation false` | Disable required model depth-estimation declarations |

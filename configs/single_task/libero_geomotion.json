@@ -13,8 +13,7 @@
       "task": "libero_rp/0",
       "seed": 0,
       "init_state_index": 0,
-      "max_native_steps": 4000,
-      "image_size": 256
+      "max_native_steps": 4000
     }
   ]
 }

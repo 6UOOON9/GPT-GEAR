@@ -123,6 +123,8 @@ gpt-gear run adjust_bottle outputs/robotwin_one \
 | 选项 | 用途 |
 |---|---|
 | `--codex-model 模型名` | 覆盖本机默认模型配置 |
+| `--codex-context-window TOKENS` | Codex 上下文窗口，默认 272000；仅使用所选模型实际支持的大小，保留自动上下文压缩 |
+| `--reference-max-frames 48` | 序列参考每视角的图片上限（至少 2），详见[参考抽帧规则](reference-protocol.zh-CN.md#4-加入单回合或队列)。 |
 | `--device-id 0` | 选择 GPU |
 | `--port 8092` | 选择本地控制端口 |
 | `--depth-estimation false` | 关闭模型的深度估计声明要求 |

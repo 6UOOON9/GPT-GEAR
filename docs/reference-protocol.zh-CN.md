@@ -110,6 +110,8 @@ gpt-gear run align_blocks outputs/robodojo_reference \
 
 按所选组合保留对应参数：纯文字只保留 `--reference-text`；文字＋轨迹保留 `--reference-text` 和 `--trajectory`；文字＋视频保留 `--reference-text` 和 `--reference-video`。
 
+运行 `run` 或 `queue` 时，序列参考默认每视角最多 48 张图片。可用 `--reference-max-frames`（至少 2）修改，单个 episode 的 `reference.max_frames` 优先于队列 CLI 参数。按 `--reference-fps` 抽帧超过上限时，在整段视频的源帧中均匀取样并保留首尾帧；否则保留原来的 fps 抽帧结果。轨迹记录不变。此上限不作用于离线 `reference prepare` 或文字标注。
+
 即使执行过离线校验，这里仍填写所选组合的**原始视频目录、轨迹描述 JSON 或文字文件**，不填写缓存目录。启动器会重新校验并为本回合构建缓存；失败时停止，不自动降级成无参考运行。
 
 队列使用 episode 内的 `reference` 对象，示例见 [队列指南](queues.zh-CN.md#为回合添加参考)。其他环境沿用相同参数，但文件格式必须匹配 `--benchmark`。

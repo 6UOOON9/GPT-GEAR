@@ -147,7 +147,9 @@ def codex_command(executable, args, prompt, session):
     command = [executable, 'exec', '--skip-git-repo-check', '-C', str(args.output),
                '--sandbox', 'danger-full-access',
                '-c', 'approval_policy="never"',
+               '-c', 'features.code_mode.direct_only_tool_namespaces=["mcp__sim"]',
                '-c', f'tool_output_token_limit={DEFAULT_TOOL_OUTPUT_TOKEN_LIMIT}',
+               '-c', f'model_context_window={args.codex_context_window}',
                '-c', 'developer_instructions=' + toml_string(prompt),
                '--json', '--color', 'never',
                '--output-last-message', str(args.output / 'codex_final.txt')]
@@ -337,7 +339,8 @@ def run(args):
         args.reference_cache = Path(temporary) / DIRECTORY
         try:
             prepare_reference(args.reference_video, args.reference_cache, trajectory=args.trajectory,
-                              text=args.reference_text, mode=args.reference_mode, fps=args.reference_fps, benchmark=args.benchmark)
+                              text=args.reference_text, mode=args.reference_mode, fps=args.reference_fps,
+                              benchmark=args.benchmark, max_frames=args.reference_max_frames)
             args.reference_manifest_sha256 = sha256_file(args.reference_cache / MANIFEST)
             load_manifest(Path(temporary), args.reference_manifest_sha256)
         except (OSError, ValueError, TypeError, KeyError) as exc:
@@ -371,6 +374,7 @@ def _run(args):
                     simulator_python=str(args.sim_python),
                     requested_layout_id=args.layout_id,
                     codex_version=version, model_override=args.codex_model,
+                    codex_context_window=args.codex_context_window,
                     control_transport='mcp', mcp_version=mcp_info['mcp_version'],
                     mcp_python=str(args.codex_mcp_python),
                     prompt_sha256=hashlib.sha256(prompt_bytes).hexdigest(),

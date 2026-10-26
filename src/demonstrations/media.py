@@ -11,6 +11,8 @@ import subprocess
 from execution.runtime import thread_environment
 from .common import ReferenceError, checked_cache_file, finite_number, sha256_file, source_file, strict_json
 
+DEFAULT_REFERENCE_MAX_FRAMES = 48
+
 
 def positive_fps(value):
     try:
@@ -22,9 +24,20 @@ def positive_fps(value):
     return fps
 
 
-def frame_indices(timestamps, mode, fps=1.0):
+def frame_limit(value):
+    try:
+        limit = int(value)
+    except (TypeError, ValueError, OverflowError):
+        raise argparse.ArgumentTypeError("frame limit must be an integer of at least 2") from None
+    if limit < 2:
+        raise argparse.ArgumentTypeError("frame limit must be an integer of at least 2")
+    return limit
+
+
+def frame_indices(timestamps, mode, fps=1.0, max_frames=None):
     """Sample the first source frame at/after each relative FPS tick, plus the end.
 
+    If capped, replace oversized selections with evenly spaced source frames.
     Advance over ticks arithmetically rather than allocating one entry per tick:
     even a sampling rate much higher than the source rate costs O(source frames).
     Decimal fractions avoid dropping exact tick boundaries through float rounding.
@@ -35,6 +48,8 @@ def frame_indices(timestamps, mode, fps=1.0):
         raise ReferenceError("unknown reference mode")
     if not finite_number(fps) or fps <= 0:
         raise ReferenceError("reference-fps must be a finite positive number")
+    if max_frames is not None and (type(max_frames) is not int or max_frames < 2):
+        raise ReferenceError("reference-max-frames must be an integer of at least 2")
     previous = None
     for timestamp in timestamps:
         if not finite_number(timestamp) or (previous is not None and timestamp < previous):
@@ -52,6 +67,10 @@ def frame_indices(timestamps, mode, fps=1.0):
             next_tick = reached_tick + 1
     if indices[-1] != len(timestamps) - 1:
         indices.append(len(timestamps) - 1)
+    if max_frames is not None and len(indices) > max_frames:
+        # Cover the entire source video, including both endpoints. Do not round
+        # or resample the independently prepared reference trajectory.
+        indices = [round(i * (len(timestamps) - 1) / (max_frames - 1)) for i in range(max_frames)]
     return indices
 
 
@@ -107,7 +126,7 @@ def scan_videos(directory, benchmark="robodojo"):
     return {camera: source_file(directory, filename) for camera, filename in manifest["videos"].items()}
 
 
-def _decode_view(video, destination, camera, *, mode, fps, timeout):
+def _decode_view(video, destination, camera, *, mode, fps, timeout, max_frames=None):
     ffmpeg, ffprobe = shutil.which("ffmpeg"), shutil.which("ffprobe")
     if not ffmpeg or not ffprobe:
         raise ReferenceError("references require ffmpeg and ffprobe on PATH")
@@ -148,7 +167,7 @@ def _decode_view(video, destination, camera, *, mode, fps, timeout):
             timestamps.append(float(frame["best_effort_timestamp_time"]))
         except (KeyError, ValueError, TypeError):
             raise ReferenceError("reference frame has no usable timestamp") from None
-    indices = frame_indices(timestamps, mode, fps)
+    indices = frame_indices(timestamps, mode, fps, max_frames)
     selection = "+".join(f"eq(n,{index})" for index in indices)
     run_media(
         [
@@ -216,15 +235,16 @@ def _decode_view(video, destination, camera, *, mode, fps, timeout):
     )
 
 
-def prepare_images(video, destination, *, mode="sequence", fps=1.0, timeout=600.0, benchmark="robodojo"):
+def prepare_images(video, destination, *, mode="sequence", fps=1.0, timeout=600.0, benchmark="robodojo", max_frames=None):
     """Camera-major order; each view has its own timestamps and frame indices."""
     videos = scan_videos(video, benchmark)
-    frame_indices([0.0, 1.0], mode, fps)
+    frame_indices([0.0, 1.0], mode, fps, max_frames)
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=False)
     frames, sources = [], {}
     for camera, path in videos.items():
-        records, sources[camera] = _decode_view(path, destination, camera, mode=mode, fps=fps, timeout=timeout)
+        records, sources[camera] = _decode_view(path, destination, camera, mode=mode, fps=fps,
+                                               timeout=timeout, max_frames=max_frames)
         frames.extend(records)
     return dict(
         frames=frames,

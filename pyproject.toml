@@ -12,7 +12,7 @@ license = {text = "MIT AND Apache-2.0"}
 dependencies = []
 
 [project.optional-dependencies]
-mcp = ["mcp==1.29.1"]
+mcp = ["mcp==1.29.1", "pillow"]
 test = ["pytest", "numpy", "pillow", "omegaconf", "scipy", "PyYAML"]
 
 [project.scripts]

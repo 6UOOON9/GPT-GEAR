@@ -71,6 +71,7 @@ To create a mixed-environment queue, add named environments and select the appro
 | Paths on the command line | Relative to the current working directory |
 | Seeds, initialization, budgets, modalities | Put them in each episode using underscore field names such as `max_native_steps` |
 | Model, GPU, port, cache | Set through shared `queue` command options |
+| Context window | Set top-level `codex_context_window` for the whole queue; precedence: explicit `--codex-context-window`, queue value, default 272000. |
 | Environment selection | Use `benchmark`; there is no command-line `--backend` alias |
 
 With only one named environment, you can override two paths on the command line:
