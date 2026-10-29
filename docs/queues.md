@@ -15,9 +15,10 @@ Copy a suitable configuration and update its environment paths. Repository examp
 | Configuration | Content | Fields to update |
 |---|---|---|
 | [libero_plus.json](../configs/queues/libero_plus.json) | LIBERO-plus: 50 task variants, one run each | `env_root`, `sim_python` |
+| [libero_geomotion.json](../configs/queues/libero_geomotion.json) | LIBERO-GeoMotion: 36 scenes, 24 with references | Environment paths and all reference paths |
 | [robocasa_gr1.json](../configs/queues/robocasa_gr1.json) | GR1: 24 tasks × 20 seeds | All four environment paths |
 | [univtac.json](../configs/queues/univtac.json) | UniVTAC: 8 tasks × 20 seeds, `force` mode | `env_root`, `sim_python` |
-| [robotwin.json](../configs/queues/robotwin.json) | 50 tasks × 2 configurations × 5 seeds: `0–4` for both clean and random, 500 episodes total | `env_root`, `sim_python` |
+| [robotwin.json](../configs/queues/robotwin.json) | 50 tasks × 2 configurations × 5 seeds: `0–4` for both clean and random, 500 episodes with same-task references | Environment paths and all reference paths |
 | [robodojo.json](../configs/queues/robodojo.json) | RoboDojo: 42 tasks, 34 with references | Environment paths and all reference paths |
 
 GR1's four paths are `env_root`, `robosuite_root`, `data_root`, and `sim_python`. Seeds in the GR1 and UniVTAC batch queues come from source-project presets, not official seed splits.
@@ -85,6 +86,8 @@ gpt-gear queue configs/queues/robotwin.json outputs/robotwin_override \
 GR1's `robosuite_root` and `data_root` must still be updated in JSON. Do not pass a single `--benchmark` for a mixed-environment queue.
 
 ### Add references to an episode
+
+For RoboDojo and LIBERO-GeoMotion with video, text, and full trajectory references, use a context window of `432000`. Their bundled queues already set top-level `"codex_context_window": 432000`; retain it when copying the configuration. An explicit `--codex-context-window` overrides the JSON value. For standalone runs, add `--codex-context-window 432000` to `gpt-gear run`; see the [reference guide](reference-protocol.md#4-add-references-to-an-episode-or-queue).
 
 Prepare the original reference files, then add `reference` to the episode. For example, this entry can be placed in `episodes`:
 

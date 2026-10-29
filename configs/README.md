@@ -20,11 +20,11 @@ Both use `version: 2` and are loaded by `gpt-gear queue`; `episodes` in `single_
 | [libero_geomotion.json](queues/libero_geomotion.json) | LIBERO-GeoMotion: 36 scenes; 6 families with references (24 scenes), 3 without (12 scenes) | 36 |
 | [robocasa_gr1.json](queues/robocasa_gr1.json) | RoboCasa GR1: 24 tasks × 20 preset seeds | 480 |
 | [univtac.json](queues/univtac.json) | UniVTAC: 8 tasks × 20 preset seeds, `force` mode by default | 160 |
-| [robotwin.json](queues/robotwin.json) | RoboTwin: 50 tasks × 2 configurations × 5 seeds (`0–4` for each) | 500 |
+| [robotwin.json](queues/robotwin.json) | RoboTwin: 50 tasks × 2 configurations × 5 seeds (`0–4` for each), all with references | 500 |
 
 GR1 and UniVTAC batch seeds follow presets from the source projects; they are not official seed splits. Prepare reference data separately.
 
-The RoboTwin queue sorts tasks lexicographically. For each task, it runs `clean` with seeds `0–4`, then `random` with seeds `0–4`, for 250 clean and 250 random episodes. The 50 task names were checked against task modules and descriptions in RoboTwin's `envs/` directory and cross-checked with RPent's RoboTwin evaluation task set. Seeds follow this queue's rules.
+The RoboTwin queue sorts tasks lexicographically. For each task, it runs `clean` with seeds `0–4`, then `random` with seeds `0–4`, for 250 clean and 250 random episodes. The 50 task names were checked against task modules and descriptions in RoboTwin's `envs/` directory and cross-checked with RPent's RoboTwin evaluation task set. Seeds follow this queue's rules. Each task uses its same-name demonstration for both configurations and all seeds.
 
 To select UniVTAC modalities, set `tactile_mode` on each JSON episode to `none`, `image`, `force`, or `image-force`; the default is `force`. With `gpt-gear run`, use `--tactile-mode`.
 
@@ -45,7 +45,7 @@ Change `task`, `seed`, and supported environment options in the sole episode to 
 
 ## Usage
 
-Run from the repository root. Copy a configuration and replace every `/path/to/...` environment-path placeholder with your installation paths first. Relative paths in JSON are resolved against **the directory containing the configuration file**, so adjust them when copying a file elsewhere. Absolute paths are recommended; shell variables such as `$HOME` cannot be used in JSON. GR1 also needs `robosuite_root` and `data_root`.
+Run from the repository root. Copy a configuration and replace every `/path/to/...` environment-path placeholder with your installation paths first. Relative paths in JSON are resolved against **the directory containing the configuration file**, so adjust them when copying a file elsewhere. Absolute paths are recommended; shell variables such as `$HOME` cannot be used in JSON. GR1 also needs `robosuite_root` and `data_root`. Simulation Python placeholders use `/path/to/<benchmark>/bin/python`. Reference paths use `/path/to/reference_demo/<environment>/<task>/`, matching the downloaded directory names (for example, `RoboDojo` and `LIBERO-GeoMotion`); video inputs point to its `videos/` subdirectory, text to `steps.txt`, and trajectories to `trajectory.json`.
 
 ```bash
 # Run one episode: inspect the plan, then execute.

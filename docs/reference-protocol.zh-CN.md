@@ -95,20 +95,26 @@ gpt-gear reference prepare --benchmark robodojo \
 
 ## 4. 加入单回合或队列
 
-以 RoboDojo 为例，替换路径并使用新的输出目录：
+**RoboDojo 和 LIBERO-GeoMotion 带示范运行时需要加大上下文窗口。** 同时使用示范包中的视频、文字和完整轨迹时，在 `run` 或 `queue` 命令中加入 `--codex-context-window 432000`，与仓库的评测队列保持一致。默认值为 `272000`，较大的示范可能在模型完整阅读前触发上下文压缩。所选模型需支持设置的窗口大小。
+
+[RoboDojo 队列](../configs/queues/robodojo.json)和 [LIBERO-GeoMotion 队列](../configs/queues/libero_geomotion.json)已在 JSON 顶层设置 `"codex_context_window": 432000`，复制队列时请保留；显式 CLI 参数会覆盖该值。单独执行 `run` 不会读取队列设置，需要自行加上此参数。离线 `reference prepare` 不调用模型，无需添加该参数。
+
+下面使用 RoboDojo 的 `fasten_screws` 任务，以及 `reference_demo` 示范包中的同名视频、文字与轨迹。先准备 [RoboDojo 环境和资产](environments/robodojo.zh-CN.md#源码与资产)，激活 GPT-GEAR 工具环境，再从仓库根目录运行。替换安装路径和示范路径，并使用新的输出目录：
 
 ```bash
-gpt-gear run align_blocks outputs/robodojo_reference \
+gpt-gear run fasten_screws outputs/robodojo_reference \
   --benchmark robodojo \
   --env-root /path/to/RoboDojo \
   --sim-python /path/to/robodojo/bin/python \
-  --seed 0 --layout-id 0 \
-  --reference-video /path/to/reference/videos \
-  --trajectory /path/to/reference/trajectory.json \
-  --reference-text /path/to/reference/steps.txt
+  --seed 0 --layout-id 9 \
+  --codex-context-window 432000 \
+  --reference-video /path/to/reference_demo/RoboDojo/fasten_screws/videos \
+  --trajectory /path/to/reference_demo/RoboDojo/fasten_screws/trajectory.json \
+  --reference-text /path/to/reference_demo/RoboDojo/fasten_screws/steps.txt \
+  --reference-mode sequence --reference-fps 1
 ```
 
-按所选组合保留对应参数：纯文字只保留 `--reference-text`；文字＋轨迹保留 `--reference-text` 和 `--trajectory`；文字＋视频保留 `--reference-text` 和 `--reference-video`。
+按所选组合保留对应参数：纯文字只保留 `--reference-text`；文字＋轨迹保留 `--reference-text` 和 `--trajectory`；文字＋视频保留 `--reference-text` 和 `--reference-video`。移除视频时，也要移除 `--reference-mode`、`--reference-fps`，以及自行添加的 `--reference-max-frames`。
 
 运行 `run` 或 `queue` 时，序列参考默认每视角最多 48 张图片。可用 `--reference-max-frames`（至少 2）修改，单个 episode 的 `reference.max_frames` 优先于队列 CLI 参数。按 `--reference-fps` 抽帧超过上限时，在整段视频的源帧中均匀取样并保留首尾帧；否则保留原来的 fps 抽帧结果。轨迹记录不变。此上限不作用于离线 `reference prepare` 或文字标注。
 

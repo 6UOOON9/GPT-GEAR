@@ -20,11 +20,11 @@
 | [libero_geomotion.json](queues/libero_geomotion.json) | LIBERO-GeoMotion：36 场景；6 类有示范（24 场景），3 类无示范（12 场景） | 36 |
 | [robocasa_gr1.json](queues/robocasa_gr1.json) | RoboCasa GR1：24 个任务 × 20 个预设 seed | 480 |
 | [univtac.json](queues/univtac.json) | UniVTAC：8 个任务 × 20 个预设 seed，默认 `force` 模式 | 160 |
-| [robotwin.json](queues/robotwin.json) | RoboTwin：50 个任务 × 2 种配置 × 5 个 seed（均为 `0–4`） | 500 |
+| [robotwin.json](queues/robotwin.json) | RoboTwin：50 个任务 × 2 种配置 × 5 个 seed（均为 `0–4`），全部带参考输入 | 500 |
 
 GR1 和 UniVTAC 的批量 seed 沿用来源项目预设，不代表官方 seed split。参考数据需另行准备。
 
-RoboTwin 队列按任务名字典序排列，每个任务依次使用 seed `0–4` 跑 `clean`、seed `0–4` 跑 `random`，共 250 个 clean 和 250 个 random 回合。50 个任务名核对自 RoboTwin 的 `envs/` 目录中的任务模块及配套任务说明，并与 RPent 的 RoboTwin 评测任务集合交叉检查；seed 按本队列规则设置。
+RoboTwin 队列按任务名字典序排列，每个任务依次使用 seed `0–4` 跑 `clean`、seed `0–4` 跑 `random`，共 250 个 clean 和 250 个 random 回合。50 个任务名核对自 RoboTwin 的 `envs/` 目录中的任务模块及配套任务说明，并与 RPent 的 RoboTwin 评测任务集合交叉检查；seed 按本队列规则设置。每个任务在两种配置和所有 seed 下共用其同名示范。
 
 UniVTAC 的模态可按需设置：JSON 中为相应 episode 设置 `tactile_mode`，可选 `none`、`image`、`force`、`image-force`，默认 `force`；直接使用 `gpt-gear run` 时通过 `--tactile-mode` 指定。
 
@@ -45,7 +45,7 @@ LIBERO-plus 的完整任务标识与执行顺序见 [队列配置](queues/libero
 
 ## 使用方法
 
-在仓库根目录执行。先复制配置，将所有 `/path/to/...` 环境路径占位符替换为自己的安装路径；JSON 内的相对路径以**配置文件所在目录**为基准，复制到其他目录时也要调整路径。建议使用绝对路径，不能在 JSON 中写 `$HOME` 等 shell 变量。GR1 还需配置 `robosuite_root` 和 `data_root`。
+在仓库根目录执行。先复制配置，将所有 `/path/to/...` 环境路径占位符替换为自己的安装路径；JSON 内的相对路径以**配置文件所在目录**为基准，复制到其他目录时也要调整路径。建议使用绝对路径，不能在 JSON 中写 `$HOME` 等 shell 变量。GR1 还需配置 `robosuite_root` 和 `data_root`。仿真 Python 占位路径统一为 `/path/to/<benchmark>/bin/python`。参考路径统一为 `/path/to/reference_demo/<环境>/<任务>/`，环境目录名与下载数据保持一致（如 `RoboDojo`、`LIBERO-GeoMotion`）；视频指向其 `videos/` 子目录，文本为 `steps.txt`，轨迹描述为 `trajectory.json`。
 
 ```bash
 # 只跑一个 episode：先检查计划，再执行。

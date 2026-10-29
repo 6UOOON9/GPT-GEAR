@@ -6,7 +6,7 @@
       "env_root": "/path/to/robocasa-gr1-tabletop-tasks",
       "robosuite_root": "/path/to/robosuite-gr1",
       "data_root": "/path/to/robocasa_data",
-      "sim_python": "/path/to/robocasa/bin/python"
+      "sim_python": "/path/to/robocasa-gr1/bin/python"
     }
   },
   "episodes": [

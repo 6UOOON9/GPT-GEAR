@@ -8,9 +8,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/arrange_largest_number",
-        "trajectory": "/path/to/references/robodojo/arrange_largest_number/trajectory.json",
-        "text": "/path/to/references/robodojo/arrange_largest_number/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/arrange_largest_number/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/arrange_largest_number/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/arrange_largest_number/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -22,9 +22,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/build_tower",
-        "trajectory": "/path/to/references/robodojo/build_tower/trajectory.json",
-        "text": "/path/to/references/robodojo/build_tower/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/build_tower/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/build_tower/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/build_tower/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -36,9 +36,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/classify_objects",
-        "trajectory": "/path/to/references/robodojo/classify_objects/trajectory.json",
-        "text": "/path/to/references/robodojo/classify_objects/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/classify_objects/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/classify_objects/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/classify_objects/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -50,9 +50,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/cover_blocks",
-        "trajectory": "/path/to/references/robodojo/cover_blocks/trajectory.json",
-        "text": "/path/to/references/robodojo/cover_blocks/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/cover_blocks/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/cover_blocks/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/cover_blocks/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -64,9 +64,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/deposit_coin",
-        "trajectory": "/path/to/references/robodojo/deposit_coin/trajectory.json",
-        "text": "/path/to/references/robodojo/deposit_coin/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/deposit_coin/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/deposit_coin/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/deposit_coin/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -78,9 +78,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/fasten_screws",
-        "trajectory": "/path/to/references/robodojo/fasten_screws/trajectory.json",
-        "text": "/path/to/references/robodojo/fasten_screws/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/fasten_screws/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/fasten_screws/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/fasten_screws/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -92,9 +92,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/fill_egg_holder",
-        "trajectory": "/path/to/references/robodojo/fill_egg_holder/trajectory.json",
-        "text": "/path/to/references/robodojo/fill_egg_holder/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/fill_egg_holder/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/fill_egg_holder/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/fill_egg_holder/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -106,9 +106,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/fill_pen_holder",
-        "trajectory": "/path/to/references/robodojo/fill_pen_holder/trajectory.json",
-        "text": "/path/to/references/robodojo/fill_pen_holder/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/fill_pen_holder/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/fill_pen_holder/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/fill_pen_holder/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -120,9 +120,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/fold_clothes",
-        "trajectory": "/path/to/references/robodojo/fold_clothes/trajectory.json",
-        "text": "/path/to/references/robodojo/fold_clothes/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/fold_clothes/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/fold_clothes/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/fold_clothes/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -134,9 +134,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/hang_mugs",
-        "trajectory": "/path/to/references/robodojo/hang_mugs/trajectory.json",
-        "text": "/path/to/references/robodojo/hang_mugs/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/hang_mugs/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/hang_mugs/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/hang_mugs/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -148,9 +148,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/imitate_sorting_sequence",
-        "trajectory": "/path/to/references/robodojo/imitate_sorting_sequence/trajectory.json",
-        "text": "/path/to/references/robodojo/imitate_sorting_sequence/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/imitate_sorting_sequence/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/imitate_sorting_sequence/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/imitate_sorting_sequence/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -162,9 +162,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/insert_key",
-        "trajectory": "/path/to/references/robodojo/insert_key/trajectory.json",
-        "text": "/path/to/references/robodojo/insert_key/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/insert_key/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/insert_key/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/insert_key/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -176,9 +176,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/insert_tubes",
-        "trajectory": "/path/to/references/robodojo/insert_tubes/trajectory.json",
-        "text": "/path/to/references/robodojo/insert_tubes/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/insert_tubes/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/insert_tubes/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/insert_tubes/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -190,9 +190,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/make_kong",
-        "trajectory": "/path/to/references/robodojo/make_kong/trajectory.json",
-        "text": "/path/to/references/robodojo/make_kong/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/make_kong/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/make_kong/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/make_kong/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -204,9 +204,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/make_toast",
-        "trajectory": "/path/to/references/robodojo/make_toast/trajectory.json",
-        "text": "/path/to/references/robodojo/make_toast/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/make_toast/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/make_toast/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/make_toast/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -218,9 +218,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/match_and_pick_from_conveyor",
-        "trajectory": "/path/to/references/robodojo/match_and_pick_from_conveyor/trajectory.json",
-        "text": "/path/to/references/robodojo/match_and_pick_from_conveyor/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/match_and_pick_from_conveyor/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/match_and_pick_from_conveyor/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/match_and_pick_from_conveyor/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -232,9 +232,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/organize_table",
-        "trajectory": "/path/to/references/robodojo/organize_table/trajectory.json",
-        "text": "/path/to/references/robodojo/organize_table/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/organize_table/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/organize_table/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/organize_table/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -246,9 +246,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/pack_objects_into_box",
-        "trajectory": "/path/to/references/robodojo/pack_objects_into_box/trajectory.json",
-        "text": "/path/to/references/robodojo/pack_objects_into_box/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/pack_objects_into_box/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/pack_objects_into_box/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/pack_objects_into_box/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -260,9 +260,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/play_Xylophone",
-        "trajectory": "/path/to/references/robodojo/play_Xylophone/trajectory.json",
-        "text": "/path/to/references/robodojo/play_Xylophone/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/play_Xylophone/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/play_Xylophone/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/play_Xylophone/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -274,9 +274,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/play_stacking_toy",
-        "trajectory": "/path/to/references/robodojo/play_stacking_toy/trajectory.json",
-        "text": "/path/to/references/robodojo/play_stacking_toy/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/play_stacking_toy/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/play_stacking_toy/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/play_stacking_toy/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -288,9 +288,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/play_tic_tac_toe",
-        "trajectory": "/path/to/references/robodojo/play_tic_tac_toe/trajectory.json",
-        "text": "/path/to/references/robodojo/play_tic_tac_toe/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/play_tic_tac_toe/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/play_tic_tac_toe/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/play_tic_tac_toe/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -302,9 +302,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/plug_in_charger",
-        "trajectory": "/path/to/references/robodojo/plug_in_charger/trajectory.json",
-        "text": "/path/to/references/robodojo/plug_in_charger/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/plug_in_charger/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/plug_in_charger/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/plug_in_charger/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -316,9 +316,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/pour_balls_into_vase",
-        "trajectory": "/path/to/references/robodojo/pour_balls_into_vase/trajectory.json",
-        "text": "/path/to/references/robodojo/pour_balls_into_vase/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/pour_balls_into_vase/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/pour_balls_into_vase/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/pour_balls_into_vase/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -330,9 +330,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/pour_liquid_into_cup",
-        "trajectory": "/path/to/references/robodojo/pour_liquid_into_cup/trajectory.json",
-        "text": "/path/to/references/robodojo/pour_liquid_into_cup/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/pour_liquid_into_cup/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/pour_liquid_into_cup/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/pour_liquid_into_cup/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -344,9 +344,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/press_by_number",
-        "trajectory": "/path/to/references/robodojo/press_by_number/trajectory.json",
-        "text": "/path/to/references/robodojo/press_by_number/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/press_by_number/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/press_by_number/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/press_by_number/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -358,9 +358,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/push_T",
-        "trajectory": "/path/to/references/robodojo/push_T/trajectory.json",
-        "text": "/path/to/references/robodojo/push_T/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/push_T/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/push_T/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/push_T/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -372,9 +372,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/put_bottles_into_dustbin",
-        "trajectory": "/path/to/references/robodojo/put_bottles_into_dustbin/trajectory.json",
-        "text": "/path/to/references/robodojo/put_bottles_into_dustbin/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/put_bottles_into_dustbin/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/put_bottles_into_dustbin/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/put_bottles_into_dustbin/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -386,9 +386,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/sort_nesting_dolls_by_size",
-        "trajectory": "/path/to/references/robodojo/sort_nesting_dolls_by_size/trajectory.json",
-        "text": "/path/to/references/robodojo/sort_nesting_dolls_by_size/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/sort_nesting_dolls_by_size/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/sort_nesting_dolls_by_size/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/sort_nesting_dolls_by_size/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -400,9 +400,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/stack_blocks",
-        "trajectory": "/path/to/references/robodojo/stack_blocks/trajectory.json",
-        "text": "/path/to/references/robodojo/stack_blocks/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/stack_blocks/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/stack_blocks/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/stack_blocks/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -414,9 +414,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/stack_bowls",
-        "trajectory": "/path/to/references/robodojo/stack_bowls/trajectory.json",
-        "text": "/path/to/references/robodojo/stack_bowls/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/stack_bowls/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/stack_bowls/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/stack_bowls/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -428,9 +428,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/store_laptop_and_headphones",
-        "trajectory": "/path/to/references/robodojo/store_laptop_and_headphones/trajectory.json",
-        "text": "/path/to/references/robodojo/store_laptop_and_headphones/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/store_laptop_and_headphones/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/store_laptop_and_headphones/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/store_laptop_and_headphones/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -442,9 +442,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/swap_T",
-        "trajectory": "/path/to/references/robodojo/swap_T/trajectory.json",
-        "text": "/path/to/references/robodojo/swap_T/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/swap_T/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/swap_T/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/swap_T/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -456,9 +456,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/swap_blocks",
-        "trajectory": "/path/to/references/robodojo/swap_blocks/trajectory.json",
-        "text": "/path/to/references/robodojo/swap_blocks/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/swap_blocks/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/swap_blocks/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/swap_blocks/steps.txt",
         "mode": "sequence",
         "fps": 1
       },
@@ -470,9 +470,9 @@
       "layout_id": 9,
       "depth_estimation": true,
       "reference": {
-        "video": "/path/to/references/robodojo/sweep_blocks",
-        "trajectory": "/path/to/references/robodojo/sweep_blocks/trajectory.json",
-        "text": "/path/to/references/robodojo/sweep_blocks/steps.txt",
+        "video": "/path/to/reference_demo/RoboDojo/sweep_blocks/videos",
+        "trajectory": "/path/to/reference_demo/RoboDojo/sweep_blocks/trajectory.json",
+        "text": "/path/to/reference_demo/RoboDojo/sweep_blocks/steps.txt",
         "mode": "sequence",
         "fps": 1
       },

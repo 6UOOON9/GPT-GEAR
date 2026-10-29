@@ -4,7 +4,7 @@
     "geomotion": {
       "benchmark": "libero-geomotion",
       "env_root": "/path/to/LIBERO-GeoMotion",
-      "sim_python": "/path/to/geomotion/bin/python"
+      "sim_python": "/path/to/libero-geomotion/bin/python"
     }
   },
   "episodes": [

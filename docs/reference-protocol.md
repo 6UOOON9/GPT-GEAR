@@ -94,20 +94,26 @@ With video, the default is `sequence` sampling at 1 FPS. `endpoints` mode select
 
 ## 4. Add references to an episode or queue
 
-For example, with RoboDojo, replace paths and use a new output directory:
+**Increase the context window for RoboDojo and LIBERO-GeoMotion demonstrations.** When using the supplied video, text, and full trajectories together, pass `--codex-context-window 432000` to `run` or `queue`, matching the bundled evaluation queues. The default is `272000`; large references can trigger context compaction before the model has fully inspected them. Use a model that supports the requested window.
+
+The [RoboDojo queue](../configs/queues/robodojo.json) and [LIBERO-GeoMotion queue](../configs/queues/libero_geomotion.json) already set top-level `"codex_context_window": 432000`. Keep this field when copying a queue; an explicit CLI value overrides it. A standalone `run` does not read queue settings, so include the flag yourself. Offline `reference prepare` does not call a model and does not need this flag.
+
+This example uses RoboDojo's `fasten_screws` task and its video, text, and trajectory from the `reference_demo` package. Prepare the [RoboDojo environment and assets](environments/robodojo.md#source-code-and-assets), activate the GPT-GEAR tool environment, then run from the repository root. Replace the installation and demonstration paths and use a new output directory:
 
 ```bash
-gpt-gear run align_blocks outputs/robodojo_reference \
+gpt-gear run fasten_screws outputs/robodojo_reference \
   --benchmark robodojo \
   --env-root /path/to/RoboDojo \
   --sim-python /path/to/robodojo/bin/python \
-  --seed 0 --layout-id 0 \
-  --reference-video /path/to/reference/videos \
-  --trajectory /path/to/reference/trajectory.json \
-  --reference-text /path/to/reference/steps.txt
+  --seed 0 --layout-id 9 \
+  --codex-context-window 432000 \
+  --reference-video /path/to/reference_demo/RoboDojo/fasten_screws/videos \
+  --trajectory /path/to/reference_demo/RoboDojo/fasten_screws/trajectory.json \
+  --reference-text /path/to/reference_demo/RoboDojo/fasten_screws/steps.txt \
+  --reference-mode sequence --reference-fps 1
 ```
 
-Keep options matching your combination: text-only uses `--reference-text`; text + trajectory uses `--reference-text` and `--trajectory`; text + video uses `--reference-text` and `--reference-video`.
+Keep options matching your combination: text-only uses `--reference-text`; text + trajectory uses `--reference-text` and `--trajectory`; text + video uses `--reference-text` and `--reference-video`. When removing video, also remove `--reference-mode` and `--reference-fps`, and `--reference-max-frames` if you added it.
 
 For `run` and `queue`, sequence references default to at most 48 images per view. Set `--reference-max-frames` (minimum 2) to change the limit; an episode's `reference.max_frames` overrides the queue CLI value. If sampling at `--reference-fps` exceeds the limit, select frames evenly across the full video, including both endpoints; otherwise keep the FPS sampling. Trajectory records remain unchanged. This limit does not apply to offline `reference prepare` or text annotation.
 

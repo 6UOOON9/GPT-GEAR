@@ -15,9 +15,10 @@
 | 配置 | 内容 | 需要调整 |
 |---|---|---|
 | [libero_plus.json](../configs/queues/libero_plus.json) | LIBERO-plus：任务清单中的 50 个变体，各运行一次 | `env_root`、`sim_python` |
+| [libero_geomotion.json](../configs/queues/libero_geomotion.json) | LIBERO-GeoMotion：36 个场景，其中 24 个带参考 | 环境路径及所有参考路径 |
 | [robocasa_gr1.json](../configs/queues/robocasa_gr1.json) | GR1：24 任务 × 20 seed | 四项环境路径 |
 | [univtac.json](../configs/queues/univtac.json) | UniVTAC：8 任务 × 20 seed，`force` 模式 | `env_root`、`sim_python` |
-| [robotwin.json](../configs/queues/robotwin.json) | 50 任务 × 2 种配置 × 5 seed：clean 和 random 均为 `0–4`，共 500 回合 | `env_root`、`sim_python` |
+| [robotwin.json](../configs/queues/robotwin.json) | 50 任务 × 2 种配置 × 5 seed：clean 和 random 均为 `0–4`，共 500 回合，均使用同名任务示范 | 环境路径和所有参考路径 |
 | [robodojo.json](../configs/queues/robodojo.json) | RoboDojo：42 个任务，其中 34 个带参考 | 环境路径及所有参考路径 |
 
 GR1 的四项路径为 `env_root`、`robosuite_root`、`data_root`、`sim_python`。GR1 与 UniVTAC 大队列中的 seed 来自来源项目预设，不代表官方 seed split。
@@ -85,6 +86,8 @@ gpt-gear queue configs/queues/robotwin.json outputs/robotwin_override \
 GR1 的 `robosuite_root` 和 `data_root` 仍需在 JSON 中修改。混合环境队列不要传统一的 `--benchmark`。
 
 ### 为回合添加参考
+
+RoboDojo 和 LIBERO-GeoMotion 同时使用视频、文字与完整轨迹示范时，上下文窗口设为 `432000`。仓库中的两份队列已在 JSON 顶层设置 `"codex_context_window": 432000`，复制配置时请保留；显式 `--codex-context-window` 会覆盖 JSON 值。单任务运行时，在 `gpt-gear run` 中加入 `--codex-context-window 432000`，详见[示范指南](reference-protocol.zh-CN.md#4-加入单回合或队列)。
 
 先准备好原始参考文件，再在 episode 内增加 `reference`。例如，下面是一个可放入 `episodes` 的条目：
 

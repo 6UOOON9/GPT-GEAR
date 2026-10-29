@@ -4,7 +4,7 @@
     "libero": {
       "benchmark": "libero-plus",
       "env_root": "/path/to/LIBERO-plus",
-      "sim_python": "/path/to/libero/bin/python"
+      "sim_python": "/path/to/libero-plus/bin/python"
     }
   },
   "episodes": [

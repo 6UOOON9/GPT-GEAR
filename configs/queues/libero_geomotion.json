@@ -5,7 +5,7 @@
     "geomotion": {
       "benchmark": "libero-geomotion",
       "env_root": "/path/to/LIBERO-GeoMotion",
-      "sim_python": "/path/to/geomotion/bin/python"
+      "sim_python": "/path/to/libero-geomotion/bin/python"
     }
   },
   "episodes": [
@@ -16,9 +16,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_000",
-        "text": "/path/to/references/libero-geomotion/task_000/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_000/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -30,9 +30,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_000",
-        "text": "/path/to/references/libero-geomotion/task_000/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_000/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -44,9 +44,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_000",
-        "text": "/path/to/references/libero-geomotion/task_000/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_000/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -58,9 +58,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_000",
-        "text": "/path/to/references/libero-geomotion/task_000/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_000/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_000/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -72,9 +72,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_004",
-        "text": "/path/to/references/libero-geomotion/task_004/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_004/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -86,9 +86,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_004",
-        "text": "/path/to/references/libero-geomotion/task_004/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_004/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -100,9 +100,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_004",
-        "text": "/path/to/references/libero-geomotion/task_004/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_004/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -114,9 +114,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_004",
-        "text": "/path/to/references/libero-geomotion/task_004/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_004/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_004/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -128,9 +128,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_008",
-        "text": "/path/to/references/libero-geomotion/task_008/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_008/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -142,9 +142,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_008",
-        "text": "/path/to/references/libero-geomotion/task_008/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_008/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -156,9 +156,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_008",
-        "text": "/path/to/references/libero-geomotion/task_008/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_008/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -170,9 +170,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_008",
-        "text": "/path/to/references/libero-geomotion/task_008/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_008/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_008/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -268,9 +268,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_026",
-        "text": "/path/to/references/libero-geomotion/task_026/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_026/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -282,9 +282,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_026",
-        "text": "/path/to/references/libero-geomotion/task_026/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_026/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -296,9 +296,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_026",
-        "text": "/path/to/references/libero-geomotion/task_026/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_026/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -310,9 +310,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_026",
-        "text": "/path/to/references/libero-geomotion/task_026/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_026/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_026/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -324,9 +324,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_028",
-        "text": "/path/to/references/libero-geomotion/task_028/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_028/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -338,9 +338,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_028",
-        "text": "/path/to/references/libero-geomotion/task_028/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_028/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -352,9 +352,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_028",
-        "text": "/path/to/references/libero-geomotion/task_028/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_028/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -366,9 +366,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_028",
-        "text": "/path/to/references/libero-geomotion/task_028/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_028/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -380,9 +380,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_028",
-        "text": "/path/to/references/libero-geomotion/task_028/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_028/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -394,9 +394,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_028",
-        "text": "/path/to/references/libero-geomotion/task_028/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_028/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_028/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -408,9 +408,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_034",
-        "text": "/path/to/references/libero-geomotion/task_034/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_034/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_034/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_034/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_034/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
@@ -422,9 +422,9 @@
       "init_state_index": 0,
       "max_native_steps": 4000,
       "reference": {
-        "video": "/path/to/references/libero-geomotion/task_034",
-        "text": "/path/to/references/libero-geomotion/task_034/steps.md",
-        "trajectory": "/path/to/references/libero-geomotion/task_034/trajectory.json",
+        "video": "/path/to/reference_demo/LIBERO-GeoMotion/task_034/videos",
+        "text": "/path/to/reference_demo/LIBERO-GeoMotion/task_034/steps.txt",
+        "trajectory": "/path/to/reference_demo/LIBERO-GeoMotion/task_034/trajectory.json",
         "mode": "sequence",
         "fps": 1
       }
