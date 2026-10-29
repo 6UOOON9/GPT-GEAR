@@ -22,7 +22,7 @@ Both use `version: 2` and are loaded by `gpt-gear queue`; `episodes` in `single_
 | [univtac.json](queues/univtac.json) | UniVTAC: 8 tasks × 20 preset seeds, `force` mode by default | 160 |
 | [robotwin.json](queues/robotwin.json) | RoboTwin: 50 tasks × 2 configurations × 5 seeds (`0–4` for each), all with references | 500 |
 
-GR1 and UniVTAC batch seeds follow presets from the source projects; they are not official seed splits. Prepare reference data separately.
+GR1 and UniVTAC batch seeds follow presets from the source projects; they are not official seed splits. Download the references used by the RoboDojo, RoboTwin, and LIBERO-GeoMotion queues from [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo) on Hugging Face. See the [demonstration download guide](../docs/reference-protocol.md#download-reference-demo) for commands and directory layout, then replace `/path/to/reference_demo` in the configurations with your absolute download directory.
 
 The RoboTwin queue sorts tasks lexicographically. For each task, it runs `clean` with seeds `0–4`, then `random` with seeds `0–4`, for 250 clean and 250 random episodes. The 50 task names were checked against task modules and descriptions in RoboTwin's `envs/` directory and cross-checked with RPent's RoboTwin evaluation task set. Seeds follow this queue's rules. Each task uses its same-name demonstration for both configurations and all seeds.
 

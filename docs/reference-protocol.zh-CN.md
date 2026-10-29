@@ -30,12 +30,40 @@
 
 **所有环境都需在 `run` 或 `queue --run` 之前准备好所用参考文件。**
 
+<a id="download-reference-demo"></a>
+
+### 下载已发布的示范
+
+可直接从 Hugging Face 下载 **[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)**：共 91 份示范，包含 RoboDojo（35 份）、RoboTwin（50 份）和 LIBERO-GeoMotion（6 份）的多视角视频、文字步骤及动作轨迹。任务映射见[示范包说明](https://huggingface.co/datasets/uooon/reference_demo/blob/main/README.zh-CN.md#task-mapping)。
+
+在已激活的工具环境中安装 [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli)，将 `/path/to/reference_demo` 替换为本机的绝对下载路径：
+
+```bash
+python -m pip install -U huggingface_hub
+hf download uooon/reference_demo --repo-type dataset \
+  --local-dir /path/to/reference_demo
+```
+
+也可以只下载一个完整任务目录，例如 RoboDojo 的 `fasten_screws`：
+
+```bash
+hf download uooon/reference_demo --repo-type dataset \
+  --include "RoboDojo/fasten_screws/*" \
+  --local-dir /path/to/reference_demo
+```
+
+下载后，任务目录为 `/path/to/reference_demo/<环境>/<任务>/`，包含 `steps.txt`、`trajectory.json`、`trajectory.jsonl` 和 `videos/`。保留目录结构、文件名及大小写，确保描述文件能找到轨迹与视频。
+
+仓库的 [RoboDojo](../configs/queues/robodojo.json)、[RoboTwin](../configs/queues/robotwin.json) 和 [LIBERO-GeoMotion](../configs/queues/libero_geomotion.json) 队列已配置对应任务的参考路径。将其中 `/path/to/reference_demo` 替换为下载目录的绝对路径，并修改仿真环境路径，即可复用；使用完整队列时需下载该环境的全部示范。
+
+### 使用已有文件或自行准备
+
 1. 按所选组合准备文件；如使用轨迹，准备所选环境格式的轨迹描述 JSON 和 JSONL。
 2. 如需文字，提供已有文字，或使用 [视频文字生成教程](reference-format.zh-CN.md) 中的 `reference annotate`。
 3. 核对任务、视角和轨迹坐标语义，再执行下面的离线校验。
 4. 运行评测时传入原始文件路径，由启动器组装本次回合的缓存。
 
-本项目提供视频转文字、格式校验、抽帧与缓存，不下载原始数据、不导出视频或生成轨迹，也不会在评测启动时补齐缺失示范。
+GPT-GEAR 命令提供视频转文字、格式校验、抽帧与缓存，不会自动下载原始数据、导出视频或生成轨迹，也不会在评测启动时补齐缺失示范。请先用上面的下载命令获取示范，或准备自己的文件。
 
 | 环境 | 文字生成所需视角 | 文字生成入口 |
 |---|---|---|
@@ -99,7 +127,7 @@ gpt-gear reference prepare --benchmark robodojo \
 
 [RoboDojo 队列](../configs/queues/robodojo.json)和 [LIBERO-GeoMotion 队列](../configs/queues/libero_geomotion.json)已在 JSON 顶层设置 `"codex_context_window": 432000`，复制队列时请保留；显式 CLI 参数会覆盖该值。单独执行 `run` 不会读取队列设置，需要自行加上此参数。离线 `reference prepare` 不调用模型，无需添加该参数。
 
-下面使用 RoboDojo 的 `fasten_screws` 任务，以及 `reference_demo` 示范包中的同名视频、文字与轨迹。先准备 [RoboDojo 环境和资产](environments/robodojo.zh-CN.md#源码与资产)，激活 GPT-GEAR 工具环境，再从仓库根目录运行。替换安装路径和示范路径，并使用新的输出目录：
+下面使用 RoboDojo 的 `fasten_screws` 任务，以及 [reference_demo 示范包](#download-reference-demo)中的同名视频、文字与轨迹。先准备 [RoboDojo 环境和资产](environments/robodojo.zh-CN.md#源码与资产)，激活 GPT-GEAR 工具环境，再从仓库根目录运行。替换安装路径和示范路径，并使用新的输出目录：
 
 ```bash
 gpt-gear run fasten_screws outputs/robodojo_reference \

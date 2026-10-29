@@ -22,7 +22,7 @@
 | [univtac.json](queues/univtac.json) | UniVTAC：8 个任务 × 20 个预设 seed，默认 `force` 模式 | 160 |
 | [robotwin.json](queues/robotwin.json) | RoboTwin：50 个任务 × 2 种配置 × 5 个 seed（均为 `0–4`），全部带参考输入 | 500 |
 
-GR1 和 UniVTAC 的批量 seed 沿用来源项目预设，不代表官方 seed split。参考数据需另行准备。
+GR1 和 UniVTAC 的批量 seed 沿用来源项目预设，不代表官方 seed split。RoboDojo、RoboTwin 和 LIBERO-GeoMotion 队列所用参考示范可从 Hugging Face 的 [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo) 下载，下载命令与目录说明见[示范下载指南](../docs/reference-protocol.zh-CN.md#download-reference-demo)。下载后，将配置中的 `/path/to/reference_demo` 替换为本机下载目录的绝对路径。
 
 RoboTwin 队列按任务名字典序排列，每个任务依次使用 seed `0–4` 跑 `clean`、seed `0–4` 跑 `random`，共 250 个 clean 和 250 个 random 回合。50 个任务名核对自 RoboTwin 的 `envs/` 目录中的任务模块及配套任务说明，并与 RPent 的 RoboTwin 评测任务集合交叉检查；seed 按本队列规则设置。每个任务在两种配置和所有 seed 下共用其同名示范。
 

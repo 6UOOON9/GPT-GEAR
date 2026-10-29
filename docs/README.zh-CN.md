@@ -26,6 +26,7 @@
 
 | 文档 | 适用场景 |
 |---|---|
+| [下载参考示范](reference-protocol.zh-CN.md#download-reference-demo) · [Hugging Face 数据集](https://huggingface.co/datasets/uooon/reference_demo) | 下载 RoboDojo、RoboTwin 和 LIBERO-GeoMotion 的视频、文字与轨迹，直接复用现有队列 |
 | [上下文学习指南](reference-protocol.zh-CN.md) | 将视频、轨迹和文字加入评测，或编写格式转换工具 |
 | [从视频生成文字步骤](reference-format.zh-CN.md) | 已有示范视频，希望生成可读的操作描述；已有文字时可跳过 |
 

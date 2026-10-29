@@ -23,7 +23,7 @@
 
 GR1 的四项路径为 `env_root`、`robosuite_root`、`data_root`、`sim_python`。GR1 与 UniVTAC 大队列中的 seed 来自来源项目预设，不代表官方 seed split。
 
-`single_task/` 中的配置执行时也会调用模型；无模型检查见 [运行指南](running.zh-CN.md#无模型接口检查)。参考数据不随仓库提供。
+`single_task/` 中的配置执行时也会调用模型；无模型检查见 [运行指南](running.zh-CN.md#无模型接口检查)。RoboDojo、RoboTwin 和 LIBERO-GeoMotion 的参考数据已发布在 Hugging Face：[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)。按[示范下载指南](reference-protocol.zh-CN.md#download-reference-demo)下载后，将配置中的 `/path/to/reference_demo` 替换为本机下载目录的绝对路径。
 
 ## 2. 检查计划，再执行
 

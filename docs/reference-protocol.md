@@ -29,12 +29,40 @@ Reference text describes steps from expert demonstration videos. At evaluation t
 
 **Prepare reference files before `run` or `queue --run` for every environment.**
 
+<a id="download-reference-demo"></a>
+
+### Download the released demonstrations
+
+Download **[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)** from Hugging Face: 91 demonstrations with multi-view video, textual steps, and action trajectories for RoboDojo (35), RoboTwin (50), and LIBERO-GeoMotion (6). See the [package README](https://huggingface.co/datasets/uooon/reference_demo/blob/main/README.md#task-mapping) for task mappings.
+
+Install the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli) in your activated tool environment. Replace `/path/to/reference_demo` with your absolute download path:
+
+```bash
+python -m pip install -U huggingface_hub
+hf download uooon/reference_demo --repo-type dataset \
+  --local-dir /path/to/reference_demo
+```
+
+To download just one complete task directory, such as RoboDojo's `fasten_screws`:
+
+```bash
+hf download uooon/reference_demo --repo-type dataset \
+  --include "RoboDojo/fasten_screws/*" \
+  --local-dir /path/to/reference_demo
+```
+
+Each downloaded task lives at `/path/to/reference_demo/<environment>/<task>/` and contains `steps.txt`, `trajectory.json`, `trajectory.jsonl`, and `videos/`. Preserve directory structure, filenames, and capitalization so descriptors can resolve the trajectory and video files.
+
+The bundled [RoboDojo](../configs/queues/robodojo.json), [RoboTwin](../configs/queues/robotwin.json), and [LIBERO-GeoMotion](../configs/queues/libero_geomotion.json) queues already map tasks to their reference paths. Replace `/path/to/reference_demo` with your absolute download directory and update the simulation environment paths to reuse them. Download all demonstrations for an environment before running its full queue.
+
+### Use existing files or prepare your own
+
 1. Prepare files for your input combination. For trajectories, prepare a descriptor JSON and JSONL in the selected environment's format.
 2. If text is needed, supply existing text or use `reference annotate` from the [video-to-text tutorial](reference-format.md).
 3. Check the task, camera views, and trajectory coordinate semantics, then run the offline validation below.
 4. Pass original file paths when running evaluation; the launcher assembles a cache for that episode.
 
-This project provides video-to-text generation, format validation, frame sampling, and caching. It does not download raw data, export video, generate trajectories, or fill in missing demonstrations at evaluation startup.
+GPT-GEAR commands provide video-to-text generation, format validation, frame sampling, and caching. They do not automatically download raw data, export video, generate trajectories, or fill in missing demonstrations at evaluation startup. Download the released demonstrations with the commands above or prepare your own files first.
 
 | Environment | Views needed for text generation | Text-generation entry point |
 |---|---|---|
@@ -98,7 +126,7 @@ With video, the default is `sequence` sampling at 1 FPS. `endpoints` mode select
 
 The [RoboDojo queue](../configs/queues/robodojo.json) and [LIBERO-GeoMotion queue](../configs/queues/libero_geomotion.json) already set top-level `"codex_context_window": 432000`. Keep this field when copying a queue; an explicit CLI value overrides it. A standalone `run` does not read queue settings, so include the flag yourself. Offline `reference prepare` does not call a model and does not need this flag.
 
-This example uses RoboDojo's `fasten_screws` task and its video, text, and trajectory from the `reference_demo` package. Prepare the [RoboDojo environment and assets](environments/robodojo.md#source-code-and-assets), activate the GPT-GEAR tool environment, then run from the repository root. Replace the installation and demonstration paths and use a new output directory:
+This example uses RoboDojo's `fasten_screws` task and its video, text, and trajectory from the [reference_demo package](#download-reference-demo). Prepare the [RoboDojo environment and assets](environments/robodojo.md#source-code-and-assets), activate the GPT-GEAR tool environment, then run from the repository root. Replace the installation and demonstration paths and use a new output directory:
 
 ```bash
 gpt-gear run fasten_screws outputs/robodojo_reference \

@@ -23,7 +23,7 @@ Copy a suitable configuration and update its environment paths. Repository examp
 
 GR1's four paths are `env_root`, `robosuite_root`, `data_root`, and `sim_python`. Seeds in the GR1 and UniVTAC batch queues come from source-project presets, not official seed splits.
 
-Executing configurations in `single_task/` also calls the model. See [model-free checks](running.md#model-free-interface-checks) for checks without one. Reference data is not included in the repository.
+Executing configurations in `single_task/` also calls the model. See [model-free checks](running.md#model-free-interface-checks) for checks without one. Reference data for RoboDojo, RoboTwin, and LIBERO-GeoMotion is available on Hugging Face at [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo). Follow the [demonstration download guide](reference-protocol.md#download-reference-demo), then replace `/path/to/reference_demo` in the configurations with your absolute download directory.
 
 ## 2. Inspect the plan, then execute
 

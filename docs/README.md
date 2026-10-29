@@ -26,6 +26,7 @@ Unless stated otherwise, run commands from the repository root with the tool env
 
 | Guide | When to use it |
 |---|---|
+| [Download reference demonstrations](reference-protocol.md#download-reference-demo) · [Hugging Face dataset](https://huggingface.co/datasets/uooon/reference_demo) | Download RoboDojo, RoboTwin, and LIBERO-GeoMotion video, text, and trajectories to reuse the existing queues |
 | [In-context learning guide](reference-protocol.md) | Add video, trajectories, and text to evaluation, or build format converters |
 | [Generate textual steps from video](reference-format.md) | Turn demonstration videos into readable instructions; skip this if text is already available |
 
