@@ -168,6 +168,9 @@ def codex_command(executable, args, prompt, session):
         command.extend(['-c', f'mcp_servers.sim.tools.{REFERENCE_TOOL}.output_token_limit={limit}'])
     if args.codex_model:
         command.extend(['--model', args.codex_model])
+    effort = getattr(args, 'codex_reasoning_effort', None)
+    if effort is not None:
+        command.extend(['-c', 'model_reasoning_effort=' + toml_string(effort)])
     # No task strategy, credentials or prompt file content in the user message.
     command.append('Connect to the existing simulation episode; do not start simulation or another Codex.\n'
                    f'Session file: {json.dumps(str(args.output / "session.json"), ensure_ascii=False)}\n'
@@ -374,6 +377,7 @@ def _run(args):
                     simulator_python=str(args.sim_python),
                     requested_layout_id=args.layout_id,
                     codex_version=version, model_override=args.codex_model,
+                    reasoning_effort_override=getattr(args, 'codex_reasoning_effort', None),
                     codex_context_window=args.codex_context_window,
                     control_transport='mcp', mcp_version=mcp_info['mcp_version'],
                     mcp_python=str(args.codex_mcp_python),

@@ -71,7 +71,8 @@ gpt-gear queue configs/queues/my_robotwin_queue.json outputs/my_robotwin_queue -
 | JSON 中的路径 | 相对于配置文件所在目录；建议使用绝对路径，不写 `$HOME` 等 shell 变量 |
 | 命令行中的路径 | 相对于当前工作目录 |
 | seed、初始化选择、预算、模态 | 放在每个 episode 中，使用下划线字段，如 `max_native_steps` |
-| 模型、GPU、端口、缓存 | 可通过 `queue` 命令的公共选项指定 |
+| 模型与推理强度 | JSON 顶层使用 `codex_model`、`codex_reasoning_effort`；命令行同名选项可覆盖 |
+| GPU、端口、缓存 | 可通过 `queue` 命令的公共选项指定 |
 | 上下文窗口 | JSON 顶层 `codex_context_window` 应用于整个队列；优先级：显式 `--codex-context-window`、队列配置、默认值 272000。 |
 | 环境选择 | 使用 `benchmark`，命令行没有 `--backend` 别名 |
 
@@ -84,6 +85,28 @@ gpt-gear queue configs/queues/robotwin.json outputs/robotwin_override \
 ```
 
 GR1 的 `robosuite_root` 和 `data_root` 仍需在 JSON 中修改。混合环境队列不要传统一的 `--benchmark`。
+
+### 指定模型与推理强度
+
+可在队列 JSON 顶层添加 `codex_model` 和 `codex_reasoning_effort`，统一应用到所有 episode。例如，在现有 JSON 的 `version` 旁增加以下两项（模型名替换为实际可用的模型 ID）：
+
+```json
+{
+  "codex_model": "YOUR_MODEL_ID",
+  "codex_reasoning_effort": "high"
+}
+```
+
+也可以直接在命令行指定，无需修改 JSON：
+
+```bash
+gpt-gear queue configs/queues/robodojo.json outputs/robodojo_model_high \
+  --codex-model YOUR_MODEL_ID --codex-reasoning-effort high --run
+```
+
+两项分别按“显式命令行参数 > JSON 顶层设置 > 本机 Codex 默认配置”取值。未设置的字段不会覆盖 Codex 默认值。`run` 同样支持这两个命令行参数。
+
+推理强度接受 `none`、`minimal`、`low`、`medium`、`high`、`xhigh`、`max`、`ultra`；实际支持的等级由所选模型和 Codex CLI 版本决定。每个回合的 `launcher.json` 记录 `model_override` 和 `reasoning_effort_override`；`null` 表示该项未显式指定，并不表示模型没有推理能力。
 
 ### 为回合添加参考
 
@@ -127,7 +150,7 @@ RoboDojo 和 LIBERO-GeoMotion 同时使用视频、文字与完整轨迹示范�
 
 队列通过环境路径、任务、seed 和初始化选择识别回合。GR1 的测量深度开关、UniVTAC 的触觉模式、RoboTwin 的 `task_config` 也参与身份计算。
 
-同一队列不允许重复身份。只改变预算、模型、参考或深度估计声明，不能将同一任务与初始化变成另一条独立回合。比较这些条件时，应分别执行队列并使用不同的输出目录；预算、参考和深度估计声明的差异分别写入各次使用的配置，模型通过各次命令的 `--codex-model` 指定。
+同一队列不允许重复身份。只改变预算、模型、推理强度、参考或深度估计声明，不能将同一任务与初始化变成另一条独立回合。比较这些条件时，应分别执行队列并使用不同的输出目录；模型和推理强度可在各次 JSON 顶层或命令行中指定。
 
 ## 4. 续跑与重试
 
@@ -150,7 +173,7 @@ gpt-gear queue configs/queues/robotwin.json outputs/robotwin_queue --run --retry
 
 重试创建新的 `attempt`，从初始状态重新开始，不恢复或重放旧动作。修改队列内容、环境路径或预算后，使用新的输出目录；原输出目录中的配置清单用于核对续跑是否一致。
 
-续跑比对的是解析后的 episode 配置和环境路径，**不包含命令行指定的模型、GPU、端口、缓存或 MCP 解释器**。续跑时请保持这些选项一致；更换模型做对比时使用新的输出目录，程序不会因此自动重跑已完成的回合。
+续跑比对的是解析后的 episode 配置和环境路径，包含 JSON 顶层设置的模型和推理强度，**不包含命令行覆盖的模型、推理强度、GPU、端口、缓存或 MCP 解释器**。续跑时请保持这些选项一致；更换模型或推理强度做对比时使用新的输出目录，程序不会因此自动重跑已完成的回合。
 
 ## 5. 查看队列产物
 

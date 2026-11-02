@@ -10,7 +10,7 @@ import signal
 import subprocess
 import sys
 from environments.benchmarks import BENCHMARKS, DEFAULTS, EPISODE_OPTIONS, PATH_OPTIONS, validate_task
-from execution.config import DEFAULT_CODEX_CONTEXT_WINDOW, episode_settings, positive_integer, reference_settings
+from execution.config import CODEX_REASONING_EFFORTS, DEFAULT_CODEX_CONTEXT_WINDOW, episode_settings, positive_integer, reference_settings
 from demonstrations.media import DEFAULT_REFERENCE_MAX_FRAMES, frame_limit
 
 
@@ -40,6 +40,10 @@ def load_jobs(path, *, env_root=None, sim_python=None):
     context_window = data.get('codex_context_window')
     if 'codex_context_window' in data and (type(context_window) is not int or context_window <= 0):
         raise ValueError('queue codex_context_window must be a positive integer')
+    if 'codex_model' in data and (not isinstance(data['codex_model'], str) or not data['codex_model'].strip()):
+        raise ValueError('queue codex_model must be a nonempty string')
+    if 'codex_reasoning_effort' in data and data['codex_reasoning_effort'] not in CODEX_REASONING_EFFORTS:
+        raise ValueError('queue codex_reasoning_effort must be one of: ' + ', '.join(CODEX_REASONING_EFFORTS))
     environments = data.get('environments')
     if not isinstance(environments, dict) or not environments:
         raise ValueError('queue requires named environments')
@@ -68,6 +72,9 @@ def load_jobs(path, *, env_root=None, sim_python=None):
         job = dict(entry)
         if context_window is not None:
             job['codex_context_window'] = context_window
+        for key in ('codex_model', 'codex_reasoning_effort'):
+            if key in data:
+                job[key] = data[key]
         if job.get('environment') not in resolved:
             raise ValueError('episode references unknown environment')
         job['host'] = dict(resolved[job['environment']])
@@ -141,8 +148,12 @@ def command(job, output, args):
             result += ['--' + key.replace('_', '-'), str(job[key]).lower() if isinstance(job[key], bool) else str(job[key])]
     for key in PATH_OPTIONS.get(host['benchmark'], ()):
         result += ['--' + key.replace('_', '-'), host[key]]
-    if args.codex_model:
-        result += ['--codex-model', args.codex_model]
+    for key in ('codex_model', 'codex_reasoning_effort'):
+        value = getattr(args, key, None)
+        if value is None:
+            value = job.get(key)
+        if value is not None:
+            result += ['--' + key.replace('_', '-'), value]
     context_window = getattr(args, 'codex_context_window', None)
     if context_window is None:
         context_window = job.get('codex_context_window', DEFAULT_CODEX_CONTEXT_WINDOW)
@@ -169,6 +180,8 @@ def main(argv=None):
     p.add_argument('--codex-mcp-python', type=Path, default=MCP_PYTHON)
     p.add_argument('--cache-dir', type=Path, default=REFERENCE_TEMP_ROOT)
     p.add_argument('--codex-model')
+    p.add_argument('--codex-reasoning-effort', choices=CODEX_REASONING_EFFORTS,
+                   help='Override queue codex_reasoning_effort (otherwise use the local Codex configuration)')
     p.add_argument('--codex-context-window', type=positive_integer,
                    help='Override queue codex_context_window for every episode (fallback: 272000)')
     p.add_argument('--reference-max-frames', type=frame_limit, default=DEFAULT_REFERENCE_MAX_FRAMES,

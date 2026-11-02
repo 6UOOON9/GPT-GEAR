@@ -71,7 +71,8 @@ To create a mixed-environment queue, add named environments and select the appro
 | Paths in JSON | Relative to the configuration file's directory; absolute paths are recommended, without shell variables such as `$HOME` |
 | Paths on the command line | Relative to the current working directory |
 | Seeds, initialization, budgets, modalities | Put them in each episode using underscore field names such as `max_native_steps` |
-| Model, GPU, port, cache | Set through shared `queue` command options |
+| Model and reasoning effort | Set top-level `codex_model` and `codex_reasoning_effort`; command-line options override these values |
+| GPU, port, cache | Set through shared `queue` command options |
 | Context window | Set top-level `codex_context_window` for the whole queue; precedence: explicit `--codex-context-window`, queue value, default 272000. |
 | Environment selection | Use `benchmark`; there is no command-line `--backend` alias |
 
@@ -84,6 +85,28 @@ gpt-gear queue configs/queues/robotwin.json outputs/robotwin_override \
 ```
 
 GR1's `robosuite_root` and `data_root` must still be updated in JSON. Do not pass a single `--benchmark` for a mixed-environment queue.
+
+### Select a model and reasoning effort
+
+Add top-level `codex_model` and `codex_reasoning_effort` to apply them to every episode. For example, add these fields next to `version` in an existing configuration, replacing the model ID with one available to your account:
+
+```json
+{
+  "codex_model": "YOUR_MODEL_ID",
+  "codex_reasoning_effort": "high"
+}
+```
+
+Alternatively, set them on the command line:
+
+```bash
+gpt-gear queue configs/queues/robodojo.json outputs/robodojo_model_high \
+  --codex-model YOUR_MODEL_ID --codex-reasoning-effort high --run
+```
+
+Each field uses this precedence: explicit CLI option, top-level JSON value, local Codex default. Unspecified fields do not override Codex defaults. Standalone `run` commands also accept both options.
+
+Accepted effort names are `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, `max`, and `ultra`; actual support depends on the model and Codex CLI version. Each episode's `launcher.json` records `model_override` and `reasoning_effort_override`. A `null` value means no explicit override was supplied.
 
 ### Add references to an episode
 
@@ -127,7 +150,7 @@ Additional supported `reference` combinations are shown below. Relative paths ar
 
 Queues identify episodes by environment paths, task, seed, and initialization choices. GR1's measured-depth setting, UniVTAC's tactile mode, and RoboTwin's `task_config` also participate in identity.
 
-Duplicate identities are not allowed within a queue. Changing only the budget, model, reference, or depth-estimation declaration setting does not make the same task and initialization a distinct episode. To compare these conditions, run separate queues with different output directories. Put budget, reference, and depth-estimation changes in each run's configuration, and select the model with `--codex-model` on each command.
+Duplicate identities are not allowed within a queue. Changing only the budget, model, reasoning effort, reference, or depth-estimation declaration setting does not make the same task and initialization a distinct episode. To compare these conditions, run separate queues with different output directories. Set the model and reasoning effort in each queue's top-level JSON or CLI options.
 
 ## 4. Resume and retry
 
@@ -150,7 +173,7 @@ gpt-gear queue configs/queues/robotwin.json outputs/robotwin_queue --run --retry
 
 A retry creates a new `attempt` from the initial state. It does not restore or replay old actions. Use a new output directory after changing queue contents, environment paths, or budgets. The manifest in the original output directory is used to check resume consistency.
 
-Resume validation compares resolved episode configurations and environment paths. It **does not include command-line model, GPU, port, cache, or MCP interpreter settings**. Keep those options consistent when resuming. Use a new output directory when comparing a different model; changing models does not automatically rerun completed episodes.
+Resume validation compares resolved episode configurations and environment paths, including model and reasoning effort set in JSON. It **does not include command-line overrides for model, reasoning effort, GPU, port, cache, or MCP interpreter settings**. Keep those options consistent when resuming. Use a new output directory when comparing a different model or reasoning effort; changing these options does not automatically rerun completed episodes.
 
 ## 5. Inspect queue artifacts
 

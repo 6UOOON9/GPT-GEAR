@@ -123,6 +123,7 @@ See [RoboTwin configuration](environments/robotwin.md) for assets, observations,
 | Option | Purpose |
 |---|---|
 | `--codex-model MODEL_NAME` | Override the local default model configuration |
+| `--codex-reasoning-effort high` | Set reasoning effort; omit to inherit local Codex configuration. Supported levels depend on the model and Codex CLI version. |
 | `--codex-context-window TOKENS` | Codex context window, default 272000. Use a size supported by the selected model; automatic context compaction remains enabled. |
 | `--reference-max-frames 48` | Maximum sequence images per view (minimum 2); see [reference sampling](reference-protocol.md#4-add-references-to-an-episode-or-queue). |
 | `--device-id 0` | Select the GPU |

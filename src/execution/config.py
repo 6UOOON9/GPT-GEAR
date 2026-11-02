@@ -11,6 +11,7 @@ from demonstrations.common import reference_modalities
 
 MCP_PYTHON = Path(sys.executable)
 DEFAULT_CODEX_CONTEXT_WINDOW = 272000
+CODEX_REASONING_EFFORTS = ('none', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max', 'ultra')
 # Keep reference frames on the caller's data disk, not the system /tmp.
 REFERENCE_TEMP_ROOT = Path.cwd() / '.cache/gpt-gear'
 FINALIZE_GRACE = 120.0
@@ -96,6 +97,8 @@ def parse_args(argv=None):
     for key in ('connect', 'idle', 'request'):
         parser.add_argument('--codex_' + key + '_timeout', type=positive_seconds, default=600.)
     parser.add_argument('--codex-model')
+    parser.add_argument('--codex-reasoning-effort', choices=CODEX_REASONING_EFFORTS,
+                        help='Override Codex reasoning effort; supported levels depend on the model and CLI version')
     parser.add_argument('--codex-context-window', type=positive_integer, default=DEFAULT_CODEX_CONTEXT_WINDOW,
                         help='Codex context window (default: 272000); must be supported by the selected model')
     parser.add_argument('--depth-estimation', type=boolean_string, default=None)
