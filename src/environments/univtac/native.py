@@ -153,14 +153,23 @@ class UniVTACNative:
         return state
 
     def _calibrate(self):
+        # Flush current articulation poses to Fabric without advancing physics.
+        self.env.sim.forward()
         root_pose = np.r_[self.robot.data.root_link_pos_w[0].cpu().numpy(),
                           self.robot.data.root_link_quat_w[0].cpu().numpy()]
         world_to_base = np.linalg.inv(ee_transform(root_pose))
         result = {}
         for name in CAMERAS:
             camera = self.env._camera_manager.cameras[name]
-            camera._update_poses(camera._ALL_INDICES)
-            pose = np.r_[camera.data.pos_w[0].cpu().numpy(), camera.data.quat_w_opengl[0].cpu().numpy()]
+            # Camera._update_poses() defaults to USD, which can retain the
+            # pre-reset pose while physics/rendering use Fabric. Freezing that
+            # pose against the current EE would corrupt the wrist installation.
+            # XFormPrim returns the camera prim's OpenGL orientation (wxyz).
+            # Fabric's Warp index conversion requires 32-bit indices.
+            positions, quaternions_gl = camera._view.get_world_poses(
+                camera._ALL_INDICES.to(dtype=self.torch.int32),
+                usd=not self.env.cfg.sim.use_fabric)
+            pose = np.r_[positions[0].cpu().numpy(), quaternions_gl[0].cpu().numpy()]
             result[name] = dict(intrinsic_K=camera.data.intrinsic_matrices[0].cpu().numpy().tolist(),
                 camera_to_env_gl=(world_to_base @ ee_transform(pose)).tolist(),
                 calibration_reference='environment' if name == 'head' else 'robot0_ee',
