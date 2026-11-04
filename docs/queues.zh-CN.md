@@ -14,7 +14,7 @@
 
 | 配置 | 内容 | 需要调整 |
 |---|---|---|
-| [libero_plus.json](../configs/queues/libero_plus.json) | LIBERO-plus：任务清单中的 50 个变体，各运行一次 | `env_root`、`sim_python` |
+| [libero_plus.json](../configs/queues/libero_plus.json) | LIBERO-plus：任务清单中的 50 个变体，各运行一次，均带基础任务参考 | 环境路径及所有参考路径 |
 | [libero_geomotion.json](../configs/queues/libero_geomotion.json) | LIBERO-GeoMotion：36 个场景，其中 24 个带参考 | 环境路径及所有参考路径 |
 | [robocasa_gr1.json](../configs/queues/robocasa_gr1.json) | GR1：24 任务 × 20 seed | 四项环境路径 |
 | [univtac.json](../configs/queues/univtac.json) | UniVTAC：8 任务 × 20 seed，`force` 模式 | `env_root`、`sim_python` |
@@ -23,7 +23,7 @@
 
 GR1 的四项路径为 `env_root`、`robosuite_root`、`data_root`、`sim_python`。GR1 与 UniVTAC 大队列中的 seed 来自来源项目预设，不代表官方 seed split。
 
-`single_task/` 中的配置执行时也会调用模型；无模型检查见 [运行指南](running.zh-CN.md#无模型接口检查)。RoboDojo、RoboTwin 和 LIBERO-GeoMotion 的参考数据已发布在 Hugging Face：[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)。按[示范下载指南](reference-protocol.zh-CN.md#download-reference-demo)下载后，将配置中的 `/path/to/reference_demo` 替换为本机下载目录的绝对路径。
+`single_task/` 中的配置执行时也会调用模型；无模型检查见 [运行指南](running.zh-CN.md#无模型接口检查)。RoboDojo、RoboTwin、LIBERO-GeoMotion 和 LIBERO-Plus 的参考数据已发布在 Hugging Face：[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)。按[示范下载指南](reference-protocol.zh-CN.md#download-reference-demo)下载后，将配置中的 `/path/to/reference_demo` 替换为本机下载目录的绝对路径。
 
 ## 2. 检查计划，再执行
 

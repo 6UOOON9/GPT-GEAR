@@ -47,6 +47,7 @@ Take a look at the [paper](https://arxiv.org/abs/2610.28259) and [project page](
 
 ## 📰 News
 
+- 🎬 **2026/11/04** — Added 40 LIBERO-Plus base-task demonstrations, bringing the reference collection to 131. The [LIBERO-Plus queue](configs/queues/libero_plus.json) now attaches video, text, and trajectory references to all 50 task variants. See the [download and usage guide](docs/reference-protocol.md#download-reference-demo).
 - 🎬 **2026/10/29** — [Simulation reference demonstrations](https://huggingface.co/datasets/uooon/reference_demo) are now available on Hugging Face! Download 91 video, text, and trajectory demonstrations for RoboDojo, RoboTwin, and LIBERO-GeoMotion and reuse the existing evaluation queues. See the [download and usage guide](docs/reference-protocol.md#download-reference-demo).
 - ✨ **2026/10/21** — Our 📄 [paper](https://arxiv.org/abs/2610.28259), 🌐 [project page](https://6uooon9.github.io/GPT-GEAR/), and 📦 [LIBERO-GeoMotion dataset](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion) are now available! Visit the project page for more demos, explore our method and results, and share your thoughts and feedback.
 - 📄 **2026/10/20** — **Research report**: 📄 [*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](https://arxiv.org/abs/2610.28259). We share GPT-6 Astra's capabilities and limitations in robotic manipulation, along with questions for further exploration.
@@ -230,7 +231,7 @@ gpt-gear run libero_spatial/0 outputs/libero_first_run \
 
 This starts the simulator and calls the model. The output directory must not already exist; do not create it beforehand. To select a model, append `--codex-model MODEL_NAME`.
 
-To add demonstration text, video, or trajectories to a task, follow the 🎬 [in-context learning (ICL) guide](docs/reference-protocol.md). Ready-to-use RoboDojo, RoboTwin, and LIBERO-GeoMotion demonstrations are available at [Hugging Face: simulation reference demonstrations](https://huggingface.co/datasets/uooon/reference_demo); see the [download and usage instructions](docs/reference-protocol.md#download-reference-demo) to use them with the corresponding queues.
+To add demonstration text, video, or trajectories to a task, follow the 🎬 [in-context learning (ICL) guide](docs/reference-protocol.md). Ready-to-use RoboDojo, RoboTwin, LIBERO-GeoMotion, and LIBERO-Plus demonstrations are available at [Hugging Face: simulation reference demonstrations](https://huggingface.co/datasets/uooon/reference_demo); see the [download and usage instructions](docs/reference-protocol.md#download-reference-demo) to use them with the corresponding queues.
 
 <a id="3-inspect-the-results"></a>
 
@@ -268,7 +269,7 @@ A queue can contain multiple tasks, seeds, or environments. See the 🧪 [queue 
 
 Embodied in-context learning (ICL) provides Astra with demonstrations in its context to guide decisions in the current scene. Demonstrations are optional: supply text or video alone, or combine them with action trajectories to compare input settings.
 
-Prepare demonstration files before evaluation for every environment. Download the released **[simulation reference demonstration collection](https://huggingface.co/datasets/uooon/reference_demo)** to reuse video, text, and trajectories for RoboDojo, RoboTwin, and LIBERO-GeoMotion with the bundled queues. For other tasks, prepare your own demonstrations. GPT-GEAR generates textual steps from existing videos, validates inputs, and delivers demonstrations to the model; its evaluation commands do not automatically download data, export videos, or generate trajectories.
+Prepare demonstration files before evaluation for every environment. Download the released **[simulation reference demonstration collection](https://huggingface.co/datasets/uooon/reference_demo)** to reuse video, text, and trajectories for RoboDojo, RoboTwin, LIBERO-GeoMotion, and LIBERO-Plus with the bundled queues. For other tasks, prepare your own demonstrations. GPT-GEAR generates textual steps from existing videos, validates inputs, and delivers demonstrations to the model; its evaluation commands do not automatically download data, export videos, or generate trajectories.
 
 - 📦 [Download demonstrations and configure local paths](docs/reference-protocol.md#download-reference-demo)
 - 🎬 [Use in-context learning in evaluation](docs/reference-protocol.md)

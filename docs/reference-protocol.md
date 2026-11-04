@@ -33,7 +33,7 @@ Reference text describes steps from expert demonstration videos. At evaluation t
 
 ### Download the released demonstrations
 
-Download **[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)** from Hugging Face: 91 demonstrations with multi-view video, textual steps, and action trajectories for RoboDojo (35), RoboTwin (50), and LIBERO-GeoMotion (6). See the [package README](https://huggingface.co/datasets/uooon/reference_demo/blob/main/README.md#task-mapping) for task mappings.
+Download **[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)** from Hugging Face: 131 demonstrations with multi-view video, textual steps, and action trajectories for RoboDojo (35), RoboTwin (50), LIBERO-GeoMotion (6), and LIBERO-Plus (40). See the [package README](https://huggingface.co/datasets/uooon/reference_demo/blob/main/README.md#task-mapping) for task mappings.
 
 Install the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli) in your activated tool environment. Replace `/path/to/reference_demo` with your absolute download path:
 
@@ -51,9 +51,17 @@ hf download uooon/reference_demo --repo-type dataset \
   --local-dir /path/to/reference_demo
 ```
 
+To download all 40 LIBERO-Plus base-task demonstrations:
+
+```bash
+hf download uooon/reference_demo --repo-type dataset \
+  --include "LIBERO-Plus/*" \
+  --local-dir /path/to/reference_demo
+```
+
 Each downloaded task lives at `/path/to/reference_demo/<environment>/<task>/` and contains `steps.txt`, `trajectory.json`, `trajectory.jsonl`, and `videos/`. Preserve directory structure, filenames, and capitalization so descriptors can resolve the trajectory and video files.
 
-The bundled [RoboDojo](../configs/queues/robodojo.json), [RoboTwin](../configs/queues/robotwin.json), and [LIBERO-GeoMotion](../configs/queues/libero_geomotion.json) queues already map tasks to their reference paths. Replace `/path/to/reference_demo` with your absolute download directory and update the simulation environment paths to reuse them. Download all demonstrations for an environment before running its full queue.
+The bundled [RoboDojo](../configs/queues/robodojo.json), [RoboTwin](../configs/queues/robotwin.json), [LIBERO-GeoMotion](../configs/queues/libero_geomotion.json), and [LIBERO-Plus](../configs/queues/libero_plus.json) queues already map tasks to their reference paths. Replace `/path/to/reference_demo` with your absolute download directory and update the simulation environment paths to reuse them. Download all demonstrations for an environment before running its full queue.
 
 ### Use existing files or prepare your own
 
@@ -173,6 +181,8 @@ The trajectory descriptor JSON points to the complete JSONL file through `files.
 A video directory can contain one matching `*head.mp4`, `*left_wrist.mp4`, and `*right_wrist.mp4` each, or use an explicit `videos.json` mapping, which takes precedence when present. The mapping uses `sim-reference-videos-v1` as described above; `robodojo-reference-videos-v1` is also accepted with the same mapping structure. Text generation requires `head`, `left_wrist`, and `right_wrist` views. See the [video-to-text tutorial](reference-format.md#robodojo-three-view-video) for a directory example. Whether to provide trajectories and video still follows the input combinations above.
 
 ### LIBERO-plus
+
+The 40 demonstrations are stored in `LIBERO-Plus/base_00/`–`base_39/`, one per base task. Each includes `steps.txt`, `trajectory.json`, `trajectory.jsonl`, and `videos/` with `agentview.mp4`, `wrist.mp4`, and `videos.json`. Match perturbation variants to demonstrations by base task name; `base_XX` is not a runtime task ID. See the [LIBERO-Plus environment guide](environments/libero-plus.md#references-and-evaluation-configurations) for directory ranges and a queue example.
 
 `pose.reference` is `robot0_grip_site`. Each action contains `dpos`, `dquat`, and `gripper`. Gripper values are `open`, `close`, or `null`, with `null` meaning unknown. The final action is `null`. `sampling` contains video declarations, the nominal interval, gaps, and lists of frames with unknown gripper commands.
 

@@ -16,19 +16,19 @@
 | 配置 | 评测内容 | episode 数 |
 |---|---|---:|
 | [robodojo.json](queues/robodojo.json) | RoboDojo：42 个任务，seed 0、layout 9；其中 34 个提供参考输入，其余 8 个不带参考 | 42 |
-| [libero_plus.json](queues/libero_plus.json) | LIBERO-plus：5 个基础任务 × 10 个扰动变体，每项运行一次 | 50 |
+| [libero_plus.json](queues/libero_plus.json) | LIBERO-plus：5 个基础任务 × 10 个扰动变体，每项运行一次，均带参考 | 50 |
 | [libero_geomotion.json](queues/libero_geomotion.json) | LIBERO-GeoMotion：36 场景；6 类有示范（24 场景），3 类无示范（12 场景） | 36 |
 | [robocasa_gr1.json](queues/robocasa_gr1.json) | RoboCasa GR1：24 个任务 × 20 个预设 seed | 480 |
 | [univtac.json](queues/univtac.json) | UniVTAC：8 个任务 × 20 个预设 seed，默认 `force` 模式 | 160 |
 | [robotwin.json](queues/robotwin.json) | RoboTwin：50 个任务 × 2 种配置 × 5 个 seed（均为 `0–4`），全部带参考输入 | 500 |
 
-GR1 和 UniVTAC 的批量 seed 沿用来源项目预设，不代表官方 seed split。RoboDojo、RoboTwin 和 LIBERO-GeoMotion 队列所用参考示范可从 Hugging Face 的 [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo) 下载，下载命令与目录说明见[示范下载指南](../docs/reference-protocol.zh-CN.md#download-reference-demo)。下载后，将配置中的 `/path/to/reference_demo` 替换为本机下载目录的绝对路径。
+GR1 和 UniVTAC 的批量 seed 沿用来源项目预设，不代表官方 seed split。RoboDojo、RoboTwin、LIBERO-GeoMotion 和 LIBERO-Plus 队列所用参考示范可从 Hugging Face 的 [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo) 下载，下载命令与目录说明见[示范下载指南](../docs/reference-protocol.zh-CN.md#download-reference-demo)。下载后，将配置中的 `/path/to/reference_demo` 替换为本机下载目录的绝对路径。
 
 RoboTwin 队列按任务名字典序排列，每个任务依次使用 seed `0–4` 跑 `clean`、seed `0–4` 跑 `random`，共 250 个 clean 和 250 个 random 回合。50 个任务名核对自 RoboTwin 的 `envs/` 目录中的任务模块及配套任务说明，并与 RPent 的 RoboTwin 评测任务集合交叉检查；seed 按本队列规则设置。每个任务在两种配置和所有 seed 下共用其同名示范。
 
 UniVTAC 的模态可按需设置：JSON 中为相应 episode 设置 `tactile_mode`，可选 `none`、`image`、`force`、`image-force`，默认 `force`；直接使用 `gpt-gear run` 时通过 `--tactile-mode` 指定。
 
-LIBERO-plus 的完整任务标识与执行顺序见 [队列配置](queues/libero_plus.json) 中的 `episodes`。`task` 使用 `suite/Task编号`（0-based），不使用 1-based 的 Classification ID。每项沿用单任务配置的 `seed=0`、`init_state_index=0`、`max_native_steps=600`，未配置参考输入。任务名称中的 `initstate_N` 属于变体名称，不作为 `init_state_index`。
+LIBERO-plus 的完整任务标识与执行顺序见 [队列配置](queues/libero_plus.json) 中的 `episodes`。`task` 使用 `suite/Task编号`（0-based），不使用 1-based 的 Classification ID。每项沿用单任务配置的 `seed=0`、`init_state_index=0`、`max_native_steps=600`，并按基础任务配置视频、文字和轨迹参考（`mode: sequence`、`fps: 1`）。示范目录为 `LIBERO-Plus/base_XX`，示范编号不是运行任务编号。映射与路径设置见 [LIBERO-Plus 示范说明](../docs/environments/libero-plus.zh-CN.md#参考与评测配置)。任务名称中的 `initstate_N` 属于变体名称，不作为 `init_state_index`。
 
 ## 单任务测试
 

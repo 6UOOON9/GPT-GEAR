@@ -29,4 +29,36 @@ Each episode generates its own `libero_config/config.yaml`, selected through the
 
 Reference trajectories use `libero-codex-trajectory-v1`, with `robot0_grip_site` as the control point. See the [in-context learning guide](../reference-protocol.md#libero-plus) for video views and action fields, and the [video-to-text guide](../reference-format.md) for text generation.
 
-The [single-task configuration](../../configs/single_task/libero_plus.json) uses `libero_spatial/0`. The [queue configuration](../../configs/queues/libero_plus.json) contains 50 variants of 5 base tasks, each with seed 0, init state 0, 600 native steps, and no references. See its `episodes` for complete task IDs and execution order. For execution and resuming, see the [queue guide](../queues.md).
+The [single-task configuration](../../configs/single_task/libero_plus.json) uses `libero_spatial/0`. The [queue configuration](../../configs/queues/libero_plus.json) contains 50 variants of 5 base tasks, each with seed 0, init state 0, 600 native steps, and video, text, and trajectory references matched by base task (`sequence`, 1 fps). Replace `/path/to/reference_demo` with your local demonstration root before running. See its `episodes` for complete task IDs and execution order. For execution and resuming, see the [queue guide](../queues.md).
+
+The reference collection includes 40 LIBERO-Plus base-task demonstrations. Download them using the [demonstration download guide](../reference-protocol.md#download-reference-demo). The directory ranges under `/path/to/reference_demo/LIBERO-Plus/` are:
+
+| Demonstration directory | Suite | Count |
+|---|---|---:|
+| `base_00`–`base_09` | `libero_spatial` | 10 |
+| `base_10`–`base_19` | `libero_object` | 10 |
+| `base_20`–`base_29` | `libero_goal` | 10 |
+| `base_30`–`base_39` | `libero_10` | 10 |
+
+Match a variant to its base task before selecting a demonstration. `base_XX` identifies a demonstration, not `suite/task_id`. For example, `libero_goal/0` is a variant of `open_the_middle_drawer_of_the_cabinet` and uses `base_20`. All variants of that base task share the same reference:
+
+```json
+"reference": {
+  "video": "/path/to/reference_demo/LIBERO-Plus/base_20/videos",
+  "trajectory": "/path/to/reference_demo/LIBERO-Plus/base_20/trajectory.json",
+  "text": "/path/to/reference_demo/LIBERO-Plus/base_20/steps.txt",
+  "mode": "sequence",
+  "fps": 1
+}
+```
+
+Each demonstration includes external (`agentview`) and wrist (`robot0_eye_in_hand`) video, textual steps, and an action trajectory. Keep the complete directory, including `trajectory.jsonl` and `videos/videos.json`.
+
+To run the bundled queue, replace `env_root`, `sim_python`, and every `/path/to/reference_demo` prefix in its JSON with local absolute paths. The `--env-root` option only overrides the simulator path; it does not rewrite reference paths. Then inspect the plan and run:
+
+```bash
+gpt-gear queue configs/queues/libero_plus.json outputs/libero_plus_reference
+gpt-gear queue configs/queues/libero_plus.json outputs/libero_plus_reference --run
+```
+
+The first command only prints the plan. If you previously ran this queue without references, use a new output directory for the configuration with references. Each queue JSON is self-contained; recipients can run their own file with `gpt-gear queue <config.json> <output-directory> --run` after updating its paths.

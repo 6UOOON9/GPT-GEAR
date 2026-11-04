@@ -16,19 +16,19 @@ Both use `version: 2` and are loaded by `gpt-gear queue`; `episodes` in `single_
 | Configuration | Evaluation | Episodes |
 |---|---|---:|
 | [robodojo.json](queues/robodojo.json) | RoboDojo: 42 tasks, seed 0, layout 9; 34 with reference inputs and 8 without | 42 |
-| [libero_plus.json](queues/libero_plus.json) | LIBERO-plus: 5 base tasks × 10 perturbation variants, one run each | 50 |
+| [libero_plus.json](queues/libero_plus.json) | LIBERO-plus: 5 base tasks × 10 perturbation variants, one run each with references | 50 |
 | [libero_geomotion.json](queues/libero_geomotion.json) | LIBERO-GeoMotion: 36 scenes; 6 families with references (24 scenes), 3 without (12 scenes) | 36 |
 | [robocasa_gr1.json](queues/robocasa_gr1.json) | RoboCasa GR1: 24 tasks × 20 preset seeds | 480 |
 | [univtac.json](queues/univtac.json) | UniVTAC: 8 tasks × 20 preset seeds, `force` mode by default | 160 |
 | [robotwin.json](queues/robotwin.json) | RoboTwin: 50 tasks × 2 configurations × 5 seeds (`0–4` for each), all with references | 500 |
 
-GR1 and UniVTAC batch seeds follow presets from the source projects; they are not official seed splits. Download the references used by the RoboDojo, RoboTwin, and LIBERO-GeoMotion queues from [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo) on Hugging Face. See the [demonstration download guide](../docs/reference-protocol.md#download-reference-demo) for commands and directory layout, then replace `/path/to/reference_demo` in the configurations with your absolute download directory.
+GR1 and UniVTAC batch seeds follow presets from the source projects; they are not official seed splits. Download the references used by the RoboDojo, RoboTwin, LIBERO-GeoMotion, and LIBERO-Plus queues from [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo) on Hugging Face. See the [demonstration download guide](../docs/reference-protocol.md#download-reference-demo) for commands and directory layout, then replace `/path/to/reference_demo` in the configurations with your absolute download directory.
 
 The RoboTwin queue sorts tasks lexicographically. For each task, it runs `clean` with seeds `0–4`, then `random` with seeds `0–4`, for 250 clean and 250 random episodes. The 50 task names were checked against task modules and descriptions in RoboTwin's `envs/` directory and cross-checked with RPent's RoboTwin evaluation task set. Seeds follow this queue's rules. Each task uses its same-name demonstration for both configurations and all seeds.
 
 To select UniVTAC modalities, set `tactile_mode` on each JSON episode to `none`, `image`, `force`, or `image-force`; the default is `force`. With `gpt-gear run`, use `--tactile-mode`.
 
-For complete LIBERO-plus task identifiers and execution order, see `episodes` in the [queue configuration](queues/libero_plus.json). `task` uses `suite/task_id` with a zero-based task ID, not the one-based Classification ID. Each entry retains `seed=0`, `init_state_index=0`, and `max_native_steps=600` from the single-task configuration, with no reference inputs. `initstate_N` in a task name is part of the variant name, not an `init_state_index` value.
+For complete LIBERO-plus task identifiers and execution order, see `episodes` in the [queue configuration](queues/libero_plus.json). `task` uses `suite/task_id` with a zero-based task ID, not the one-based Classification ID. Each entry retains `seed=0`, `init_state_index=0`, and `max_native_steps=600` from the single-task configuration, and adds video, text, and trajectory references matched by base task (`mode: sequence`, `fps: 1`). Reference directories are `LIBERO-Plus/base_XX`; the demonstration number is not a runtime task ID. See the [LIBERO-Plus reference guide](../docs/environments/libero-plus.md#references-and-evaluation-configurations) for the mapping and path setup. `initstate_N` in a task name is part of the variant name, not an `init_state_index` value.
 
 ## Single-task tests
 

@@ -14,7 +14,7 @@ Copy a suitable configuration and update its environment paths. Repository examp
 
 | Configuration | Content | Fields to update |
 |---|---|---|
-| [libero_plus.json](../configs/queues/libero_plus.json) | LIBERO-plus: 50 task variants, one run each | `env_root`, `sim_python` |
+| [libero_plus.json](../configs/queues/libero_plus.json) | LIBERO-plus: 50 task variants, one run each, all with base-task references | Environment paths and all reference paths |
 | [libero_geomotion.json](../configs/queues/libero_geomotion.json) | LIBERO-GeoMotion: 36 scenes, 24 with references | Environment paths and all reference paths |
 | [robocasa_gr1.json](../configs/queues/robocasa_gr1.json) | GR1: 24 tasks × 20 seeds | All four environment paths |
 | [univtac.json](../configs/queues/univtac.json) | UniVTAC: 8 tasks × 20 seeds, `force` mode | `env_root`, `sim_python` |
@@ -23,7 +23,7 @@ Copy a suitable configuration and update its environment paths. Repository examp
 
 GR1's four paths are `env_root`, `robosuite_root`, `data_root`, and `sim_python`. Seeds in the GR1 and UniVTAC batch queues come from source-project presets, not official seed splits.
 
-Executing configurations in `single_task/` also calls the model. See [model-free checks](running.md#model-free-interface-checks) for checks without one. Reference data for RoboDojo, RoboTwin, and LIBERO-GeoMotion is available on Hugging Face at [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo). Follow the [demonstration download guide](reference-protocol.md#download-reference-demo), then replace `/path/to/reference_demo` in the configurations with your absolute download directory.
+Executing configurations in `single_task/` also calls the model. See [model-free checks](running.md#model-free-interface-checks) for checks without one. Reference data for RoboDojo, RoboTwin, LIBERO-GeoMotion, and LIBERO-Plus is available on Hugging Face at [uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo). Follow the [demonstration download guide](reference-protocol.md#download-reference-demo), then replace `/path/to/reference_demo` in the configurations with your absolute download directory.
 
 ## 2. Inspect the plan, then execute
 

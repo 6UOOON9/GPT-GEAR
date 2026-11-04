@@ -34,7 +34,7 @@
 
 ### 下载已发布的示范
 
-可直接从 Hugging Face 下载 **[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)**：共 91 份示范，包含 RoboDojo（35 份）、RoboTwin（50 份）和 LIBERO-GeoMotion（6 份）的多视角视频、文字步骤及动作轨迹。任务映射见[示范包说明](https://huggingface.co/datasets/uooon/reference_demo/blob/main/README.zh-CN.md#task-mapping)。
+可直接从 Hugging Face 下载 **[uooon/reference_demo](https://huggingface.co/datasets/uooon/reference_demo)**：共 131 份示范，包含 RoboDojo（35 份）、RoboTwin（50 份）、LIBERO-GeoMotion（6 份）和 LIBERO-Plus（40 份）的多视角视频、文字步骤及动作轨迹。任务映射见[示范包说明](https://huggingface.co/datasets/uooon/reference_demo/blob/main/README.zh-CN.md#task-mapping)。
 
 在已激活的工具环境中安装 [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli)，将 `/path/to/reference_demo` 替换为本机的绝对下载路径：
 
@@ -52,9 +52,17 @@ hf download uooon/reference_demo --repo-type dataset \
   --local-dir /path/to/reference_demo
 ```
 
+只下载 LIBERO-Plus 的全部 40 份基础任务示范：
+
+```bash
+hf download uooon/reference_demo --repo-type dataset \
+  --include "LIBERO-Plus/*" \
+  --local-dir /path/to/reference_demo
+```
+
 下载后，任务目录为 `/path/to/reference_demo/<环境>/<任务>/`，包含 `steps.txt`、`trajectory.json`、`trajectory.jsonl` 和 `videos/`。保留目录结构、文件名及大小写，确保描述文件能找到轨迹与视频。
 
-仓库的 [RoboDojo](../configs/queues/robodojo.json)、[RoboTwin](../configs/queues/robotwin.json) 和 [LIBERO-GeoMotion](../configs/queues/libero_geomotion.json) 队列已配置对应任务的参考路径。将其中 `/path/to/reference_demo` 替换为下载目录的绝对路径，并修改仿真环境路径，即可复用；使用完整队列时需下载该环境的全部示范。
+仓库的 [RoboDojo](../configs/queues/robodojo.json)、[RoboTwin](../configs/queues/robotwin.json)、[LIBERO-GeoMotion](../configs/queues/libero_geomotion.json) 和 [LIBERO-Plus](../configs/queues/libero_plus.json) 队列已配置对应任务的参考路径。将其中 `/path/to/reference_demo` 替换为下载目录的绝对路径，并修改仿真环境路径，即可复用；使用完整队列时需下载该环境的全部示范。
 
 ### 使用已有文件或自行准备
 
@@ -174,6 +182,8 @@ gpt-gear run fasten_screws outputs/robodojo_reference \
 视频目录可包含唯一的 `*head.mp4`、`*left_wrist.mp4` 与 `*right_wrist.mp4`，或使用 `videos.json` 显式映射；存在映射文件时优先使用映射。映射使用上述 `sim-reference-videos-v1` 标识，也接受 `robodojo-reference-videos-v1`，两者使用相同的映射结构。文字生成需要 `head`、`left_wrist`、`right_wrist` 三路视角，目录示例见 [视频文字教程](reference-format.zh-CN.md#robodojo三路视频)。轨迹与视频是否提供仍按前面的输入组合选择。
 
 ### LIBERO-plus
+
+40 份示范位于 `LIBERO-Plus/base_00/`–`base_39/`，每个基础任务一份。每份包含 `steps.txt`、`trajectory.json`、`trajectory.jsonl`，以及 `videos/` 下的 `agentview.mp4`、`wrist.mp4` 和 `videos.json`。扰动变体按基础任务名称匹配示范；`base_XX` 不是运行任务编号。目录范围和 queue 示例见 [LIBERO-Plus 环境说明](environments/libero-plus.zh-CN.md#参考与评测配置)。
 
 `pose.reference` 为 `robot0_grip_site`。每条 action 包含 `dpos`、`dquat`、`gripper`；夹爪取 `open`、`close` 或 `null`，其中 `null` 表示未知。末条 action 为 `null`。`sampling` 包含视频声明、名义间隔、缺口和未知夹爪帧列表。
 

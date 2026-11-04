@@ -47,6 +47,7 @@
 
 ## 📰 最新动态
 
+- 🎬 **2026/11/04** — 新增 40 份 LIBERO-Plus 基础任务示范，参考示范集增至 131 份。[LIBERO-Plus 队列](configs/queues/libero_plus.json) 的 50 个任务变体均已配置视频、文字和轨迹参考。见[下载与使用指南](docs/reference-protocol.zh-CN.md#download-reference-demo)。
 - 🎬 **2026/10/29** — [仿真参考示范集](https://huggingface.co/datasets/uooon/reference_demo) 已在 Hugging Face 开放！包含 RoboDojo、RoboTwin 和 LIBERO-GeoMotion 的 91 份视频、文字与轨迹示范，支持下载后复用现有评测队列。见[下载与使用指南](docs/reference-protocol.zh-CN.md#download-reference-demo)。
 - ✨ **2026/10/21** — 📄 [论文](https://arxiv.org/abs/2610.28259)、🌐 [项目主页](https://6uooon9.github.io/GPT-GEAR/)和📦 [LIBERO-GeoMotion 数据集](https://huggingface.co/datasets/uooon/LIBERO-GeoMotion)已开放！更多演示请参考项目主页，也欢迎了解我们的方法和实验结果，交流想法与反馈。
 - 📄 **2026/10/20** — **论文报告**：📄 [*Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning*](https://arxiv.org/abs/2610.28259)。我们分享了 GPT-6 Astra 在机器人操作中的能力、局限，以及值得继续探索的问题。
@@ -237,7 +238,7 @@ gpt-gear run libero_spatial/0 outputs/libero_first_run \
 
 该命令会启动仿真并调用模型。输出目录必须尚不存在，无需提前创建。指定模型时，在命令末尾加 `--codex-model 模型名`。
 
-想为任务加入示范文字、视频或轨迹，可以继续阅读 🎬 [上下文学习（ICL）指南](docs/reference-protocol.zh-CN.md)。RoboDojo、RoboTwin 和 LIBERO-GeoMotion 的现成示范已发布在 [Hugging Face：仿真参考示范集](https://huggingface.co/datasets/uooon/reference_demo)，可按[下载与使用说明](docs/reference-protocol.zh-CN.md#download-reference-demo)直接接入对应队列。
+想为任务加入示范文字、视频或轨迹，可以继续阅读 🎬 [上下文学习（ICL）指南](docs/reference-protocol.zh-CN.md)。RoboDojo、RoboTwin、LIBERO-GeoMotion 和 LIBERO-Plus 的现成示范已发布在 [Hugging Face：仿真参考示范集](https://huggingface.co/datasets/uooon/reference_demo)，可按[下载与使用说明](docs/reference-protocol.zh-CN.md#download-reference-demo)直接接入对应队列。
 
 <a id="3-查看结果"></a>
 <a id="3-inspect-the-results"></a>
@@ -278,7 +279,7 @@ gpt-gear summarize outputs/gr1_24x20
 
 具身上下文学习（Embodied In-Context Learning，ICL）将示范放入模型上下文，帮助 Astra 结合当前场景进行决策。示范是可选的：可以单独提供文字或视频，也可以搭配动作轨迹，比较不同输入组合的效果。
 
-所有环境的示范文件都需在评测前准备。可下载已发布的 **[仿真参考示范集](https://huggingface.co/datasets/uooon/reference_demo)**，直接复用 RoboDojo、RoboTwin 和 LIBERO-GeoMotion 的视频、文字与轨迹，以及仓库中的对应评测队列；其他任务可自行准备示范。GPT-GEAR 提供从已有视频到文字步骤的生成、输入校验和示范读取；评测命令不会自动下载数据、导出视频或生成轨迹。
+所有环境的示范文件都需在评测前准备。可下载已发布的 **[仿真参考示范集](https://huggingface.co/datasets/uooon/reference_demo)**，直接复用 RoboDojo、RoboTwin、LIBERO-GeoMotion 和 LIBERO-Plus 的视频、文字与轨迹，以及仓库中的对应评测队列；其他任务可自行准备示范。GPT-GEAR 提供从已有视频到文字步骤的生成、输入校验和示范读取；评测命令不会自动下载数据、导出视频或生成轨迹。
 
 - 📦 [下载示范并配置本机路径](docs/reference-protocol.zh-CN.md#download-reference-demo)
 - 🎬 [在评测中使用上下文学习](docs/reference-protocol.zh-CN.md)
