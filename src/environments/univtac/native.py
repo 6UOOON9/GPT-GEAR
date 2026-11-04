@@ -12,7 +12,7 @@ import time
 import numpy as np
 from control import delta
 from environments.univtac import gripper as grip
-from perception.calibration import ee_transform
+from perception.calibration import ee_transform, rigid_matrix
 from environments.benchmarks import TASKS as ALL_TASKS
 from control.profiles import control_profile
 from perception.modalities import observation_profile
@@ -153,25 +153,49 @@ class UniVTACNative:
         return state
 
     def _calibrate(self):
-        # Flush current articulation poses to Fabric without advancing physics.
-        self.env.sim.forward()
+        from pxr import Usd, UsdGeom, UsdPhysics
+
         root_pose = np.r_[self.robot.data.root_link_pos_w[0].cpu().numpy(),
                           self.robot.data.root_link_quat_w[0].cpu().numpy()]
         world_to_base = np.linalg.inv(ee_transform(root_pose))
         result = {}
         for name in CAMERAS:
             camera = self.env._camera_manager.cameras[name]
-            # Camera._update_poses() defaults to USD, which can retain the
-            # pre-reset pose while physics/rendering use Fabric. Freezing that
-            # pose against the current EE would corrupt the wrist installation.
-            # XFormPrim returns the camera prim's OpenGL orientation (wxyz).
-            # Fabric's Warp index conversion requires 32-bit indices.
-            positions, quaternions_gl = camera._view.get_world_poses(
-                camera._ALL_INDICES.to(dtype=self.torch.int32),
-                usd=not self.env.cfg.sim.use_fabric)
-            pose = np.r_[positions[0].cpu().numpy(), quaternions_gl[0].cpu().numpy()]
+            if len(camera._sensor_prims) != 1:
+                raise ValueError('UniVTAC camera requires exactly one sensor prim')
+            prim = camera._sensor_prims[0].GetPrim()
+            xform = UsdGeom.Xformable(prim)
+            if (not prim.IsValid() or not prim.IsA(UsdGeom.Camera)
+                    or not np.isclose(UsdGeom.GetStageMetersPerUnit(prim.GetStage()), 1.0)
+                    or xform.TransformMightBeTimeVarying()):
+                raise ValueError('UniVTAC camera requires a fixed, metre-scale mounting')
+            if name == 'wrist':
+                parent = prim.GetParent()
+                body_ids = [i for i, body in enumerate(self.robot.body_names)
+                            if body == parent.GetName()]
+                if (parent.GetName() != 'WristCamera'
+                        or not parent.HasAPI(UsdPhysics.RigidBodyAPI)
+                        or xform.GetResetXformStack() or len(body_ids) != 1):
+                    raise ValueError('Wrist camera must inherit a measured robot rigid body')
+                # Read the fixed local mount and live actor-frame pose. A Fabric
+                # XFormPrim view read can author stale USD world poses on camera
+                # leaves, detaching rendering from the moving wrist.
+                local = rigid_matrix(np.asarray(
+                    xform.GetLocalTransformation(Usd.TimeCode.Default())).T)
+                measured = self.robot.data.body_link_pose_w[0, body_ids[0]].detach().cpu().numpy()
+                camera_to_world = rigid_matrix(ee_transform(measured) @ local)
+            else:
+                ancestor = prim.GetParent()
+                while ancestor.IsValid():
+                    parent_xform = UsdGeom.Xformable(ancestor)
+                    if (ancestor.HasAPI(UsdPhysics.RigidBodyAPI)
+                            or (parent_xform and parent_xform.TransformMightBeTimeVarying())):
+                        raise ValueError('Head camera requires a static environment mount')
+                    ancestor = ancestor.GetParent()
+                camera_to_world = np.asarray(
+                    xform.ComputeLocalToWorldTransform(Usd.TimeCode.Default())).T
             result[name] = dict(intrinsic_K=camera.data.intrinsic_matrices[0].cpu().numpy().tolist(),
-                camera_to_env_gl=(world_to_base @ ee_transform(pose)).tolist(),
+                camera_to_env_gl=rigid_matrix(world_to_base @ camera_to_world).tolist(),
                 calibration_reference='environment' if name == 'head' else 'robot0_ee',
                 calibration_mount_signature=f'univtac:gsmini:{name}:{self.args.image_width}x{self.args.image_height}')
         return result
