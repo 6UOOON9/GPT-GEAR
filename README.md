@@ -313,3 +313,22 @@ Use repository Issues to share questions, reproduction notes, and requests for n
 ## ⚖️ License and acknowledgments
 
 This project reuses implementations from 🌐 [RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo), 🌐 [RPent](https://github.com/RLinf/RPent), and related environment adapters. Files from different sources retain their respective MIT or Apache-2.0 licenses and attribution. See ⚖️ [LICENSE](LICENSE), ⚖️ [NOTICE](NOTICE), and the ⚖️ [license directory](licenses/). Simulation environments, datasets, and assets must be prepared separately.
+
+<a id="citation"></a>
+
+## 📄 Citation
+
+If you find our work useful in your research, please consider citing our [paper](https://arxiv.org/abs/2610.28259):
+
+```bibtex
+@misc{zhou2026largemultimodalmodels,
+  title         = {Large Multimodal Models for Direct Robot Control: {GPT-6} as a Beginning},
+  author        = {Youwei Zhou and Bohan Hou and Yankai Fu and Yaoxu Lyu and Yifan Ye and Shilin Shan and Chen Guo and Jiaming Liu and Ran He and Caifeng Shan and Shanghang Zhang and Jianfei Yang and Zhihe Lu},
+  year          = {2026},
+  eprint        = {2610.28259},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  doi           = {10.48550/arXiv.2610.28259},
+  url           = {https://arxiv.org/abs/2610.28259}
+}
+```
