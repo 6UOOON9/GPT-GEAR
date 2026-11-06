@@ -334,9 +334,10 @@ docs/                # 通用使用与开发文档
 如果我们的工作对你的研究有所帮助，欢迎引用我们的[论文](https://arxiv.org/abs/2610.28259)：
 
 ```bibtex
-@misc{zhou2026largemultimodalmodels,
+@article{zhou2026largemultimodalmodels,
   title         = {Large Multimodal Models for Direct Robot Control: {GPT-6} as a Beginning},
   author        = {Youwei Zhou and Bohan Hou and Yankai Fu and Yaoxu Lyu and Yifan Ye and Shilin Shan and Chen Guo and Jiaming Liu and Ran He and Caifeng Shan and Shanghang Zhang and Jianfei Yang and Zhihe Lu},
+  journal       = {arXiv preprint arXiv:2610.28259},
   year          = {2026},
   eprint        = {2610.28259},
   archivePrefix = {arXiv},
