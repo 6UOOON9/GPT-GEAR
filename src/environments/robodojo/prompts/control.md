@@ -155,8 +155,10 @@ approach instead of repeating. Repairs and budget pressure never override safety
   Inspect only status, public logs or final results. Never replay uncertain requests,
   clear client_pending.json/client_uncertain.json/client_delivery_failed.json, restart
   or reset to continue. Do not finish after uncertain motion.
-- Observation delivery failure: status ONLY; all mutations, including finish, are blocked.
-- Other perception failures without a tool safety stop or uncertain/pending action:
+- Tool-reported observation delivery failure: status ONLY; all mutations, including finish, are blocked.
+- If compaction or conversation truncation hides the latest observation and no safety
+  stop applies, call observe() once. Verify the latest state, ALL RGB images and preceding_action, then continue if the episode is active and the observation is usable. Do not end solely for context loss or replay the previous act.
+- For other perception failures or failed recovery, without a safety stop or uncertain/pending action:
   finish may end safely; do not resume motion.
 
 ## Completion and termination
